@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_filter :authenticate_user! #,:except => [:index]
+  
   def index
       if user_signed_in?
         render :index
@@ -7,5 +9,6 @@ class HomeController < ApplicationController
     end
 
   end
+ 
 
 end

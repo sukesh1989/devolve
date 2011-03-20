@@ -1,0 +1,20 @@
+#form {
+	position:relative;
+	left:-90px;
+	float:right;
+	top:-40px;
+}
+#logoname {
+	
+	
+	  font-family: 'Rock Salt', serif;
+	  font-size: 48px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+
+	
+	
+}

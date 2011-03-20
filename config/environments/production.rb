@@ -46,4 +46,37 @@ Devolve::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  
+  
+  
+   Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+
+   ActionMailer::Base.delivery_method = :smtp
+
+   ActionMailer::Base.perform_deliveries = true
+
+   ActionMailer::Base.raise_delivery_errors = true
+
+   ActionMailer::Base.smtp_settings = {
+
+     :enable_starttls_auto => true,  
+
+     :address            => 'smtp.gmail.com',
+
+     :port               => 587,
+
+     :tls                  => true,
+
+     :domain             => 'gmail.com', 
+
+     :authentication     => :plain,
+
+     :user_name          => ENV['GMAIL_SMTP_USER'],
+
+     :password           => ENV['GMAIL_SMTP_PASSWORD'] # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])
+
+   }
+   
+   config.action_mailer.default_url_options = { :host => 'devolve.heroku.com' }
 end

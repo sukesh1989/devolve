@@ -45,7 +45,7 @@ Devolve::Application.configure do
 
      :authentication     => :plain,
 
-     :user_name          => ENV['GMAIL_SMTP_USER'],
+     :user_name          => 'devolve.india@gmail.com',
 
      :password           => ENV['GMAIL_SMTP_PASSWORD'] # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])
 

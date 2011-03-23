@@ -116,7 +116,9 @@
 	border-radius: 50px;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
-	color: #fff;
+	border-color:#666;
+	border-width:medium;
+	color: #639;
 	cursor: pointer;
 	float: left;
 	font-size: 18px;
@@ -125,7 +127,7 @@
 	margin-left: 230px;
 	text-decoration: none;
 	
-		background-color:#639;
+		background-color:#e7e6f8;
 }
 
 .button:hover {

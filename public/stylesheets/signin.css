@@ -3,10 +3,54 @@
 	background-color:#6b238e;
 }
 #user_email {
-	width:200px;
+	width:213px;
+	position:relative;
+	margin-left:5px;
+	margin-top:4px;
+	color:#6b238e; 
+	height: 23px; 
+
+	padding: 3px 5px 3px 5px; 
+	border-style: none;
+	font-family: courier new; 
+	font-size: 18px;
+	
+	outline: 0px none;
+	outline-width: 0px;
+	outline-style: none;
+	outline-color: initial;
 }
+#img_e {
+	height:38px;
+	position:relative;
+	margin-top:-45px;
+	margin-left:150px;
+	background:url("../images/world_input.gif") no-repeat;
+}
+	#img_p {
+		height:38px;
+		position:relative;
+		margin-left:150px;
+		margin-top:-20px;
+		background:url("../images/world_input.gif") no-repeat;
+	}
 #user_password {
-	width:200px;
+	width:213px;
+	position:relative;
+	margin-left:5px;
+	margin-top:4px;
+	color:#6b238e; 
+	height: 23px; 
+
+	padding: 3px 5px 3px 5px; 
+	border-style: none;
+	font-family: courier new; 
+	font-size: 18px;
+	
+	outline: 0px none;
+	outline-width: 0px;
+	outline-style: none;
+	outline-color: initial;
 }
 #email_lab {
 	position:relative;
@@ -28,11 +72,14 @@
 #user_new {
 	position:absolute;
 	right:100px;
+	
+	background-color:#6b238e;
+	width:400px;
+	
 }
 .hidden {
   display: none; }
 #user_submit{
 	width:150px;
 }
-input { height:30px;
-	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; }
+

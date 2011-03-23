@@ -4,7 +4,7 @@
 
 $(function() {
  $("form").submit(function(){
-    $(this).fadeOut(200, function(){
+    $("#html_new").fadeOut(200, function(){
       $('#logoname').animate({
         'margin-top': '+=80',
  		'margin-left': '+=10'

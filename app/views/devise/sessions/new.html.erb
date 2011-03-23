@@ -1,18 +1,12 @@
-<div id="logoname">Devolve</div>
+<%= stylesheet_link_tag "signin" %>
+<div id="header"><div id="logoname">Devolve</div></div>
 
-<style type="text/css">
 
-.hidden {
-  display: none; }
-</style>
 
-	
-<h2>Sign in</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
+  <p><%= f.label :email,:id =>"email_lab" %><br />
   <%= f.text_field :email %></p>
-
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>
 

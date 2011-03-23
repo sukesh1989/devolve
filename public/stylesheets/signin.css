@@ -1,0 +1,38 @@
+#header {
+	height:140px;
+	background-color:#6b238e;
+}
+#user_email {
+	width:200px;
+}
+#user_password {
+	width:200px;
+}
+#email_lab {
+	position:relative;
+	margin-left:30px;
+	margin-bottom:30px;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 48px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#user_new {
+	position:absolute;
+	right:100px;
+}
+.hidden {
+  display: none; }
+#user_submit{
+	width:150px;
+}
+input { height:30px;
+	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; }

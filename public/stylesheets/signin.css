@@ -2,28 +2,43 @@
 	height:140px;
 	background-color:#6b238e;
 }
-#user_email {
-	width:213px;
-	position:relative;
-	margin-left:5px;
-	margin-top:4px;
-	color:#6b238e; 
-	height: 23px; 
 
-	padding: 3px 5px 3px 5px; 
-	border-style: none;
-	font-family: courier new; 
-	font-size: 18px;
-	
-	outline: 0px none;
-	outline-width: 0px;
-	outline-style: none;
-	outline-color: initial;
+#email_lab {
+	position:absolute;
+	margin-left:30px;
+	margin-top:10px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:24px;
+	color:#edfcd1;
 }
+
+
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 48px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#pass_lab {
+	position:absolute;
+	margin-left:30px;
+	margin-top:10px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:24px;
+	color:#edfcd1;
+}
+
+
 #img_e {
 	height:38px;
 	position:relative;
-	margin-top:-45px;
+	margin-top:5px;
 	margin-left:150px;
 	background:url("../images/world_input.gif") no-repeat;
 }
@@ -31,7 +46,7 @@
 		height:38px;
 		position:relative;
 		margin-left:150px;
-		margin-top:-20px;
+		margin-top:-0px;
 		background:url("../images/world_input.gif") no-repeat;
 	}
 #user_password {
@@ -52,23 +67,25 @@
 	outline-style: none;
 	outline-color: initial;
 }
-#email_lab {
+#user_email {
+	width:213px;
 	position:relative;
-	margin-left:30px;
-	margin-bottom:30px;
-}
-#logoname {
+	margin-left:5px;
+	margin-top:4px;
+	color:#6b238e; 
+	height: 23px; 
+
+	padding: 3px 5px 3px 5px; 
+	border-style: none;
+	font-family: courier new; 
+	font-size: 18px;
 	
-	position:relative;
-	  font-family: 'Rock Salt', serif;
-	  font-size: 48px;
-	  font-style: italic;
-	  font-weight: 700;
-	  text-shadow: 4px 4px 4px #000;
-	color:#ffffff;
-	  text-transform: uppercase;
-	margin-left:50px;
+	outline: 0px none;
+	outline-width: 0px;
+	outline-style: none;
+	outline-color: initial;
 }
+
 #user_new {
 	position:absolute;
 	right:100px;
@@ -81,5 +98,37 @@
   display: none; }
 #user_submit{
 	width:150px;
+}
+
+#user_remember_me {
+	margin-left:270px;
+	color:#F3C;
+}
+
+#lab_rem {
+	color:#edfcd1;
+}
+
+
+
+
+.button {
+	border-radius: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	color: #fff;
+	cursor: pointer;
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	margin-right: 20px;
+	text-decoration: none;
+	
+		background-color:#818286;
+}
+
+.button:hover {
+
+	text-decoration: none;
 }
 

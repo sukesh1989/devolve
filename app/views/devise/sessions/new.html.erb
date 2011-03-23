@@ -10,19 +10,20 @@
 
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email,:id =>"email_lab" %><br />
+  <%= f.label :email,:id =>"email_lab" %>
 	<div id="img_e">
-  <%= f.text_field :email %></p></div>
-
-  <p><%= f.label :password %><br />
+  <%= f.text_field :email %>
+</div>
+<br />
+  <%= f.label :password,:id => "pass_lab" %>
 	<div id="img_p">
-  <%= f.password_field :password %></p></div>
+  <%= f.password_field :password %></div>
 
   <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+    <p><%= f.check_box :remember_me %> <%= f.label :remember_me ,:id=> "lab_rem"%></p>
   <% end -%>
 
-  <p><%= f.submit "Sign in" %></p>
+  <p><%= f.submit "Sign in",:class =>"button red" %></p>
 
 <%= render :partial => "devise/shared/links" %>
 <% end %>

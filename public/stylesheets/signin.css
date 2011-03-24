@@ -14,11 +14,11 @@
 #logoname1 {
 	
 	position:absolute;
-	  top:200px;
-	left:100px;
+	  top:40%;
+	left:50%;
 	
 	  font-family: 'Rock Salt', serif;
-	  font-size: 48px;
+	  font-size: 30px;
 	  font-style: italic;
 	  font-weight: 700;
 	  text-shadow: 4px 4px 4px #000;

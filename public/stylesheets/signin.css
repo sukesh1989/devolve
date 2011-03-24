@@ -11,7 +11,18 @@
 	font-size:24px;
 	color:#edfcd1;
 }
-
+#logoname1 {
+	
+	position:absolute;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 48px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:0 0 auto;
+}
 
 #logoname {
 	

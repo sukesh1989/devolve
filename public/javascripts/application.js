@@ -5,10 +5,8 @@
 $(function() {
  $("form").submit(function(){
     $("#html_new").fadeOut(200, function(){
-      $('#logoname').animate({
-        'margin-top': '+=80',
- 		'margin-left': '+=10'
-      }, 250, function(){
+      $('#logoname1').fadeIn(300);
+    
         $("#spinner").fadeIn(300);
       });
     });

@@ -99,8 +99,9 @@
 #user_submit{
 	width:150px;
 	height:30px;
-	background-color:#6b238e;
-	color:#edfcd1;
+	background-color:#e7e6f8;
+	color:#000;
+	border-color:#fff;
 	border-radius        : 15px;
       -webkit-border-radius: 15px;
       -moz-border-radius   : 15px;

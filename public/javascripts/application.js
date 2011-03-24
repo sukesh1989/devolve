@@ -6,9 +6,7 @@ $(function() {
  
       $("form").submit(function(){
         $(this).fadeOut(200, function(){
-          $('#logoname1').fadeIn({
-            'margin-top': '+=80'
-          }, 250, function(){
+          $('#logoname1').fadeIn( 250, function(){
             $("#spinner").fadeIn(300);
          
         });

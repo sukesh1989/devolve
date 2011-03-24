@@ -6,6 +6,6 @@ $(function() {
  $("form").submit(function(){
     $("#html_new").fadeOut(200, function(){
       $("#logoname1").fadeIn(300);
-       
+   }
       });
     });

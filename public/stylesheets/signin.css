@@ -98,6 +98,23 @@
   display: none; }
 #user_submit{
 	width:150px;
+	height:30px;
+	background-color:#6b238e;
+	color:#edfcd1;
+	border-radius        : 15px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius   : 15px;
+position:relative;
+margin-left:230px;
+
+font-size:14px;
+}
+#user_submit:hover{
+	width:150px;
+	height:30px;
+	font-size:16px;
+	background-color:#6b238e;
+	
 }
 
 #user_remember_me {
@@ -112,26 +129,4 @@
 
 
 
-.button {
-	border-radius: 50px;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-color:#666;
-	border-width:medium;
-	color: #639;
-	cursor: pointer;
-	float: left;
-	font-size: 18px;
-	font-weight: bold;
-	position:relative;
-	margin-left: 230px;
-	text-decoration: none;
-	
-		background-color:#e7e6f8;
-}
-
-.button:hover {
-
-	text-decoration: none;
-}
 

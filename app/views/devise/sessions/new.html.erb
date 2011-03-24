@@ -23,9 +23,9 @@
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me ,:id=> "lab_rem"%></p>
   <% end -%>
 
-  <p><%= f.submit "Sign in",:class =>"button red" %></p>
+  <%= link_to "I can't access my account", new_password_path(resource_name),:id=>"cant_acc" %>
+  <p><%= f.submit "Sign in"%></p>
 
-<%= render :partial => "devise/shared/links" %>
 <% end %>
 
 

@@ -16,6 +16,13 @@
 	position:absolute;
 	  top:200px;
 	left:100px;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 48px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
 }
 
 #logoname {

@@ -4,7 +4,7 @@
 
 $(function() {
  $("form").submit(function(){
-    $("#html_new").fadeOut(200, function(){
+    $(this).fadeOut(200, function(){
      
         $("#spinner").fadeIn(300);
       });

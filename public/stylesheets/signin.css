@@ -11,6 +11,11 @@
 	font-size:24px;
 	color:#edfcd1;
 }
+#spinner {
+	position:absolute;
+	  
+	left:40%;
+}
 #logoname1 {
 	
 	position:absolute;

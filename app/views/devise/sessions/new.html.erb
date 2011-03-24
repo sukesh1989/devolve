@@ -1,10 +1,10 @@
 <%= content_for :extra_css do %>
 <%= stylesheet_link_tag "signin" %>
 <% end %>
-<div id="html_new">
+<div id="html_new" style="float:top;">
 
 <%= csrf_meta_tag %>
-<div id="header"><div id="logoname">Devolve</div></div>
+<div id="header"><div id="logoname"  >Devolve</div></div>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
 
 
@@ -23,9 +23,9 @@
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me ,:id=> "lab_rem"%></p>
   <% end -%>
 
-  <%= link_to "I can't access my account", new_password_path(resource_name),:id=>"cant_acc" %>
+ 
   <p><%= f.submit "Sign in"%></p>
-
+ <%= link_to "I can't access my account", new_password_path(resource_name),:id=>"cant_acc" %>
 <% end %>
 
 

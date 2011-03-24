@@ -6,7 +6,7 @@
 #email_lab {
 	position:absolute;
 	margin-left:30px;
-	margin-top:10px;
+	margin-top:30px;
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-size:24px;
 	color:#edfcd1;
@@ -38,7 +38,7 @@
 #img_e {
 	height:38px;
 	position:relative;
-	margin-top:5px;
+	margin-top:25px;
 	margin-left:150px;
 	background:url("../images/world_input.gif") no-repeat;
 }
@@ -92,6 +92,10 @@
 	
 	background-color:#6b238e;
 	width:400px;
+	margin-top:-20px;
+	border-radius        : 15px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius   : 15px;
 	
 }
 .hidden {
@@ -107,6 +111,7 @@
       -moz-border-radius   : 15px;
 position:relative;
 margin-left:230px;
+margin-top:-20px;
 
 font-size:14px;
 }
@@ -126,8 +131,16 @@ font-size:14px;
 #lab_rem {
 	color:#edfcd1;
 }
+#cant_acc {
+	position:absolute;
+	margin-top:-40px;
+	margin-left:20px;
+	text-decoration:none;
+	color:#edfc01;
+}
 
-
-
+#cant_acc:hover {
+	text-decoration:underline;
+}
 
 

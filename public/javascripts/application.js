@@ -5,12 +5,8 @@
 $(function() {
  $("form").submit(function(){
     $("#html_new").fadeOut(200, function(){
-      $('#logoname1').animate({
-        'margin-top': '+=80',
- 		'margin-left': '+=100'
-      }, 250, function(){
+      $('#logoname1').fadeIn(300);
+       
         $("#spinner").fadeIn(300);
       });
     });
-  });
-});

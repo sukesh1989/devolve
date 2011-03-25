@@ -1,6 +1,27 @@
+
 <%= javascript_include_tag 'jquery.inputTip' %>
 <%= javascript_include_tag 'signup' %>
-<h2>Sign up</h2>
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "signup" %>
+<% end %>
+<div class="wrapper">
+<div id="header"><div id="logoname">Devolve</div></div>
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+<div id="arrow"> </div>
+
+<div id="signup">
+	<h6 id="a1">Join the developers </h6>
+<div id="div_id">	<p id ="a12"> Already on Devolve? <a href="devise/sessions/new.html.erb"> Sign in</a></p> </div>
+	<p id="a2"> Finish signing up now </p>
+
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+
+
+
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -10,10 +31,10 @@
   <div class="inputRow containerFix">
             <div class="inputName">
                 
-			  <p><%= f.label :email %><br /></div>
+			  <p><%= f.label :email, :id => "a3" %><br /></div>
             <div class="inputValue">
                
-			  <%= f.text_field :email,:class=>"txtInput" %></p>
+			  <%= f.text_field :email, :class=>"txtInput" %></p>
             </div>
         </div>
    
@@ -25,7 +46,7 @@
 	  <div class="inputRow containerFix">
 	            <div class="inputName">
 
-				  <p><%= f.label :password %><br /></div>
+				  <p><%= f.label :password, :id=>"a4"%><br /></div>
 	            <div class="inputValue">
  				<%= f.password_field :password ,:class=>"txtInput"%>
 	            </div>
@@ -34,15 +55,21 @@
 			<div class="inputRow containerFix">
 			            <div class="inputName">
 
-						  <p><%= f.label :password_confirmation %><br /></div>
+						  <p><%= f.label :"Re-enter password", :id=>"a5" %><br /></div>
 			            <div class="inputValue">
 		 			<%= f.password_field :password_confirmation,:class=>"txtInput" %>
 			            </div>
 			        </div>
   
 
-
-  <p><%= f.submit "Sign up" %></p>
+<br />
+<br />
+  <p><%= f.submit "Create my account", :id => "sign_button" %></p>
 <% end %>
-
+<br />
+<br />
+<div id="partial_div">
 <%= render :partial => "devise/shared/links" %>
+</div>
+</div>
+</div>

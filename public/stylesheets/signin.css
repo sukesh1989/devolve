@@ -160,7 +160,20 @@ font-size:14px;
 #cant_acc:hover {
 	text-decoration:underline;
 }
-
+#footer {
+	height:50px;
+	width:1100px;
+	position:absolute;
+	left:90px;
+	float:left;
+	align:center;
+	bottom:0px;
+	
+	border-radius        : 15px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius   : 15px;
+	background-color:#6b238e;
+}
 
 
 

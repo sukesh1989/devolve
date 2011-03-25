@@ -1,0 +1,48 @@
+<%= javascript_include_tag 'jquery.inputTip' %>
+<%= javascript_include_tag 'signup' %>
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+
+  <div class="inputRow containerFix">
+            <div class="inputName">
+                
+			  <p><%= f.label :email %><br /></div>
+            <div class="inputValue">
+               
+			  <%= f.text_field :email,:class=>"txtInput" %></p>
+            </div>
+        </div>
+   
+
+
+		<%= stylesheet_link_tag 'tipBoxStyle' %>
+
+		<%= javascript_include_tag 'signup' %>
+	  <div class="inputRow containerFix">
+	            <div class="inputName">
+
+				  <p><%= f.label :password %><br /></div>
+	            <div class="inputValue">
+ 				<%= f.password_field :password ,:class=>"txtInput"%>
+	            </div>
+	        </div>
+		
+			<div class="inputRow containerFix">
+			            <div class="inputName">
+
+						  <p><%= f.label :password_confirmation %><br /></div>
+			            <div class="inputValue">
+		 			<%= f.password_field :password_confirmation,:class=>"txtInput" %>
+			            </div>
+			        </div>
+  
+
+
+  <p><%= f.submit "Sign up" %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

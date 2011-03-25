@@ -3,6 +3,15 @@
 
 
 $(function() {
+   var $alertdiv = $('<div id = "alertmsg"/>');
+           
+            $alertdiv.bind('click', function() {
+                $(this).slideUp(200);
+            });
+            $(document.body).append($alertdiv);
+            $("#alertmsg").slideDown("slow"); 
+            setTimeout(function() { $("#alertmsg").slideUp(200) }, 3000);
+                      
  
       $("form").submit(function(){
         $(this).fadeOut(200, function(){
@@ -15,3 +24,4 @@ $(function() {
 
 
 });
+

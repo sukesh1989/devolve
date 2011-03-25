@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_filter :authenticate_user! #,:except => [:index]
+  before_filter :authenticate_user! ,:except => [:help]
   
   def index
       if user_signed_in?
@@ -9,6 +9,7 @@ class HomeController < ApplicationController
     end
 
   end
- 
+  def help
+  end
 
 end

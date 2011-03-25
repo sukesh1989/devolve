@@ -1,6 +1,9 @@
 <%= content_for :extra_css do %>
 <%= stylesheet_link_tag "signin" %>
 <% end %>
+<%= content_for :extra_js do %>
+<%= javascript_include_tag "signin" %>
+<% end %>
 <div id="html_new" style="float:top;">
 
 <div id="header"><div id="logoname" >Devolve</div></div>
@@ -24,7 +27,7 @@
 
  
   <p><%= f.submit "Sign in"%></p>
- <%= link_to "I can't access my account", new_password_path(resource_name),:id=>"cant_acc" %>
+ <%= link_to "I can't access my account",  home_help_path(resource_name),:id=>"cant_acc" %>
 <% end %>
 </div>
 <div id="load">

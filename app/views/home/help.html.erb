@@ -1,0 +1,31 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "signin" %>
+<% end %>
+<div id="header"><div id="logoname" >Devolve</div></div>
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+<h1>Looks like you need some help?</h1>
+<p>Let us help you find a solution.</p>
+
+<fieldset id="fldsetProblems">
+	<h3>What's the problem you are experiencing?</h3>
+	<dl id="problemList">
+		<dt>
+		 			
+			  <%= link_to "Forgot your password?", new_user_password_path %><br />
+			
+				</dt>
+					<dt>
+
+		
+			  <%= link_to "Didn't receive confirmation instructions?", new_user_confirmation_path %><br />
+
+				</dt>
+					<dt>
+		
+			  <%= link_to "Didn't receive unlock instructions?", new_user_unlock_path %><br />
+			
+				</dt>
+		
+	
+  </dl>
+</fieldset>

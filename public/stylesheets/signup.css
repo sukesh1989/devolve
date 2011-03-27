@@ -134,7 +134,7 @@ html, body {
 }
 #a5 {
 	position:absolute;
-	top:215px;
+	top:235px;
 	left:25px;
 }
 #user_password_confirmation
@@ -155,6 +155,9 @@ html, body {
 	position:relative;
 	margin-left:100px;
 	margin-top:50px;
+}
+.field_with_errors {
+	color:#f00;
 }
 
 

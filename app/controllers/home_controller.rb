@@ -5,7 +5,7 @@ class HomeController < ApplicationController
       if (current_user.getting_started == true )
         redirect_to  home_gettingstarted_path
       else 
-render :index
+        render :index
   end
 end
   def help

@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
    var $alertdiv = $('<div id = "alertmsg"/>');
            
             $alertdiv.bind('click', function() {
@@ -7,8 +7,6 @@ $(function() {
             $(document.body).append($alertdiv);
             $("#alertmsg").slideDown("slow"); 
             setTimeout(function() { $("#alertmsg").slideUp(200) }, 3000);
-                      
- 
       $("form").submit(function(){
 	
         $("#html_new").fadeOut(200, function(){

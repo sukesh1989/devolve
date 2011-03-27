@@ -1,6 +1,8 @@
 Devolve::Application.routes.draw do
+  
+ get "home/getting_started_completed"
   devise_for :users
-
+ get "home/gettingstarted"
   get "home/index"
 
   get "home/help"

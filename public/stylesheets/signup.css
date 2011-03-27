@@ -16,48 +16,52 @@ html, body {
 	  font-weight: 700;
 	  text-shadow: 4px 4px 4px #000;
 	color:#ffffff;
-	  text-transform: uppercase;
+	   text-transform: uppercase;
 	margin-left:80px;
 }
-#user_new
-{
-	position: relative;
-	margin-left:100px;
-}
+
 #a1
 {
+	top: 15px;
 	position:relative;
-	margin-right: 200 px;
-	margin-top:10px;
-	font-family: 'EB Garamond', arial, serif;
-	font-weight:bolder;
-	font-size:40px;
-	color:#F60;
+	margin-top:-10px;
+	margin-left:30px;
+	left:300 px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 26px;
+	font-weight: bold;
+	letter-spacing: -1px;	
+	color:#000;
 
 }
-#a12
+#div_id
 {
+	positon:absolute;
+	margin-left:700px;
+	margin-top: -70px;
 }
-#a2
+
+
+
+#finish_signup
 {
 	position:relative;
-	margin-top: -130px;
-	font-family: 'Dancing Script', arial, serif;
-	font-size:36px;
+	margin-top: -30px;
+	margin-left:30px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:22px;
 	color:#C63;
 }
 
 #signup
 {
-	float:left;
-	margin-left:40px;
+	 margin: 0 auto;
+	 position:relative;
 	margin-top:-50px;
 	background-color:#e6e6fa;
 	-moz-border-radius: 25px;
 	border-radius: 25px;
-	height: 700px;
-	position:relative;
-	margin-left:150 px;
+	height: 430px;
 	width:920px;
 	
 }
@@ -68,7 +72,7 @@ html, body {
 	padding: 7px 10px;
 	text-decoration: none;
 	font-weight: bold;
-	color: #fff;
+	colr: #fff;
 	background-color: #6b238e;;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -77,6 +81,13 @@ html, body {
 	border: 0px none;
 	font-family: 'Quattrocento', arial, serif; 
 	font-size:18px;
+	position:relative;
+	margin-top:0px;
+	margin-left:90px;
+}
+#sign_button:hover
+{
+	background-color:#f90;
 }
 
 .txtInput
@@ -88,46 +99,62 @@ html, body {
 
 #a3
 {	position:relative;
-top:-13px;
-margin-left:0px;
+	top:20px;
+	margin-left:170px;
 	font-size:20px;
 	color:#6b238e;
 	font-family: 'Cherry Cream Soda', arial, serif;
+}
+#user_email
+{
+	position:relative;
+	margin-top:40px;
+	margin-left:90px;
 }
 
 #a4
 {
 	position:relative;
-top:-13px;
-margin-left:0px;
+	top:-15px;
+	margin-left:120px;
 	font-size:20px;
 	color:#6b238e;
 	font-family: 'Cherry Cream Soda', arial, serif;
+}
+#user_password
+{
+	position:relative;
+	margin-left:90px;
 }
 #a5
 {
-	position:relative;
-	top:-13px;
-margin-left:-300px;
 	font-size:20px;
 	color:#6b238e;
 	font-family: 'Cherry Cream Soda', arial, serif;
 }
-#div_id
+#a5 {
+	position:absolute;
+	top:215px;
+	left:25px;
+}
+#user_password_confirmation
 {
 	position:relative;
-	margin-left:650px;
-	margin-top:0px;
+	margin-top:-15px;
+	margin-left:90px;
 }
-.link_style
-{
-	text-decoration:none;
-	position:relative;
-	margin-left:-500 px;
-	font-family: 'Oswald', arial, serif;
-	color:#C60;
-}
+
+
+
 .wrapper {
    width: 960px; /* fixed width */
    margin: 0 auto; /* center */
 }
+#form_error
+{
+	position:relative;
+	margin-left:100px;
+	margin-top:50px;
+}
+
+

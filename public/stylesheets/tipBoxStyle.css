@@ -84,8 +84,10 @@ input.selected, textarea.selected
 
 input[type='password'], 
 .passwordStrengthBar { 
-    background: white; 
-    margin: 2px;
+    background: white;
+position:relative; 
+    margin-left: 90px;
+   margin-top:5px;
     width: 218px; 
 } 
  

@@ -1,1 +1,21 @@
-#gettin
+<%= form_for(:profile,:url =>{:action=> 'create'}) do |f| %>
+
+  <p><%= f.label :Name %><br />
+  <%= f.text_field :name %></p>
+
+
+	 
+
+  <p><%= f.label :BirthDate %><br />
+  <%= f.text_field :birthdate %></p>
+  <p><%= f.label :Location %><br />
+  <%= f.text_field :location %></p>
+  <p><%= f.label :Bio %><br />
+  <%= f.text_area :bio, :size => '40*10'%></p>
+  <p><%= f.label :Occupation %><br />
+  <%= f.text_field :occupation %></p>
+	<p> <%= f.label :Gender %> <br />
+		<%= f.radio_button(:gender, 'male')%> Male
+		<%= f.radio_button(:gender, "female")%> Female </p>
+  <p><%= f.submit "Update" %></p>
+<% end %>

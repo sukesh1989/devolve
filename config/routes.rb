@@ -1,10 +1,17 @@
 Devolve::Application.routes.draw do
   
+  get "profile/edit"
+  
+ get "home/gettingstarted"
+  get "profile/show"
+  match 'home/create' => 'home#create'
+
+  resources :profiles
+
  get "home/getting_started_completed"
   devise_for :users
- get "home/gettingstarted"
   get "home/index"
-
+  get "home/create"
   get "home/help"
   # The priority is based upon order of creation:
   # first created -> highest priority.

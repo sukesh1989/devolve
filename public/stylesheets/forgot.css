@@ -55,7 +55,7 @@ html, body {
 	background-color:#e6e6fa;
 	-moz-border-radius: 25px;
 	border-radius: 25px;
-	height: 280px;
+	height: 270px;
 	width:920px;
 	
 }
@@ -75,9 +75,9 @@ html, body {
 	border: 0px none;
 	font-family: 'Quattrocento', arial, serif; 
 	font-size:18px;
-	position:relative;
-	margin-top:-20px;
-	margin-left:30px;
+	position:absolute;
+	margin-top:-50px;
+	margin-left:360px;
 
 }
 #user_submit:hover
@@ -129,7 +129,7 @@ input.selected, textarea.selected
 }
 #email_lab {
 	position:absolute;
-	margin-top:-25px;
+	margin-top:-5px;
 	margin-left:85px;
 	
 }
@@ -163,12 +163,10 @@ input.selected, textarea.selected
 	margin-left:35px;
 	
 }
-#problemList {
+
+
+#user_email {
 	position:absolute;
-	margin-top:40px;
-	margin-left:35px;
+	margin-top:-25px;
+	margin-left:155px;
 }
-#h3_help {
-	position:absolute;
-margin-top:-10px;
-margin-left:25px;}

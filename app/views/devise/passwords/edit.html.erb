@@ -3,7 +3,7 @@
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
 
 
-<%= stylesheet_link_tag "resend" %>
+<%= stylesheet_link_tag "edit_pass" %>
 <% end %>
 <div class="wrapper">
 <div id="header"><div id="logoname">Devolve</div></div>
@@ -11,20 +11,21 @@
 
 	<h6 id="a1">Change your password</h6>
 	
-	<p id="finish_signup">Please enter your email here, We will resend the confirmation instructions.</p>
+
 
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <p><%= f.label :password %><br />
+  <p><%= f.label :password,:id=>"pass_lab" %><br />
   <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
+  <p><%= f.label :password_confirmation,:id=>"passc_lab" %><br />
   <%= f.password_field :password_confirmation %></p>
 
   <p><%= f.submit "Change my password" %></p>
 <% end %>
+<br/><br/><br/><br/>
 
 <%= render :partial => "devise/shared/links" %>

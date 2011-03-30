@@ -1,12 +1,32 @@
-<h2>Forgot your password?</h2>
+<%= content_for :extra_css do %>
+
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+
+<%= stylesheet_link_tag "forgot" %>
+<% end %>
+
+
+<div class="wrapper">
+<div id="header"><div id="logoname">Devolve</div></div>
+<div id="signup">
+
+	<h6 id="a1">Forgot your password?</h6>
+	
+	<p id="finish_signup">Please enter your email here, We will send the reset instructions.</p>
+
+<h2></h2>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
+  <p><%= f.label :email ,:id => "email_lab"%><br />
   <%= f.text_field :email %></p>
 
-  <p><%= f.submit "Send me reset password instructions" %></p>
+  <p><%= f.submit "Submit" %></p>
 <% end %>
+<br/>
 
+<br/>
 <%= render :partial => "devise/shared/links" %>
+</div>
+</div>

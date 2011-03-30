@@ -55,7 +55,7 @@ html, body {
 	background-color:#e6e6fa;
 	-moz-border-radius: 25px;
 	border-radius: 25px;
-	height: 280px;
+	height: 340px;
 	width:920px;
 	
 }
@@ -75,9 +75,9 @@ html, body {
 	border: 0px none;
 	font-family: 'Quattrocento', arial, serif; 
 	font-size:18px;
-	position:relative;
-	margin-top:-20px;
-	margin-left:30px;
+	position:absolute;
+	margin-top:-0px;
+	margin-left:160px;
 
 }
 #user_submit:hover
@@ -127,10 +127,16 @@ input.selected, textarea.selected
 {
 	border:1px solid #777;
 }
-#email_lab {
+#pass_lab {
 	position:absolute;
-	margin-top:-25px;
-	margin-left:85px;
+	margin-top:-5px;
+	margin-left:105px;
+	
+}
+#passc_lab {
+	position:absolute;
+	margin-top:-5px;
+	margin-left:25px;
 	
 }
 #signin_link {
@@ -163,12 +169,20 @@ input.selected, textarea.selected
 	margin-left:35px;
 	
 }
-#problemList {
+
+
+#user_email {
 	position:absolute;
-	margin-top:40px;
-	margin-left:35px;
+	margin-top:-25px;
+	margin-left:155px;
 }
-#h3_help {
+#user_password_confirmation{
 	position:absolute;
-margin-top:-10px;
-margin-left:25px;}
+	margin-top:-25px;
+	margin-left:175px;
+}
+#user_password{
+	position:absolute;
+	margin-top:-25px;
+	margin-left:175px;
+}

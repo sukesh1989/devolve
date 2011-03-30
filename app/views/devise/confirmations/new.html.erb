@@ -1,12 +1,34 @@
-<h2>Resend confirmation instructions</h2>
+<%= content_for :extra_css do %>
 
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+
+
+<%= stylesheet_link_tag "resend" %>
+<% end %>
+<div class="wrapper">
+<div id="header"><div id="logoname">Devolve</div></div>
+<div id="signup">
+
+	<h6 id="a1">Resend confirmation instructions</h6>
+	
+	<p id="finish_signup">Please enter your email here, We will resend the confirmation instructions.</p>
+	
 <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
+
+<div class="inputRow containerFix">
+          <div class="inputName">
+  <p><%= f.label :email,:id => "email_lab" %><br /></div>
+		  <div class="inputValue">
+	
   <%= f.text_field :email %></p>
-
-  <p><%= f.submit "Resend confirmation instructions" %></p>
+</div></div>
+  <p><%= f.submit "Submit" %></p>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<%= render :partial => "devise/shared/links" ,:id=>"link" %>
+</div>
+<div id="alertmsg">  
+<%= devise_error_messages! %>	
+
+</div>

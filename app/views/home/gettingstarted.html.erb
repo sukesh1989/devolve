@@ -1,21 +1,86 @@
+<%= content_for :extra_js do %>
+
+<% end%>
+<%= content_for :extra_css do %>
+
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+
+
+<%= stylesheet_link_tag 'tipBoxStyle' %>
+
+<%= stylesheet_link_tag "gettingstarted" %>
+<% end %>
+<div class="wrapper">
+<div id="header"><div id="logoname">Devolve</div></div>
+
+<div id="signup">
+	<h6 id="a1">Your profile </h6>
+	
+	<p id="finish_signup">This info will be available to whomever you connect with on Devolve.</p>
+	
+
+
+
 <%= form_for(:profile,:url =>{:action=> 'create'}) do |f| %>
 
-  <p><%= f.label :Name %><br />
-  <%= f.text_field :name %></p>
 
+<div class="inputRow containerFix">
+          <div class="inputName">
+  <p><%= f.label :Name,:id => "name_lab" %><br /></div>
+		    <div class="inputValue">
+	
+  <%= f.text_field :name %></div>
+</div>
+<br/>
+<br/>
 
-	 
+<div class="inputRow containerFix">
+          <div class="inputName">
+  <%= f.label :BirthDate,:id=>"birthdate_lab" %><br /></div>
+	
+	    <div class="inputValue">
+  <%= f.date_select :birthdate,:prompt => true,:default => true,  :start_year => 2000, :end_year => 1930%></div>
+</div><br/>
+<br/>
+<div class="inputRow containerFix">
+          <div class="inputName">
+  <%= f.label :Location,:id=>"location_lab" %><br /></div>
+	
+	    <div class="inputValue">
+		
+  <%= f.text_field :location %></div></div>
+<br/>
+<br/>
 
-  <p><%= f.label :BirthDate %><br />
-  <%= f.text_field :birthdate %></p>
-  <p><%= f.label :Location %><br />
-  <%= f.text_field :location %></p>
-  <p><%= f.label :Bio %><br />
-  <%= f.text_area :bio, :size => '40*10'%></p>
-  <p><%= f.label :Occupation %><br />
-  <%= f.text_field :occupation %></p>
-	<p> <%= f.label :Gender %> <br />
-		<%= f.radio_button(:gender, 'male')%> Male
-		<%= f.radio_button(:gender, "female")%> Female </p>
-  <p><%= f.submit "Update" %></p>
+<div class="inputRow containerFix">
+          <div class="inputName">
+  <%= f.label :Bio,:id=>"bio_lab" %><br /></div>
+	 <div class="inputValue">
+  <%= f.text_area :bio, :size => '40*10'%></div></div>		<br/>
+		<br/>
+	
+<div class="inputRow containerFix">
+          <div class="inputName">
+
+  <%= f.label :Occupation,:id=>"occupation_lab" %><br /></div>		
+		 <div class="inputValue">
+  <%= f.text_field :occupation %>
+</div></div>
+
+<div class="inputRow containerFix">
+          <div class="inputName">
+ <%= f.label :Gender,:id=>"gender_lab" %> <br /></div>
+	 <div class="inputValue">
+		<%= f.radio_button(:gender, 'male')%><p id="male_lab"> Male</p>
+		<%= f.radio_button(:gender, "female")%><p id="female_lab">Female</p> </div></div>
+		<br/>
+				<br/>
+  <%= f.submit "Update" %>
+
 <% end %>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></div>

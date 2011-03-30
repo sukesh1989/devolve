@@ -1,0 +1,165 @@
+html, body {
+	margin:0;
+	padding:0;
+	background-color:#6b238e;
+}
+#header {
+	height:140px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 36px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	   text-transform: uppercase;
+	margin-left:80px;
+}
+
+#a1
+{
+	top: 15px;
+	position:relative;
+	margin-top:-10px;
+	margin-left:30px;
+	left:300 px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 26px;
+	font-weight: bold;
+	letter-spacing: -1px;	
+	color:#000;
+
+}
+
+
+
+#finish_signup
+{
+	position:relative;
+	margin-top: -30px;
+	margin-left:30px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:22px;
+	color:#C63;
+}
+
+#signup
+{
+	 margin: 0 auto;
+	 position:relative;
+	margin-top:-50px;
+	background-color:#e6e6fa;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	height: 280px;
+	width:920px;
+	
+}
+#user_submit
+{
+	display: inline-block;
+	line-height: 1;
+	padding: 7px 10px;
+	text-decoration: none;
+	font-weight: bold;
+	colr: #fff;
+	background-color: #6b238e;;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	border: 0px none;
+	font-family: 'Quattrocento', arial, serif; 
+	font-size:18px;
+	position:relative;
+	margin-top:-20px;
+	margin-left:30px;
+
+}
+#user_submit:hover
+{
+	background-color:#f90;
+}
+
+
+
+
+.wrapper {
+   width: 960px; /* fixed width */
+   margin: 0 auto; /* center */
+}
+
+.field_with_errors {
+	color:#f00;
+}
+
+
+
+
+.inputRow .inputName
+{
+	color:#444;
+	font-size:16px;
+	font-weight:normal;
+	line-height:42px;
+	padding-right:10px;
+	text-align:right;
+	width:140px;
+	height:20px;
+	float:left;
+}
+.inputRow .inputValue 
+{
+	float:left;
+	width:200px;
+}
+.inputRow .inputValue input, .inputRow .inputValue textarea 
+{
+	width:99%;
+}
+
+
+input.selected, textarea.selected
+{
+	border:1px solid #777;
+}
+#email_lab {
+	position:absolute;
+	margin-top:-25px;
+	margin-left:85px;
+	
+}
+#signin_link {
+	position:absolute;
+	margin-top:-0px;
+	margin-left:35px;
+	
+}
+#signup_link {
+	position:absolute;
+	margin-top:0px;
+	margin-left:35px;
+	
+}
+#forgot_link {
+	position:absolute;
+	margin-top:0px;
+	margin-left:35px;
+	
+}
+#confirmation_link {
+	position:absolute;
+	margin-top:0px;
+	margin-left:35px;
+	
+}
+#unlock_link {
+	position:absolute;
+	margin-top:0px;
+	margin-left:35px;
+	
+}

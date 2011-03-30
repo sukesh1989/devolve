@@ -1,10 +1,7 @@
 class HomeController < ApplicationController
   before_filter :authenticate_user! ,:except => [:help]
   def create
-    
-    
- 
-    
+        
     @user=User.find(current_user.id)
     @pro=Profile.new(:name=>params[:profile][:name],
     :birthdate=>params[:profile][:birthdate],
@@ -19,8 +16,8 @@ class HomeController < ApplicationController
   end
   def index
      if (current_user.getting_started == true )
-       @user=current_user.id
-        redirect_to home_gettingstarted_path
+      @user=current_user.id
+       redirect_to home_gettingstarted_path
       else 
         render :index
   end

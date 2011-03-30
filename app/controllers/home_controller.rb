@@ -1,10 +1,16 @@
 class HomeController < ApplicationController
   before_filter :authenticate_user! ,:except => [:help]
   def create
-        
+    
+    if params[:profile][:"birthdate(1i)"] && params[:profile][:"birthdate(2i)"] && params[:profile][:"birthdate(3i)"]
+       year = params[:profile][:"birthdate(1i)"].to_i
+       month = params[:profile][:"birthdate(2i)"].to_i
+       day = params[:profile][:"birthdate(3i)"].to_i
+       @date = "#{year}-#{month}-#{day}"
+     end
     @user=User.find(current_user.id)
     @pro=Profile.new(:name=>params[:profile][:name],
-    :birthdate=>params[:profile][:birthdate],
+    :birthdate=>@date,
     :location=>params[:profile][:location],
     :bio=>params[:profile][:bio],
     :occupation=>params[:profile][:occupation],:gender=>params[:profile][:gender])

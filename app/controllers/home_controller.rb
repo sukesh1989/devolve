@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     :birthdate=>@date,
     :location=>params[:profile][:location],
     :bio=>params[:profile][:bio],
-    :occupation=>params[:profile][:occupation],:gender=>params[:profile][:gender])
+    :occupation=>params[:profile][:occupation],:gender=>params[:profile][:gender],:image=>params[:profile][:image])
     
     @user.profile=@pro
     

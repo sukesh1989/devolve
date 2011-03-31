@@ -21,7 +21,7 @@
 
 
 
-<%= form_for(:profile,:url =>{:action=> 'create'}) do |f| %>
+<%= form_for(:profile,:url =>{:action=> 'create'},:html => {:multipart => true}) do |f| %>
 
 
 <div class="inputRow containerFix">
@@ -72,7 +72,12 @@
  <%= f.label :Gender,:id=>"gender_lab" %> <br /></div>
 	 <div class="inputValue">
 		<%= f.radio_button(:gender, 'male')%><p id="male_lab"> Male</p>
-		<%= f.radio_button(:gender, "female")%><p id="female_lab">Female</p> </div></div>
+		<%= f.radio_button(:gender, "female")%><p id="female_lab">Female</p> </div>
+		<div class="inputRow containerFix">
+		          <div class="inputName">
+		 <%= f.label :image,:id=>"image_lab" %> <br /></div>
+		 <div class="inputValue">
+			<%= f.file_field :image %>
 		<br/>
 				<br/>
   <%= f.submit "Update" %>

@@ -9,6 +9,8 @@ gem 'mysql2'
 gem 'devise'
 gem 'jquery-rails'
 gem 'tlsmail'
+gem "carrierwave"
+gem "rmagick"
 
 # Use unicorn as the web server
 # gem 'unicorn'

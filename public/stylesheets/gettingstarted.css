@@ -82,7 +82,7 @@ html, body {
 	font-family: 'Quattrocento', arial, serif; 
 	font-size:18px;
 	position:relative;
-	margin-top:20px;
+	margin-top:35px;
 	margin-left:150px;
 	width:160px;
 }
@@ -210,4 +210,14 @@ input.selected, textarea.selected
 	position:absolute;
 	margin-top:12px;
 	margin-left:100px;
+}
+#image_lab{
+	position:absolute;
+	margin-top:12px;
+	margin-left:100px;	
+}
+#profile_image{
+	position:absolute;
+	margin-top:25px;
+	margin-left:0px;
 }

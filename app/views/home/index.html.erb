@@ -1,3 +1,12 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "profileshow" %>
+<% end %>
+<link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+<div id="header"><div id="logoname" >Devolve</div></div>
 
-<%=image_tag current_user.profile.image_url(:thumb).to_s %>
-<%= current_user.profile.name %>
+
+<%= image_tag current_user.profile.image_url(:thumb).to_s,:id=>"home_img"%>
+
+ <h1>this is home page of user "
+<%=current_user.profile.name%>"</h1>

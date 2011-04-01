@@ -1,0 +1,59 @@
+#header {
+	height:60px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 24px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#profilebody
+{
+	position:relative;
+	margin-top:20px;
+	left:300px;
+	
+}
+#profilename 
+{
+	font-family: 'Copse', arial, serif;
+	text-transform:capitalize;
+	font-size:36px;
+
+}
+.scholarlogo
+{
+	height:20px;
+	width:15px;
+}
+#profilehr
+{
+	position:absolute;
+	left:100 px;
+	width:600px;
+	height:3px;
+	color:#93C;
+}
+#profimg
+{
+	position:absolute;
+	top:90px;
+	left:80px;
+}
+
+#bio_id {
+		width:600px;
+}
+#home_img {
+	position:relative;
+	margin-left:45px;
+	height:200px;
+	margin-top:10px;
+}

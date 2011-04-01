@@ -6,7 +6,7 @@ class HomeController < ApplicationController
        year = params[:profile][:"birthdate(1i)"].to_i
        month = params[:profile][:"birthdate(2i)"].to_i
        day = params[:profile][:"birthdate(3i)"].to_i
-       @date = "#{year}-#{month}-#{day}"
+       @date = "#{day}-#{month}-#{year}"
      end
     @user=User.find(current_user.id)
     @pro=Profile.new(:name=>params[:profile][:name],

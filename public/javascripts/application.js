@@ -11,3 +11,24 @@ var $alertdiv = $('<div id = "alertmsg"/>');
             $("#alertmsg").slideDown("slow"); 
             setTimeout(function() { $("#alertmsg").slideUp(200) }, 3000); 
 			});
+			
+			
+			
+			var View = {
+			  initialize: function() {
+				$(this.userMenu.selector)
+			      .click(this.userMenu.click);
+			    $(document.body)
+			      .click(this.userMenu.removeFocus) },
+				userMenu: {
+				    click: function() {
+				      $(this).toggleClass("active");
+				    },
+				    removeFocus: function(evt) {
+				      var $target = $(evt.target);
+				      if(!$target.closest("#user_menu").length) {
+				        $(View.userMenu.selector).removeClass("active");
+				      }
+				    },
+				    selector: "#user_menu"
+				  }};

@@ -21,3 +21,69 @@ font-weight:bold;
   opacity: .9;
     display:none;
 }
+ul#user_menu {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 0 black;
+  width: auto;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px 0;
+    padding-left: 30px;
+    padding-right: 5px;
+  margin: 0;
+    margin-top: 5px;
+    margin-right: 25px;
+    background-color: #6b238e;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  display: inline;
+  top: 5px;
+  right: 0; }
+   ul#user_menu a {
+    padding-right: 15px;
+    color: #cccccc; }
+     ul#user_menu a:hover {
+      text-decoration: none; }
+   ul#user_menu .right {
+    right: 5px; }
+   ul#user_menu:hover {
+    background-color: #6b248e; }
+   ul#user_menu li {
+    display: none; }
+     ul#user_menu li a {
+      display: block;
+      padding: 4px;
+      height: 100%; }
+    ul#user_menu li:hover {
+      background-color: #3f8fba;
+      color: white; }
+   ul#user_menu.active {
+
+    margin-top: 5px;
+    margin-right: 25px;
+    background-color: #6b238e;
+    border: 1px solid #999999;
+    box-shadow: 0 1px 2px #333333;
+    -webkit-box-shadow: 0 1px 2px #333333;
+    -moz-box-shadow: 0 1px 2px #333333; }
+   ul#user_menu.active li {
+      display: block; }
+   ul#user_menu .avatar {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: block; }
+
+	.hidden {
+	  display: none; }
+	.right {
+		position:absolute;
+		right:0px;
+      top: 5px;
+ }

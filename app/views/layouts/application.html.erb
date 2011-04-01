@@ -6,6 +6,8 @@
 <%= javascript_include_tag 'jquery'%>
 <%= javascript_include_tag 'rails' %>
 <%= javascript_include_tag 'application' %>
+
+<%= javascript_include_tag 'view' %>
 <%= yield :extra_js %>
 <%= yield :extra_css %>
 
@@ -17,7 +19,26 @@
 	
 </head>
 <body>
-    
+	<%	if current_user  %>
+	<ul id="user_menu">
+
+	        	<%=image_tag current_user.profile.image_url(:small).to_s,:class=>"avatar"  %>
+
+	
+	
+	<%= link_to current_user.profile.name, '#' %>
+      <li> <%= link_to "view_profile", " /profiles/#{current_user.id}" %></li>
+      <li> <%= link_to "edit_profile",  home_gettingstarted_path %> </li>
+      <li> <%= link_to "account_settings", edit_user_registration_path %></li>
+      <li> <%= link_to "logout", destroy_user_session_path %></li>
+		<div class="right">
+	        ▼
+	</div>
+
+	
+    </ul>
+<%end%>
+	
 <%= yield %>
 <div id="alertmsg">
 <%= notice %>

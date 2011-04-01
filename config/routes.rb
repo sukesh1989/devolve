@@ -2,7 +2,7 @@ Devolve::Application.routes.draw do
   
   get "profiles/show"
 
-  get "profile/edit"
+  get "profiles/edit"
   
  get "home/gettingstarted"
   get "profile/show"

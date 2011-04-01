@@ -36,8 +36,11 @@ end
 
 
   def gettingstarted
-
-      
+   if current_user.getting_started == false
+     redirect_to root_path
+   end
+    
+    @profile = current_user.profile
   end
  
 

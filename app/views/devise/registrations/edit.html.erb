@@ -1,4 +1,20 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= content_for :extra_js do %>
+
+<% end%>
+<%= content_for :extra_css do %>
+
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+
+
+<%= stylesheet_link_tag 'tipBoxStyle' %>
+
+<%= stylesheet_link_tag "gettingstarted" %>
+<% end %>
+
+<div id="signup">
+	<h6 id="a1">Edit your account </h6>
+	
+
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>

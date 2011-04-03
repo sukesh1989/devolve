@@ -87,3 +87,11 @@ ul#user_menu {
 		right:0px;
       top: 5px;
  }
+#link_devolve {
+	text-decoration:none;
+	color:#fff;
+}
+#link_devolve:hover {
+	text-decoration:none;
+	color:#ff0;
+}

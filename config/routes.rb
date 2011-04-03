@@ -7,6 +7,8 @@ Devolve::Application.routes.draw do
  get "home/gettingstarted"
   get "profile/show"
   match 'home/create' => 'home#create'
+  
+  match 'profiles/create' => 'profiles#create'
 
   resources :profiles
 

@@ -19,7 +19,7 @@
 </head>
 <body>
 	<%	if (current_user  && current_user.getting_started == false) %>
-	<div id="header"><div id="logoname" >Devolve</div></div>
+	<div id="header"><div id="logoname" ><%=link_to "Devolve" ,root_path ,:id=>"link_devolve"%></div></div>
 	<ul id="user_menu">
 
 	        	<%=image_tag current_user.profile.image_url(:small).to_s,:class=>"avatar"  %>
@@ -32,7 +32,7 @@
       <li> <%= link_to "account_settings", edit_user_registration_path %></li>
       <li> <%= link_to "logout", destroy_user_session_path %></li>
 		<div class="right">
-	        ▼
+	       ▼
 	</div>
 
 	

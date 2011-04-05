@@ -9,6 +9,14 @@ Devolve::Application.routes.draw do
   match 'home/create' => 'home#create'
   
   match 'profiles/create' => 'profiles#create'
+  
+  match 'friendship/create' => 'friendship#create'
+  
+  match 'friendship/accept' => 'friendship#accept'
+  
+  match 'friendship/decline' => 'friendship#decline'
+  
+  match 'friendship/cancel' => 'friendship#cancel'
 
   resources :profiles
 

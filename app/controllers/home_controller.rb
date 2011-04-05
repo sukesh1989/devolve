@@ -25,6 +25,7 @@ class HomeController < ApplicationController
       @user=current_user.id
        redirect_to home_gettingstarted_path
       else 
+            @user=User.find(current_user.id)
         render :index
   end
 end

@@ -8,7 +8,7 @@
 
 <%= stylesheet_link_tag 'tipBoxStyle' %>
 
-<%= stylesheet_link_tag "gettingstarted" %>
+<%= stylesheet_link_tag "editaccount" %>
 <% end %>
 
 <div id="signup">
@@ -19,26 +19,26 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 
 
-  <p><%= f.label :email %><br />
+  <p><%= f.label :email, :id => "label_email" %><br />
   <%= f.text_field :email %></p>
 
-  <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <p id="label_password"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
+  <p id="label_confirm_password"><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <p id="label_current_password"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></p>
 
   <p><%= f.submit "Update" %></p>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3 id="label_cancel">Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+<p id="label_unhappy">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
-<%= link_to "Back", :back %></div>
+<%= link_to "Back to Home page", :back, :id => "label_back"%></div>
 
 <div id="alertmsg">  
 <%= devise_error_messages! %>	

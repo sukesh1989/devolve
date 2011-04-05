@@ -3,6 +3,8 @@
 
 $(document).ready(function() {
 	 View.initialize.apply(View);
+	
+	 Viewone.initialize.apply(Viewone);
 var $alertdiv = $('<div id = "alertmsg"/>');
            
             $alertdiv.bind('click', function() {
@@ -22,15 +24,15 @@ var $alertdiv = $('<div id = "alertmsg"/>');
 			    /* User menu */
 			    $(this.userMenu.selector)
 			      .click(this.userMenu.click);
+			
+			
 
 			    $(document.body)
 			      .click(this.userMenu.removeFocus);
+			
 
 
 			  },
-
-
-
 
 
 
@@ -49,3 +51,44 @@ var $alertdiv = $('<div id = "alertmsg"/>');
 			    selector: "#user_menu"
 			  }
 			};
+			
+			
+			
+			
+			
+			
+				 	var Viewone = {
+					  initialize: function() {
+					    /* Buttons */
+
+
+					    /* User menu */
+					    $(this.userMenu.selector)
+					      .click(this.userMenu.click);
+
+
+
+					    $(document.body)
+					      .click(this.userMenu.removeFocus);
+
+
+
+					  },
+
+
+
+
+
+					  userMenu: {
+					    click: function() {
+					      $(this).toggleClass("active");
+					    },
+					    removeFocus: function(evt) {
+					      var $target = $(evt.target);
+					      if(!$target.closest("#user_menu").length) {
+					        $(View.userMenu.selector).removeClass("active");
+					      }
+					    },
+					    selector: "#user_menu_request"
+					  }
+					};

@@ -1,0 +1,13 @@
+	<ul id="user_menu_request">
+
+	<% unless @user.requested_friends.empty? %>
+		<%= "You've "+pluralize(@user.requested_friends.count, "friend requests") %> 
+	<% @user.requested_friends.each do |requester| %>
+			<li>	
+				<%= image_tag requester.profile.image_url(:small).to_s,:width => "20" %><%= link_to requester.profile.name, profiles_path(requester) %><%= link_to "Accept", :controller => "friendship", :action => "accept", :id => requester.id %> /
+								 <%= link_to "Decline", { :controller => "friendship", :action => "decline",
+							:id => requester.id }, :confirm => "Really decline friendship with #{requester.profile.name}?" %> 	</li>
+							<%end%>
+							<%end%>
+							
+								</ul>

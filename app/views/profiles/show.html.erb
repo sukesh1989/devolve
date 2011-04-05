@@ -13,5 +13,20 @@
 </div></div>
 
 <div id="profimg">
-	<%=image_tag @user.profile.image_url(:thumb).to_s %>
+	<%=image_tag @user.profile.image_url(:thumb).to_s,:id => "prof_img" %>
 	</div>
+	
+	<%@logged_in_user=User.find(current_user.id)%>
+	
+	<% if user_signed_in? and @user != @logged_in_user %>
+	 <div class="sidebar_box">
+		<h2> <span class="header">Actions</span> <br clear="all" />
+		</h2> <ul>
+			 <li><%= friendship_status(@logged_in_user, @user) %>
+		<% unless Friendship.exists?(@logged_in_user, @user) %> <br />
+		
+		<%= link_to "Request friendship with #{@user.profile.name}", { :controller => "friendship", :action => "create",:id =>@user.id }, :confirm => "Send friend request to #{@user.profile.name}?" %>
+		<% end %> 
+		</li>
+		</ul> </div>
+		<% end %>

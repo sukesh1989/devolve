@@ -5,28 +5,61 @@
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
 
 <div id="profilebody">
-<h1 id="profilename"><%= @user.profile.name%> </h1>
-<p><img src="/images/scholar.gif" class="scholarlogo">Is a <%= @user.profile.occupation %> <img src="/images/scholar.gif" class="scholarlogo">Lives in <%= @user.profile.location%>  <img src="/images/scholar.gif" class="scholarlogo">Born on <%= @user.profile.birthdate %></p> 
+<h1 id="profilename"><%= @user_current.profile.name%> </h1>
+<p><img src="/images/scholar.gif" class="scholarlogo">Is a <%= @user_current.profile.occupation %> <img src="/images/scholar.gif" class="scholarlogo">Lives in <%= @user_current.profile.location%>  <img src="/images/scholar.gif" class="scholarlogo">Born on <%= @user_current.profile.birthdate %></p> 
 <hr id="profilehr"/>
 <br />
-<h3> About me </h3> <div id="bio_id"> <%= @user.profile.bio %> 
-</div></div>
+<h3> About me </h3> <div id="bio_id"> <%= @user_current.profile.bio %> 
+</div>
 
 <div id="profimg">
-	<%=image_tag @user.profile.image_url(:thumb).to_s,:id => "prof_img" %>
-	</div>
-	
-	<%@logged_in_user=User.find(current_user.id)%>
-	
-	<% if user_signed_in? and @user != @logged_in_user %>
-	 <div class="sidebar_box">
-		<h2> <span class="header">Actions</span> <br clear="all" />
-		</h2> <ul>
-			 <li><%= friendship_status(@logged_in_user, @user) %>
-		<% unless Friendship.exists?(@logged_in_user, @user) %> <br />
-		
-		<%= link_to "Request friendship with #{@user.profile.name}", { :controller => "friendship", :action => "create",:id =>@user.id }, :confirm => "Send friend request to #{@user.profile.name}?" %>
-		<% end %> 
-		</li>
-		</ul> </div>
-		<% end %>
+	<%=image_tag @user_current.profile.image_url(:thumb).to_s,:id => "prof_img" %>
+
+			</div>
+			
+			
+			<%@logged_in_user=User.find(current_user.id)%>
+
+			<% if user_signed_in? and @user_current != @logged_in_user %>
+
+				<h2> <br clear="all" />
+				</h2> <ul>
+					 <li><%= friendship_status(@logged_in_user, @user_current) %>
+			
+			
+			<% if friend_link( @user_current,@logged_in_user) == '0' %>
+				<%= link_to "Request friendship with #{@user_current.profile.name}", { :controller => "friendship", :action => "create",:id =>@user_current.id }, :confirm => "Send friend request to #{@user_current.profile.name}?" %>
+				<% end %>
+				<% if friend_link( @user_current, @logged_in_user)== '1' %>
+				<%= link_to "Cancel request",
+				{ :controller => "friendship", :action => "cancel", :id => @user_current.id },
+				:confirm => "Cancel friendship request?" %>
+				
+				<%end%>
+				
+				
+					<% if friend_link( @user_current, @logged_in_user)== '2' %>
+					<%= link_to "Accept", :controller => "friendship", :action => "accept", :id => @user_current.id %> / <%= link_to "Decline", { :controller => "friendship", :action => "decline",
+					:id => @user_current.id }, :confirm => "Really decline friendship with #{@user_current.profile.name}?" %>
+
+					<%end%>
+				
+				
+				
+				
+				
+					<% if friend_link( @user_current,@logged_in_user) == '3' %>
+						<%= link_to "unfriend",
+								{ :controller => "friendship",:action => "delete",:id => @user_current.id },
+								:confirm => "Really delete friendship with #{@user_current.profile.name}?" %>
+					
+						<% end %>
+					
+			
+
+				</li>
+				</ul>
+
+
+
+				<% end %>

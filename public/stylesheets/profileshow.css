@@ -18,7 +18,7 @@
 {
 	position:relative;
 	margin-top:20px;
-	left:300px;
+	margin-left:300px;
 	
 }
 #profilename 
@@ -44,8 +44,8 @@
 #profimg
 {
 	position:absolute;
-	top:90px;
-	left:80px;
+	margin-top:-220px;
+	margin-left:-230px;
 }
 #prof_img {
 	width:200px;

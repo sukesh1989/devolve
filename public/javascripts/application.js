@@ -18,10 +18,7 @@ var $alertdiv = $('<div id = "alertmsg"/>');
 			
 		 	var View = {
 			  initialize: function() {
-			    /* Buttons */
-
-
-			    /* User menu */
+			   
 			    $(this.userMenu.selector)
 			      .click(this.userMenu.click);
 			
@@ -63,13 +60,13 @@ var $alertdiv = $('<div id = "alertmsg"/>');
 
 
 					    /* User menu */
-					    $(this.userMenu.selector)
-					      .click(this.userMenu.click);
+					    $(this.userMenuRequest.selector)
+					      .click(this.userMenuRequest.click);
 
 
 
 					    $(document.body)
-					      .click(this.userMenu.removeFocus);
+					      .click(this.userMenuRequest.removeFocus);
 
 
 
@@ -79,14 +76,15 @@ var $alertdiv = $('<div id = "alertmsg"/>');
 
 
 
-					  userMenu: {
+					  userMenuRequest: {
 					    click: function() {
 					      $(this).toggleClass("active");
+					
 					    },
 					    removeFocus: function(evt) {
 					      var $target = $(evt.target);
-					      if(!$target.closest("#user_menu").length) {
-					        $(View.userMenu.selector).removeClass("active");
+					      if(!$target.closest("#user_menu_request").length) {
+					        $(View.userMenuRequest.selector).removeClass("active");
 					      }
 					    },
 					    selector: "#user_menu_request"

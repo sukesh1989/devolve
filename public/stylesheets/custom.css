@@ -118,12 +118,12 @@ ul#user_menu_request {
   cursor: pointer;
   z-index: 10;
   padding: 5px 0;
-    padding-left: 30px;
+    padding-left: 5px;
     padding-right: 5px;
   margin: 0;
     margin-top: 5px;
     margin-right: 175px;
-    background-color: #6b238e;
+    background-color: #D2691E;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -139,21 +139,21 @@ ul#user_menu_request {
    ul#user_menu_request .right {
     right: 5px; }
    ul#user_menu_request:hover {
-    background-color: #6b248e; }
+    background-color: #d20000; }
    ul#user_menu_request li {
     display: none; }
      ul#user_menu_request li a {
       display: block;
-   
       height: 100%; }
     ul#user_menu_request li:hover {
-      background-color: #3f8fba;
+      background-color: #D2691E;
       color: white; }
    ul#user_menu_request.active {
 
+   
     margin-top: 5px;
     margin-right: 175px;
-    background-color: #6b238e;
+    background-color: #D2691E;
     border: 1px solid #999999;
     box-shadow: 0 1px 2px #333333;
     -webkit-box-shadow: 0 1px 2px #333333;
@@ -167,4 +167,9 @@ ul#user_menu_request {
     left: 2px;
     top: 2px;
     display: block; }
+
+
+
+
+
 

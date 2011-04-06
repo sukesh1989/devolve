@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   helper :friendship
   
   def show
-    @user=User.find(params[:id])
+    @user_current=User.find(params[:id])
      
   end
   def edit

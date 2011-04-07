@@ -25,7 +25,7 @@ class FriendshipController < ApplicationController
    else 
      flash[:notice] = "No friendship request from #{@friend.profile.name}."
    end
-   redirect_to root_url 
+   redirect_to profile_path(@friend.id)
    end
    
    def decline 
@@ -35,7 +35,7 @@ class FriendshipController < ApplicationController
     else
    flash[:notice] = "No friendship request from #{@friend.profile.name}." 
    end
-   redirect_to root_url
+   redirect_to profile_path(@friend.id)
     end
     
    def cancel 
@@ -46,7 +46,7 @@ class FriendshipController < ApplicationController
    else
    flash[:notice] = "No request for friendship with #{@friend.profile.name}"
     end
-   redirect_to root_url
+   redirect_to profile_path(@friend.id)
     end
     
    def delete 
@@ -56,7 +56,7 @@ class FriendshipController < ApplicationController
     else
    flash[:notice] = "You aren't friends with #{@friend.profile.name}"
     end
-    redirect_to root_url
+    redirect_to profile_path(@friend.id)
     end
     private
     def setup_friends

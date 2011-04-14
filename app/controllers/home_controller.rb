@@ -20,12 +20,21 @@ class HomeController < ApplicationController
      @user.update_attributes(:getting_started => false)
         redirect_to root_path
   end
+  
+  
+  def feed
+  # This is preliminary. See Chapter 12 for the full implementation.
+  Micropost.where("user_id = ?", id)
+  end
+  
+  
   def index
      if (current_user.getting_started == true )
       @user=current_user.id
        redirect_to home_gettingstarted_path
       else 
             @user=User.find(current_user.id)
+            @micropost = Micropost.new 
         render :index
   end
 end

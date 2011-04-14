@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :profile
+  has_many :microposts, :dependent => :destroy
   
   has_many :friendships 
   has_many :friends,:through => :friendships, :conditions => "status = 'accepted'"

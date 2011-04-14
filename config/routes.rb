@@ -1,8 +1,10 @@
 Devolve::Application.routes.draw do
-  
+  resources :microposts, :only => [:create, :destroy]
   get "profiles/show"
 
+
   get "profiles/edit"
+  get "microposts/destroy"
   
  get "home/gettingstarted"
   get "profile/show"
@@ -18,6 +20,8 @@ Devolve::Application.routes.draw do
   
   match 'friendship/cancel' => 'friendship#cancel'
 
+match 'microposts'=>'microposts/create'
+match 'microposts/destroy'=>'microposts#destroy'
   resources :profiles
 
  get "home/getting_started_completed"
@@ -81,4 +85,5 @@ Devolve::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   match ':controller(/:action(/:id(.:format)))'
+    
 end

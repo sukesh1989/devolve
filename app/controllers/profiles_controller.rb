@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   
   def show
     @user_current=User.find(params[:id])
-     
+    @microposts = @user_current.microposts.paginate(:per_page => 5,:page => params[:page]) 
   end
   def edit
     @profile=current_user.profile

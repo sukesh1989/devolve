@@ -24,6 +24,7 @@
 
 				<h2> <br clear="all" />
 				</h2> <ul>
+					<strong>Microposts</strong> <%= @user_current.microposts.count %>
 					 <li><%= friendship_status(@logged_in_user, @user_current) %>
 			
 			
@@ -60,6 +61,23 @@
 				</li>
 				</ul>
 
-
-
 				<% end %>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<% unless @user_current.microposts.empty? %>
+				<table class="microposts" summary="User microposts">
+					 <%= render @microposts %>
+				</table>
+				<%= will_paginate @microposts %>
+				 <% end %>
+		

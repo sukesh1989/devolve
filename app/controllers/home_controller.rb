@@ -35,6 +35,8 @@ class HomeController < ApplicationController
       else 
             @user=User.find(current_user.id)
             @micropost = Micropost.new 
+            
+            @feed_items = @user.feed.paginate(:page => params[:page])
         render :index
   end
 end

@@ -15,4 +15,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,:getting_started,:lname,:fname
+  
+  
+  
+  def feed
+  Micropost.from_users_followed_by(self)
+  end
 end

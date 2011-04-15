@@ -1,5 +1,8 @@
 <tr> <td class="gravatar">
 <td class="micropost"> <span class="user">
+
+	<%= image_tag feed_item.user.profile.image_url(:small).to_s,:width=>40%>
+<h3><%= link_to feed_item.user.profile.name, profile_path(feed_item.user.id) %></h3>
 	
 <span class="content"><%= feed_item.content %></span> <span class="timestamp">
 Posted <%= time_ago_in_words(feed_item.created_at) %> ago. </span>
@@ -7,7 +10,7 @@ Posted <%= time_ago_in_words(feed_item.created_at) %> ago. </span>
 
 <% if @user.id==feed_item.user.id %> <td>
 	
-	
-deletebutton
+
+	<%= link_to "delete",micropost_url(feed_item.id),:id => feed_item.id,:method=>:delete,:confirm => "You sure?" %>
 	</td>
 	<% end %> </tr>

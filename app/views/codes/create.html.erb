@@ -1,0 +1,39 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "profileshow" %>
+<% end %>
+<link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+
+<h3>Add a code block to your code hub, and start sharing</h3>
+
+
+
+
+
+<%= form_for :code,:url =>{:controller=>'codes',:action=> 'save'} do |f| %>
+
+ <%= render 'shared/error_messages', :object => f.object %>
+ <div class="field">
+
+	<%= f.label :Title%>
+	<%= f.text_field :title%>
+	<br/>
+	<br/>
+	<%=f.label :langauge%>
+	<%= f.text_field :langauge%>
+	<br/>
+	<br/>
+	<%= f.label :Enter_your_code_here%>
+<%= f.text_area :content %> </div>
+	<br/>
+	<br/>
+	<%= f.label :Description_of_code%>
+<%= f.text_area :description %> </div>
+<div class="actions"> <%= f.submit "Submit" %>
+</div> <% end %>
+
+<input type="button" value="Cancel" onclick="window.close()">
+
+
+
+

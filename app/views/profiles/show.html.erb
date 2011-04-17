@@ -19,6 +19,7 @@
 			</div>
 			
 			<%= link_to "Bookmarks",bookmark_url(@user_current.id),:id => @user_current.id %>
+			<%= link_to "code hub","/codes/#{@user_current.id}" %>
 			
 			
 			<%@logged_in_user=User.find(current_user.id)%>

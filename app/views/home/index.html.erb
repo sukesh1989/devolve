@@ -28,6 +28,7 @@
 
 
 <%= link_to "My Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>
+	<%= link_to "My Code Hub","/codes/#{current_user.id}" %>
 
 <h3>Bookmarklet for ur browser</h3>
 Drag this link: 

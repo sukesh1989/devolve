@@ -1,7 +1,7 @@
 
 
 <%= content_for :extra_css do %>
-<%= stylesheet_link_tag "profileshow" %>
+<%= stylesheet_link_tag "profileshow","syntax" %>
 <% end %>
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
@@ -16,8 +16,9 @@
 <br/>
 <br/>
 <hr>
-<h3>CODE</h3>
-<%=@code_of.content%>
+<h3>CODE</h3><p>
+<%=  coderay(@code_of.content)%></p>
+
 <hr>
 <h3>Description</h3>
 <%=@code_of.description%>

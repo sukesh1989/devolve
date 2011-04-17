@@ -21,18 +21,22 @@
 <br />
 <h2 id="micropostupdates"> Updates </h2>
 <%= render 'shared/feed' %>
+<hr />
+<br />
 </div>
 
 </div>
-
-
-
-<%= link_to "My Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>
+<div id="sidecontainer">
+	<div id="innersidecontainer"> 
+		<span id="viewbookmark">
+<%= link_to "My Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>  </span>
 	<%= link_to "My Code Hub","/codes/#{current_user.id}" %>
 
-<h3>Bookmarklet for ur browser</h3>
+<h3 id="micropost_bookmarklet">Bookmarklet for ur browser</h3> <span id="bookmarkletinfo">
 Drag this link: 
-<a href="javascript:(function(){f='http://localhost:3000/bookmarks/create?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=550,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Bookmark on Devolve!</a> up to your Bookmarks Toolbar.
-
-
-
+<a href="javascript:(function(){f='http://localhost:3000/bookmarks/create?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=550,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Bookmark on Devolve!</a> up to your Bookmarks Toolbar. </span>
+</div>
+</div>
+<div id="friendscontainer">
+	<h1> Friends </h1>
+	</div>

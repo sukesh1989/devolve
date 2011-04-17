@@ -2,15 +2,16 @@
 <td class="micropost"> <span class="user">
 
 	<%= image_tag feed_item.user.profile.image_url(:small).to_s,:width=>40%>
-<h3><%= link_to feed_item.user.profile.name, profile_path(feed_item.user.id) %></h3>
+<h3 id="micropostname"><%= link_to feed_item.user.profile.name, profile_path(feed_item.user.id) %></h3>
 	
-<span class="content"><%= feed_item.content %></span> <span class="timestamp">
-Posted <%= time_ago_in_words(feed_item.created_at) %> ago. </span>
+<span class="content" id="micropostdisplaycontent"><%= feed_item.content %></span> <span class="timestamp"><h6 id="micropostposted">
+Posted <%= time_ago_in_words(feed_item.created_at) %> ago.  </h6></span>
 </td> 
 
-<% if @user.id==feed_item.user.id %> <td>
+<% if @user.id==feed_item.user.id %> <td id="micropost_delete">
 	
 
-	<%= link_to "delete",micropost_url(feed_item.id),:id => feed_item.id,:method=>:delete,:confirm => "You sure?" %>
-	</td>
+	<%= link_to "delete",micropost_url(feed_item.id),:id => feed_item.id,:method=>:delete,:confirm => "You sure?" %> 
+	</td> 
+	
 	<% end %> </tr>

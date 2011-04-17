@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_one :profile
+  
+    has_many :bookmarks
   has_many :microposts, :dependent => :destroy
   
   has_many :friendships 

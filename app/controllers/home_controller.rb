@@ -34,9 +34,9 @@ class HomeController < ApplicationController
        redirect_to home_gettingstarted_path
       else 
             @user=User.find(current_user.id)
-            @micropost = Micropost.new 
+            @micropost = Micropost.new
             
-            @feed_items = @user.feed.paginate(:page => params[:page])
+            @feed_items = @user.feed.paginate(:per_page => 10,:page => params[:page])
         render :index
   end
 end

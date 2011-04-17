@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110407114856) do
+ActiveRecord::Schema.define(:version => 20110415154016) do
+
+  create_table "bookmarks", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "url"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookmarks", ["user_id"], :name => "index_bookmarks_on_user_id"
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"

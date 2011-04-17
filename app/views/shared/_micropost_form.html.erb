@@ -1,8 +1,15 @@
 
 <%= form_for :micropost,:url =>{:controller=>'microposts',:action=> 'create'} do |f| %>
 
- <%= render 'shared/error_messages', :object => f.object %>
+	
+<%= render 'shared/error_messages', :object => @micropost %>
+
  <div class="field">
 <%= f.text_area :content %> </div>
 <div class="actions"> <%= f.submit "Submit" %>
-</div> <% end %>
+</div> 
+
+
+
+
+<% end %>

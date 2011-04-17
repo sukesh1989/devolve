@@ -3,14 +3,35 @@
 <% end %>
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
-
-
-
+<link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'>
+<div id="profilecontainer"><br >
 <%= image_tag current_user.profile.image_url(:thumb).to_s,:id=>"home_img"%>
 
- <h1>this is home page of user "
-<%=current_user.profile.name%>"</h1>
+ <h1 id="user_profile_name">
+<%=current_user.profile.name%></h1>
+<br />
+</div>
+<div id="micropostcontainer">
+	<div id="innercontainer">
 
-<h1 class="micropost">What's up?</h1>
+<h1 class="micropost" id="micropostwhat">What's up?</h1>
 <%= render 'shared/micropost_form' %>
+<br />
+<h2 id="micropostupdates"> Updates </h2>
 <%= render 'shared/feed' %>
+</div>
+
+</div>
+
+
+
+<%= link_to "My Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>
+
+<h3>Bookmarklet for ur browser</h3>
+Drag this link: 
+<a href="javascript:(function(){f='http://localhost:3000/bookmarks/create?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=550,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Bookmark on Devolve!</a> up to your Bookmarks Toolbar.
+
+
+

@@ -1,0 +1,38 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "profileshow" %>
+<% end %>
+<link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+
+<h3>Add a Bookmark</h3>
+
+
+
+
+
+
+<%= form_for :bookmark,:url =>{:controller=>'bookmarks',:action=> 'save'} do |f| %>
+
+ <%= render 'shared/error_messages', :object => f.object %>
+ <div class="field">
+
+	<%= f.label :url%>
+	<%= f.text_field :url,:value=>params[:url]%>
+	<br/>
+	<br/>
+	<%=f.label :Title%>
+	<%= f.text_field :title,:value=>params[:title]%>
+	<br/>
+	<br/>
+	<%= f.label :Description%>
+<%= f.text_area :description %> </div>
+<div class="actions"> <%= f.submit "Submit" %>
+</div> <% end %>
+
+<input type="button" value="Cancel" onclick="window.close()">
+
+
+<%= link_to "View saved Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>
+
+
+

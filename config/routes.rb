@@ -1,10 +1,19 @@
 Devolve::Application.routes.draw do
+  get "bookmarks/index"
+
+  get "bookmarks/create"
+  get "bookmarks/saved"
+  
+  get "bookmarks/notsaved"
+
   resources :microposts, :only => [:create, :destroy]
+  resources :bookmarks,:only=>[:create,:destroy]
   get "profiles/show"
 
 
   get "profiles/edit"
   get "microposts/destroy"
+  get "bookmarks/destroy"
   
  get "home/gettingstarted"
   get "profile/show"
@@ -22,18 +31,22 @@ Devolve::Application.routes.draw do
 
 match 'microposts'=>'microposts/create'
 match 'microposts/destroy'=>'microposts#destroy'
+
+match 'bookmarks/destroy'=>'bookmarks#destroy'
   resources :profiles
 
  get "home/getting_started_completed"
   devise_for :users
   get "home/index"
   get "home/create"
+  match 'bookmarks/save' => 'bookmarks#save'
   get "home/help"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
   match 'profiles/:id' => 'profile#show'
+  match 'bookmarks/:id' => 'bookmarks#index'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

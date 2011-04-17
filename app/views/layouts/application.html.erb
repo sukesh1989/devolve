@@ -44,6 +44,12 @@
 	
 <%= yield %>
 <div id="alertmsg">
+
+
+	    <%= flash[:error] || flash[:success] %>
+	
+	
+	
 <%= notice %>
 <%= alert %>
 </div>

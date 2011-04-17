@@ -60,3 +60,90 @@
 	height:200px;
 	margin-top:10px;
 }
+
+#profilecontainer
+{
+	width:300px;
+	background-color:#6b238e;
+	position:relative;
+	margin-left:20px;
+	margin-top:-4px;
+	border-bottom-right-radius:15px;
+	border-bottom-left-radius:15px;
+
+}
+#user_profile_name
+{
+	height:30px;
+	text-transform:capitalize;
+	font-weight:bolder;
+	font-size:36px;
+	position:relative;
+	margin-left:100px;
+	margin-top:10px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#fff;
+	
+}
+
+#micropostcontainer
+{
+	/*height:700px */
+	width:700px;
+	position:relative;
+	margin-top:-300px;
+	margin-left:330px;
+	background-color:#f5f5f5;
+	border-radius:25px;
+	border-color:#6b238e;
+	border-style:solid;
+
+}
+#innercontainer
+{
+	position:relative;
+	margin-left:30px;
+	top:10px;
+}
+#micropostwhat
+{
+	font-family: 'Tangerine', arial, serif;
+}
+#micropost_content
+{
+	position:relative;
+	margin-top:-10px;
+	height:40px;
+	width:500px;
+}
+#micropost_submit
+{
+	border-radius:25px;
+	background-color:#90c984; 
+	height:30px;
+	width:80px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-style:solid;
+	border-color:#6b238e;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:18px;
+	color:#edfcd1;
+}
+#micropost_submit:hover
+{
+	background-color:#366;
+}
+#micropostname
+{
+	text-transform:capitalize;
+	font-family: 'Philosopher', arial, serif;
+	font-size:14px;
+}
+#micropostupdates
+{
+	position:relative;
+	margin-top:5px;
+	font-size:18px;
+	font-family:"Courier New", Courier, monospace;
+}

@@ -7,7 +7,7 @@ class MicropostsController < ApplicationController
     flash[:success] = "Micropost created!"
     redirect_to root_path
     else
-        flash[:error] = "Micropost is not created!"
+        flash[:error] = "Micropost is not created!(max length is 140 chars)"
         redirect_to root_path
     end
     end

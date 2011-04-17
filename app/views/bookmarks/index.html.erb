@@ -1,0 +1,37 @@
+
+
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "profileshow" %>
+<% end %>
+<link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+
+
+
+			
+			<%@logged_in_user=User.find(current_user.id)%>
+
+
+		<h1>	<%=@user_current.profile.name%>'s Bookmarks</h1>
+					<strong>Total Bookmarks</strong> <%= @user_current.bookmarks.count %>
+					
+					
+					<%= link_to "Create a new Bookmark","javascript:(function(){f='http://localhost:3000/bookmarks/create?&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=550,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()" %>
+					<br/>
+					
+
+						<% if friend_link( @user_current,@logged_in_user) == '3' || @user_current == @logged_in_user  %>
+						<% if @user_current.bookmarks.empty? %>
+						The user has not yet bookmarked anything!.
+						<%else%>
+						<table class="bookmarks" summary="User bookmarks" width="100%">
+							 <%= render @bookmarks %>
+						</table>
+						<%= will_paginate @bookmarks %>
+						 <% end %>
+						<%else%>
+						Only friends can access <%= @user_current.profile.name%>'s bookmarks
+			<%end%>
+		
+				
+				

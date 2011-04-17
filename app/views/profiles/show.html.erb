@@ -14,8 +14,11 @@
 
 <div id="profimg">
 	<%=image_tag @user_current.profile.image_url(:thumb).to_s,:id => "prof_img" %>
+	</span>
 
 			</div>
+			
+			<%= link_to "Bookmarks",bookmark_url(@user_current.id),:id => @user_current.id %>
 			
 			
 			<%@logged_in_user=User.find(current_user.id)%>
@@ -71,7 +74,7 @@
 				
 				
 				
-				
+					<% if friend_link( @user_current,@logged_in_user) == '3' || @user_current == @logged_in_user  %>
 				
 				
 				<% unless @user_current.microposts.empty? %>
@@ -80,9 +83,10 @@
 				</table>
 				<%= will_paginate @microposts %>
 				 <% end %>
+						<%else%>
+						Only friends can see <%= @user_current.profile.name%>'s microposts
 				
-				
-				
+				<%end%>
 				
 				
 				<%= render :partial => "friendship/friends_accepted" %>

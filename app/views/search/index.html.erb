@@ -1,0 +1,22 @@
+<h1>Search Results</h1>
+<p>Your search matches <%= @search_items.count%> results.</p>
+
+
+
+
+
+
+<% if @search_items.count==0 %>
+No results found, Please try again.
+<%else%>
+
+<br/>
+<% will_paginate @search_items%>
+<% unless @search_items.empty? %> 
+
+<table class="microposts" summary="User microposts">
+<%= render :partial => 'shared/search_item', :collection => @search_items%>
+ </table>
+<% end %>
+<%end%>	
+	

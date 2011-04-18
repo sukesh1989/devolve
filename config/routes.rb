@@ -1,4 +1,6 @@
 Devolve::Application.routes.draw do
+  get "search/index"
+
   get "codes/index"
 
   get "codes/create"

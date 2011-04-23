@@ -1,8 +1,12 @@
 Devolve::Application.routes.draw do
+    resources :events
   get "search/index"
 
   get "codes/index"
 
+  get "calendar/index"
+
+get 'events/new'
   get "codes/create"
   
   get "codes/save"

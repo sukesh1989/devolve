@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110417102948) do
+ActiveRecord::Schema.define(:version => 20110423162414) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(:version => 20110417102948) do
   end
 
   add_index "codes", ["user_id"], :name => "index_codes_on_user_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "all_day"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"

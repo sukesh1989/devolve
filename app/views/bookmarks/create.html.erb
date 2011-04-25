@@ -1,38 +1,36 @@
 <%= content_for :extra_css do %>
-<%= stylesheet_link_tag "profileshow" %>
+<%= stylesheet_link_tag "bookmarkscreate" %>
 <% end %>
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
-
-<h3>Add a Bookmark</h3>
-
-
-
-
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<div id="createbookmarkform">
+<h3 id="bookmarksheading">Add a Bookmark</h3>
 
 
 <%= form_for :bookmark,:url =>{:controller=>'bookmarks',:action=> 'save'} do |f| %>
 
  <%= render 'shared/error_messages', :object => f.object %>
- <div class="field">
+ 
 
-	<%= f.label :url%>
+	<%= f.label :url, :id => "bookmark_url_label" %>
 	<%= f.text_field :url,:value=>params[:url]%>
 	<br/>
 	<br/>
-	<%=f.label :Title%>
+	<%=f.label :Title, :id=>"bookmark_title_label"%>
 	<%= f.text_field :title,:value=>params[:title]%>
 	<br/>
 	<br/>
-	<%= f.label :Description%>
-<%= f.text_area :description %> </div>
-<div class="actions"> <%= f.submit "Submit" %>
-</div> <% end %>
+	<%= f.label :Description, :id => "bookmark_description_label"%>
+<%= f.text_area :description %> <br /> <br /> <br /> <br />
+<%= f.submit "Submit" %>
+<% end %>
 
-<input type="button" value="Cancel" onclick="window.close()">
+<input type="button" value="Cancel" onclick="window.close()" id="cancel_button"/>
 
-
-<%= link_to "View saved Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>
+<br /> <br /> <br />
+<span id="viewlink" > <%= link_to "View saved Bookmarks",bookmark_url(current_user.id),:id => current_user.id %> </span>
+</div>
 
 
 

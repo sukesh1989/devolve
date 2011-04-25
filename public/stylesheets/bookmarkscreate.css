@@ -1,0 +1,146 @@
+#header {
+	height:60px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 24px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#bookmarksheading
+{
+	font-family: 'Josefin Sans', arial, serif;
+}
+#createbookmarkform
+{
+	background-color:#FFF;
+	padding-top:5px;
+	padding-bottom:15px;
+	padding-left:15px;
+	padding-right:15px;
+	margin-top:20px;
+	margin-bottom:auto;
+	margin-left:auto;
+	margin-right:auto;
+	width:600px;;
+	border-radius:5px;
+}
+#bookmark_url_label
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	position:absolute;
+	margin-top:10px;
+	margin-left:10px;
+}
+#bookmark_url
+{
+	border-radius:3px;
+	height:20px;
+	width:290px;
+	position:absolute;
+	margin-top:7px;
+	margin-left:100px;
+}
+#bookmark_title_label
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	position:absolute;
+	margin-top:15px;
+	margin-left:10px;
+}
+#bookmark_title
+{
+	border-radius:3px;
+	height:20px;
+	width:290px;
+	position:absolute;
+	margin-top:7px;
+	margin-left:100px;
+}
+#bookmark_description_label
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	position:absolute;
+	margin-top:15px;
+	margin-left:10px;
+}
+#bookmark_description
+{
+	border-radius:3px;
+	height:50px;
+	width:290px;
+	position:absolute;
+	margin-top:7px;
+	margin-left:100px;
+}
+	
+#bookmark_submit
+{
+	background: #222 url(/images/alert-overlay.png) repeat-x;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+font-size: 13px;
+background-color:#7bc17e;
+position:absolute;
+margin-top:10px;
+margin-left:100px;
+width:75px;
+
+}
+#bookmark_submit:hover
+{text-shadow: rgb(255, 255, 255) 0px 0px 5px; }
+#cancel_button
+{
+	background: #222 url(/images/alert-overlay.png) repeat-x;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+font-size: 13px;
+background-color:#c50a1f;
+position:absolute;
+margin-top:10px;
+margin-left:190px;
+width:75px;
+
+}
+#cancel_button:hover
+{text-shadow: rgb(255, 255, 255) 0px 0px 5px; }
+#viewlink
+{
+	font-style:italic;
+}
+	
+	

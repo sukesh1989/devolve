@@ -1,28 +1,29 @@
 
 
 <%= content_for :extra_css do %>
-<%= stylesheet_link_tag "profileshow","syntax" %>
+<%= stylesheet_link_tag "codehubview" %>
+
+<%= stylesheet_link_tag "syntax" %>
 <% end %>
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+<div id="codehubviewcontent">
+<p> <span> Code title : </span><span><%=@code_of.title%></span> <br/>
+<span>Written by </span> <span> <%=@user_current.profile.name%></span> <br />
+<span>Language: <%=@code_of.langauge%></span> </p>
 
-<h1><%=@code_of.title%></h1>
-<h3>Written by <%=@user_current.profile.name%></h3>
-<h4>Language: <%=@code_of.langauge%></h4>
+
+<h3>Description</h3>
+<%=@code_of.description%>
 
 
 
-<br/>
-<br/>
-<br/>
-<hr>
 <h3>CODE</h3><p>
 <%=  coderay(@code_of.content)%></p>
 
-<hr>
-<h3>Description</h3>
-<%=@code_of.description%>
+
 
 Share using link: <%= link_to root_url+"codes/#{@user_current.id}/#{@code_of.id}",root_url+"codes/#{@user_current.id}/#{@code_of.id}"%>
 
 <%= link_to "delete",code_url(@code_of.id),:id => @code_of.id,:method=>:delete,:confirm => "You sure?" %>
+</div>

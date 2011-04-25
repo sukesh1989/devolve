@@ -1,12 +1,13 @@
 
 <%= content_for :extra_css do %>
-<%= stylesheet_link_tag "profileshow" %>
+<%= stylesheet_link_tag "codehubsave" %>
 <% end %>
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
 
+<div id="codehubsaved">
+<h1 id="codehubsavedheading">Code block saved!</h1>
+<input type="button" value="Close Window" onclick="window.close()" id="submit_button" />
 
-<h1>Code block saved!</h1>
-<input type="button" value="Close Window" onclick="window.close()">
-
-<input type="button" value="Go Back" onClick="history.go(-1);return true;" >
+<input type="button" value="Go Back" onClick="history.go(-1);return true;" id="back_button" />
+</div>

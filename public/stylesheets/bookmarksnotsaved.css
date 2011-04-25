@@ -1,0 +1,85 @@
+#header {
+	height:60px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 24px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#notsavedcontent
+{
+	background-color:#FFF;
+	width:350px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-bottom:auto;
+	margin-right:auto;
+	border-radius:5px;
+	padding-top:5px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom: 15px;
+}
+#submit_button
+{
+	background: #222;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+background-color: #ffb515;
+width:120px;
+position:relative;
+margin-left:30px;
+font-size: 13px;
+}
+#submit_button:hover
+{text-shadow: rgb(255, 255, 255) 0px 0px 5px; }
+
+#cancel_button
+{
+	background: #222;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+font-size: 13px;
+background-color: #e33100;
+position:relative;
+margin-top:10px;
+margin-left:10px;
+width:120px;
+/*border-style:solid;
+border-color:#e33100;*/
+
+}
+#cancel_button:hover
+{text-shadow: rgb(255, 255, 255) 0px 0px 5px; }

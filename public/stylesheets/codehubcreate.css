@@ -1,0 +1,144 @@
+#header {
+	height:60px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 24px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#codehubform
+{
+	background-color:#f6f6f6;
+	margin-left:auto;
+	margin-top:10px;
+	margin-right:auto;
+	margin-bottom:auto;
+	width:650px;
+	padding-top:5px;
+	padding-left:50px;
+}
+#codehubheading
+{
+	font-family: 'Josefin Sans', arial, serif;
+}
+#code_title_label
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	position:absolute;
+	margin-top:-20px;
+	
+}
+#code_title
+{
+	border-radius:3px;
+	height:20px;
+	width:290px;
+	position:absolute;
+	margin-top:7px;
+	margin-left:0px;
+
+}
+#code_langauge_label
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	position:absolute;
+	margin-top:-55px;
+	margin-left:310px;
+	
+
+}
+#code_langauge
+{
+	border-radius:3px;
+	height:20px;
+	width:290px;
+	position:absolute;
+	margin-top:-30px;
+	margin-left:310px;
+}
+#code_description_label
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	position:absolute;
+	margin-top:-20px;
+}
+#code_description
+{
+	border-radius:3px;
+	height:40px;
+	width:600px;
+	position:absolute;
+	margin-top:7px;
+}
+#code_content_label
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	position:absolute;
+	margin-top:70px;
+}
+#code_content
+{
+	border-radius:3px;
+	height:200px;
+	width:600px;
+	position:absolute;
+	margin-top:100px;
+}
+#code_submit
+{
+	position:absolute;
+	margin-top:-33px;
+	color:#FFF;
+	font: italic normal bold 1em/1.2 Georgia, 'Times New Roman', Times, Cambria, 'Nimbus Roman No9 L', serif;
+	background-color:#7bc17e;
+	border-style:solid;
+	border-color:#E35061;
+	border-width:1px;
+}
+#code_submit:hover
+{
+	background-color:#7bc17e;
+	text-shadow:none;
+	color:#145675;
+	
+}
+	
+#codehubinnerform
+{
+	background-color:#f6f6f6;
+	height:420px;
+}
+#code_cancel
+{
+	
+	color:#FFF;
+	font: italic normal bold 1em/1.2 Georgia, 'Times New Roman', Times, Cambria, 'Nimbus Roman No9 L', serif;
+	background-color:#c50a1f;
+	border-style:solid;
+	border-color:#7bc17e;
+	border-width:1px;
+	position:absolute;
+	margin-top:-33px;
+	margin-left:100px;
+}
+#code_cancel:hover
+{
+	background-color:#C50A1F;
+	text-shadow:none;
+	color:#FF0;
+}
+	
+	
+	

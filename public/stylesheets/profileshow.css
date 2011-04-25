@@ -77,7 +77,7 @@
 	height:30px;
 	text-transform:capitalize;
 	font-weight:bolder;
-	font-size:36px;
+	font-size:20px;
 	position:relative;
 	margin-left:100px;
 	margin-top:10px;
@@ -89,9 +89,9 @@
 #micropostcontainer
 {
 	/*height:700px */
-	width:600px;
+	width:550px;
 	position:relative;
-	margin-top:-300px;
+	margin-top:-285px;
 	margin-left:330px;
 	background-color:#f5f5f5;
 	border-top-left-radius:25px;
@@ -172,30 +172,26 @@
 {
 	background-color:#e0d09d;
 	height:300px;
-	width:300px;
+	width:290px;
 	position:absolute;
-	top:390px;
-	margin-left:13px;
+	top:400px;
+	margin-left:895px;
 	border-style:solid;
 	border-color:#6b238e;
 	border-radius:25px;
+	padding:10px;
 }
-#innersidecontainer
-{
-	position:relative;
-	margin-top:10px;
-	margin-left:10px;
-}
+
 #friendscontainer
 {
 	background-color:#FFF;
 	position:absolute;
 	top:70px;
-	margin-left:940px;
+	margin-left:895px;
 	border-color:#6b238e;
 	border-style:solid;
-	border-radius:25px;
-	height:200px;
+	border-radius:5px;
+	height:300px;
 	width:310px;
 }
 #micropostdisplaycontent
@@ -208,9 +204,9 @@
 #micropost_delete
 {
 	text-transform:capitalize;
-	/*position:relative;
-	margin-top:50px;
-	margin-left:1000px;*/
+position:relative;
+margin-left:200px;
+margin-top:20px;
 }
 
 #micropost_paginatefeed
@@ -232,4 +228,26 @@
 #bookmarkletinfo
 {
 	font-style:italic;
+}
+hr
+{
+	position:relative;
+	margin-left:6px;
+	width:500px;
+}
+#friendsinnerheading
+{
+	background-color:#6b238e;
+	position:absolute;
+	margin-top:0px;
+	width:310px;
+	height:40px;
+}
+#friendsheading
+{
+	position:absolute;
+	margin-top:8px;
+	margin-left:120px;
+	color:#FFF;
+	text-shadow: 3px 3px #000;
 }

@@ -1,14 +1,11 @@
 <tr> <td class="micropost">
-<span class="content">
 
-	
-      <li> <h4><%= link_to code.title,"/codes/#{@user_current.id}/#{code.id}" %></h4>
-Programming language:<%=code.langauge%>
-
-
-<%= link_to "delete",code_url(code.id),:id => code.id,:method=>:delete,:confirm => "You sure?" %>
-Share using link: <%= link_to root_url+"codes/#{@user_current.id}/#{code.id}",root_url+"codes/#{@user_current.id}/#{code.id}"%>
-</li>
-</span>
+Code Title : <%= link_to code.title,"/codes/#{@user_current.id}/#{code.id}" %><br />
+Programming language : <%=code.langauge%> <br />
+Share your code : <%= link_to root_url+"codes/#{@user_current.id}/#{code.id}",root_url+"codes/#{@user_current.id}/#{code.id}"%>
+<span id="deletelink"><%= link_to "delete",code_url(code.id),:id => code.id,:method=>:delete,:confirm => "You sure?"%> </span> <br /> 
+<hr />
+</tr>
+</td>
 
  

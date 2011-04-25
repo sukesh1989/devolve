@@ -1,0 +1,61 @@
+#header {
+	height:60px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 24px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#savecontent
+{
+	background-color:#FFF;
+	width:300px;
+	margin-top:20px;
+	margin-bottom:auto;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	padding-top:5px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:15px;
+	border-radius:5px;
+	text-align:center;
+}
+#close_button
+{
+	background: #222;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+margin-left:20px;
+cursor: pointer;
+font-size: 13px;
+background-color: #e33100;
+}
+
+#close_button:hover
+{text-shadow: rgb(255, 255, 255) 0px 0px 5px; }
+
+#bookmarkpaginate
+{
+	position:relative;
+	margin-left:200px;

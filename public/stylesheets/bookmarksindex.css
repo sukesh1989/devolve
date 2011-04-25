@@ -1,0 +1,76 @@
+#header {
+	height:60px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 24px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#boomarkscontent
+{
+	background-color:#FFF;
+	border-radius:5px;
+	width:600px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	padding-top:5px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:15px;
+}
+#bookmarksheading
+{
+	text-align:center;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:24px;
+}
+#bookmarksname
+{
+	text-transform:capitalize;
+}
+#bookmarkpaginate
+{
+	position:absolute;
+	margin-left:200px;
+}
+#createnewbookmarlink
+{
+	font-style:italic;
+}
+tbody tr:nth-of-type(odd){
+	background:rgba(255,255,136,0.5);
+}
+
+#bookmarkposted
+{
+	
+	font-style:italic;
+	position:relative;
+	margin-left:350px;
+	font-weight:lighter;
+	color:#363;
+	font-size:10px;
+}
+#bookmark_delete_link
+{
+	text-transform:capitalize;
+	position:absolute;
+	margin-top:-10px;
+	margin-left:510px;
+}
+td
+{
+	padding-left:15px;
+	padding-top:5px;
+	padding-bottom:5px;
+}

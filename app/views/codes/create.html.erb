@@ -1,39 +1,38 @@
 <%= content_for :extra_css do %>
-<%= stylesheet_link_tag "profileshow" %>
+<%= stylesheet_link_tag "codehubcreate" %>
+
+<%= stylesheet_link_tag "syntax" %>
 <% end %>
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 
-<h3>Add a code block to your code hub, and start sharing</h3>
+<div id="codehubform">
+	<h3 id="codehubheading"> Add a code block to your code hub, and start sharing </h3>
+	<br />
+	<%= form_for :code,:url =>{:controller=>'codes',:action=> 'save'} do |f| %>
+		<%= render 'shared/error_messages', :object => f.object %>
+	 <div class="field" id="codehubinnerform">
 
+		<%= f.label :Title, :id => "code_title_label"%>
+		<%= f.text_field :title %>
+		<br/>
+		<br/>
+		<%=f.label :langauge, :id=>"code_langauge_label"%>
+		<%= f.text_field :langauge%>
+			<br/>
+			<br/>
+			<%= f.label :Code_description, :id=>"code_description_label"%>
+		<%= f.text_area :description %> 
+		<%= f.label :Enter_your_code_here, :id=>"code_content_label"%>
+	<%= f.text_area :content%> </div>
 
+	<div class="actions"> <%= f.submit "Submit" %>
+		<input type="button" value="Cancel" onclick="window.close()" id="code_cancel"/>
+	</div> <% end %>
 
-
-
-<%= form_for :code,:url =>{:controller=>'codes',:action=> 'save'} do |f| %>
-
- <%= render 'shared/error_messages', :object => f.object %>
- <div class="field">
-
-	<%= f.label :Title%>
-	<%= f.text_field :title%>
-	<br/>
-	<br/>
-	<%=f.label :langauge%>
-	<%= f.text_field :langauge%>
-	<br/>
-	<br/>
-	<%= f.label :Enter_your_code_here%>
-<%= f.text_area :content %> </div>
-	<br/>
-	<br/>
-	<%= f.label :Description_of_code%>
-<%= f.text_area :description %> </div>
-<div class="actions"> <%= f.submit "Submit" %>
-</div> <% end %>
-
-<input type="button" value="Cancel" onclick="window.close()">
+	
+	</div>
 
 
-
-
+	</div>

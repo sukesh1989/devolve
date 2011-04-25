@@ -1,0 +1,91 @@
+#header {
+	height:60px;
+	background-color:#6b238e;
+}
+#logoname {
+	
+	position:relative;
+	  font-family: 'Rock Salt', serif;
+	  font-size: 24px;
+	  font-style: italic;
+	  font-weight: 700;
+	  text-shadow: 4px 4px 4px #000;
+	color:#ffffff;
+	  text-transform: uppercase;
+	margin-left:50px;
+}
+#codehubnotsaved
+{
+	background-color:#FFF;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	width:500px;
+	height:200px;
+	padding:15px;
+	border-radius:5px;
+}
+#codehubnotsavedheading
+{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:36px;
+	text-align:center;
+}
+
+#back_button
+{
+	background: #222 url(/images/alert-overlay.png) repeat-x;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+font-size: 13px;
+background-color: #a9014b;
+position:relative;
+margin-top:10px;
+margin-left:120px;
+width:120px;
+}
+#back_button:hover
+{text-shadow: rgb(255, 255, 255) 0px 0px 5px; }
+
+#close_button
+{
+	background: #222 url(/images/alert-overlay.png) repeat-x;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+font-size: 13px;
+background-color: #e33100;
+position:relative;
+margin-top:10px;
+margin-left:10px;
+width:120px;
+
+}
+#close_button:hover
+{text-shadow: rgb(255, 255, 255) 0px 0px 5px; }
+
+	

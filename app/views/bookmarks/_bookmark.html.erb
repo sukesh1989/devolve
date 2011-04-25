@@ -1,17 +1,18 @@
 <tr> <td class="micropost">
-<span class="content">
+
 
 	
-      <li> <h4><%= link_to bookmark.title,bookmark.url %></h4>
-<%= bookmark.description %></li>
-</span>
+      <%= link_to bookmark.title,bookmark.url %> <br />
+<%= bookmark.description %>
 
+<br />
+<% if (current_user.id==bookmark.user.id) %> 
+<span id="bookmark_delete_link" ><%= link_to "delete",bookmark_url(bookmark.id),:id => bookmark.id,:method=>:delete,:confirm => "You sure?" %> </span> <br />
  
-<span class="timestamp">
-Posted <%= time_ago_in_words(bookmark.created_at) %> ago. 
-<% if (current_user.id==bookmark.user.id) %> <td>
-<%= link_to "delete",bookmark_url(bookmark.id),:id => bookmark.id,:method=>:delete,:confirm => "You sure?" %></span>
+
+<span id="bookmarkposted" > Posted <%= time_ago_in_words(bookmark.created_at) %> ago. </span>
+<hr />
+
 <% end%>
-<br/>a
-<hr>
 </td> 
+</tr>

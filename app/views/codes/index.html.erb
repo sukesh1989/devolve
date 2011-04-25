@@ -1,7 +1,9 @@
 
 
 <%= content_for :extra_css do %>
-<%= stylesheet_link_tag "profileshow" %>
+<%= stylesheet_link_tag "codehubindex" %>
+
+<%= stylesheet_link_tag "syntax" %>
 <% end %>
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
@@ -10,28 +12,31 @@
 
 			
 			<%@logged_in_user=User.find(current_user.id)%>
+			<div id="codehubbody">
 
 
-		<h1>	<%=@user_current.profile.name%>'s Code blocks</h1>
-					<strong>Total Blocks</strong> <%= @user_current.codes.count %>
-					
-					
-					<%= link_to "Create a new code block","javascript:(function(){f='http://localhost:3000/codes/create?&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,toolbar=no,scrollbars=yes,width=900'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()" %>
-					<br/>
+	<h3 id="codehubheading">	<%=@user_current.profile.name%>'s Code blocks </h3>
+					<strong>Total number of code blocks saved: </strong> <%= @user_current.codes.count %>
+<br /> 
+				
+					<%= link_to "Create a new code block","javascript:(function(){f='http://localhost:3000/codes/create?&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,toolbar=no,scrollbars=yes,width=900'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()", :id => "link_new_code"%>
+					<br/><br />
 					
 
 						<% if friend_link( @user_current,@logged_in_user) == '3' || @user_current == @logged_in_user  %>
 						<% if @user_current.codes.empty? %>
-						The user has not yet saved any codes!.
+						<p id="notsavedmsg">The user has not yet saved any codes!. </p>
 						<%else%>
 						<table class="bookmarks" summary="User bookmarks" width="100%">
 							 <%= render @codes %>
 						</table>
-						<%= will_paginate @codes %>
+					<span id="paginateview">	<%= will_paginate @codes %> </span>
 						 <% end %>
 						<%else%>
 						Only friends can access <%= @user_current.profile.name%>'s code blocks
 			<%end%>
+			
+			</div>
 		
 				
 				

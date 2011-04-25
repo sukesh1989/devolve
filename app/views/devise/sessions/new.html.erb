@@ -14,12 +14,12 @@
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <%= f.label :email,:id =>"email_lab" %>
 	<div id="img_e">
-  <%= f.text_field :email %>
+  <%= f.text_field :email ,:placeholder=>"Enter your Email"%>
 </div>
 <br />
   <%= f.label :password,:id => "pass_lab" %>
 	<div id="img_p">
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password,:placeholder=>"Enter password" %></div>
 
   <% if devise_mapping.rememberable? -%>
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me ,:id=> "lab_rem"%></p>

@@ -12,25 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, :id=>"title_label" %><br />
     <%= f.text_field :title %>
   </div>
+<br />
   <div class="field">
-    <%= f.label :starts_at %><br />
+    <%= f.label :starts_at, :id=>"start_label"%><br />
     <%= f.datetime_select :starts_at %>
   </div>
-  <div class="field">
-    <%= f.label :ends_at %><br />
+<br />
+  <div class="field" id="start_div">
+    <%= f.label :ends_at, :id=>"end_label" %><br />
     <%= f.datetime_select :ends_at %>
   </div>
+<br />
   <div class="field">
-    <%= f.label :all_day %><br />
-    <%= f.check_box :all_day %>
+	<%= f.check_box :all_day %>
+    <%= f.label :all_day, :id=> "all_day_label" %>
+    
   </div>
+<br />
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description, :id=>"description_label" %><br />
     <%= f.text_area :description %>
   </div>
+<br />
   <div class="actions">
     <%= f.submit %>
   </div>

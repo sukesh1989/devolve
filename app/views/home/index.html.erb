@@ -1,3 +1,6 @@
+
+
+<%= javascript_include_tag 'profileshow' %>
 <%= content_for :extra_css do %>
 <%= stylesheet_link_tag "profileshow" %>
 <% end %>
@@ -11,14 +14,36 @@
 
  <h1 id="user_profile_name">
 <%=current_user.profile.name%></h1>
+
+<ul class="edit_link">
+	
+	
+		<li>
+		<%= image_tag "code.png",:id=>"code_img"%><%= link_to "My Code box","/codes/#{current_user.id}" ,:id=>"code_link"%></li>
+
+
+	<li>
+		<%= image_tag "bookmark.png",:id=>"bookmark_img"%><%= link_to "My Bookmarks",bookmark_url(current_user.id),:id => current_user.id %> </li>
+	
+
+	<li>
+
+		<%= image_tag "events.png",:id=>"events_img"%><%= link_to 'View Events', calendar_index_path %></li>
+	<li>
+
+		<%= image_tag "communities.png",:id=>"communities_img"%><%= link_to "Communities",  profiles_edit_path %></li>
+	</ul>
 <br />
 </div>
+
 <div id="micropostcontainer">
 	<div id="innercontainer">
 
 <h1 class="micropost" id="micropostwhat">What's up?</h1>
 <%= render 'shared/micropost_form' %>
-<br />
+
+<hr >
+<br/>
 <h2 id="micropostupdates"> Updates </h2>
 <%= render 'shared/feed' %>
 <hr />
@@ -26,17 +51,33 @@
 </div>
 
 </div>
-<div id="sidecontainer">
-	 
-		<span id="viewbookmark">
-<%= link_to "My Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>  </span>
-	<%= link_to "My Code Hub","/codes/#{current_user.id}" %>
 
-<h3 id="micropost_bookmarklet">Bookmarklet for ur browser</h3> <span id="bookmarkletinfo">
-Drag this link: 
-<a href="javascript:(function(){f='http://localhost:3000/bookmarks/create?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=900,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Bookmark on Devolve!</a> up to your Bookmarks Toolbar. </span>
 
-</div>
-<div id="friendscontainer">
-<div id="friendsinnerheading">	<h3 id="friendsheading"> Friends </h3> </div>
+
+
+<div id="friendscontainer" >
+<div id="friendsinnerheading">	
+	
+<h3 id="friendsheading"> <%= pluralize(current_user.friends.count, "friend") %></h3> 
+<hr id="hr_friends">
+
+
+	</div>
+	<div style="width:310px; height:300px; overflow:auto;">
+		<%= render :partial => "friendship/friends_home" %>
+		</div>
+		<hr id="hr_friends1">
+	</div>
+	
+	
+	<div id="sidecontainer">
+
+			<span id="viewbookmark">
+	<%= link_to "My Bookmarks",bookmark_url(current_user.id),:id => current_user.id %>  </span>
+		<%= link_to "My Code Hub","/codes/#{current_user.id}" %>
+
+	<h3 id="micropost_bookmarklet">Bookmarklet for ur browser</h3> <span id="bookmarkletinfo">
+	Drag this link: 
+	<a href="javascript:(function(){f='http://localhost:3000/bookmarks/create?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=900,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Bookmark on Devolve!</a> up to your Bookmarks Toolbar. </span>
+
 	</div>

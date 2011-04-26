@@ -2,6 +2,15 @@
 	height:60px;
 	background-color:#6b238e;
 }
+
+
+footer {
+float:bottom;
+margin-top:-1px;
+	height:30px;
+	width:100%;
+	background-color:#6b238e;
+}
 #logoname {
 	
 	position:relative;
@@ -58,18 +67,22 @@
 	position:relative;
 	margin-left:45px;
 	height:200px;
-	margin-top:10px;
+	max-width:200px;
+	margin-top:-0px;
+ border-color:#6b238e;
+border: 2px solid white;
 }
 
 #profilecontainer
 {
-	width:300px;
-	background-color:#6b238e;
+	width:200px;
 	position:relative;
 	margin-left:20px;
 	margin-top:-4px;
 	border-bottom-right-radius:15px;
 	border-bottom-left-radius:15px;
+	margin-right:20px;
+	
 
 }
 #user_profile_name
@@ -79,10 +92,10 @@
 	font-weight:bolder;
 	font-size:20px;
 	position:relative;
-	margin-left:100px;
+	margin-left:50px;
 	margin-top:10px;
 	font-family:Georgia, "Times New Roman", Times, serif;
-	color:#fff;
+	color:#6b23ee;
 	
 }
 
@@ -91,18 +104,11 @@
 	/*height:700px */
 	width:550px;
 	position:relative;
-	margin-top:-285px;
-	margin-left:330px;
+	margin-top:-440px;
+	margin-left:300px;
 	background-color:#f5f5f5;
-	border-top-left-radius:25px;
-	border-bottom-left-radius:25px;
-	border-top-right-radius:25px;
-	border-bottom-right-radius:25px;
+border: 1px solid white;
 	border-color:#6b238e;
-	border-top-style:solid;
-	border-left-style:solid;
-	border-bottom-style:solid;
-	border-right-style:solid;
 
 }
 #innercontainer
@@ -164,7 +170,7 @@
 {
 	font-style:italic;
 	position:relative;
-	margin-left:350px;
+	margin-left:310px;
 	font-weight:lighter;
 	color:#363;
 }
@@ -188,11 +194,9 @@
 	position:absolute;
 	top:70px;
 	margin-left:895px;
-	border-color:#6b238e;
-	border-style:solid;
+border: 1px solid #6b238e;
 	border-radius:5px;
-	height:300px;
-	width:310px;
+	
 }
 #micropostdisplaycontent
 {
@@ -205,7 +209,6 @@
 {
 	text-transform:capitalize;
 position:relative;
-margin-left:200px;
 margin-top:20px;
 }
 
@@ -236,18 +239,125 @@ hr
 	width:500px;
 }
 #friendsinnerheading
-{
-	background-color:#6b238e;
+{ background-color:#fff;
 	position:absolute;
 	margin-top:0px;
-	width:310px;
-	height:40px;
+
 }
 #friendsheading
-{
+{ background-color:#fff;
 	position:absolute;
 	margin-top:8px;
 	margin-left:120px;
-	color:#FFF;
-	text-shadow: 3px 3px #000;
+	color:#000;
 }
+
+.edit_link {
+list-style-type:none;
+position:relative;
+margin-left:50px;
+margin-top:0px;
+border-top:1px solid #6b238e;
+padding:10px;
+}
+
+.edit_link a {
+	 text-decoration: none; }
+	.edit_link a:hover {
+		 text-decoration: underline;
+		 }
+
+		.edit_link li {
+			 padding:3px;
+		
+			 }
+
+				.edit_link a {
+					position:relative;
+					margin-top:-15px;
+					padding-left:5px;
+					 }
+	#code_img {
+		position:relative;
+		margin-left:3px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	.pagination {
+	        font-size: 12px;
+	       
+	        margin: 0;
+	        padding: 3px 0 4px;
+	    }
+	        .pagination a,
+	        .pagination span {
+	            padding: 3px 3px 2px;
+	        }
+	        .pagination .disabled {
+	            background:none repeat scroll 0 0 transparent;
+	            border:medium none;
+	            color:#999999;
+	            cursor:default;
+	        }
+	        .pagination a {
+	            color:#3B5998;
+	            cursor:pointer;
+	            text-decoration:none;
+	        }
+	        .pagination a:hover {
+	            background-color:#3B5998;
+	            border-bottom:1px solid #3B5998;
+	            border-color:#D8DFEA #D8DFEA #3B5998;
+	            color:#FFFFFF;
+	            text-decoration:none;
+	        }
+	        .pagination .current {}
+	            .pagination .current {
+	                border-bottom:2px solid #3B5998;
+	                border-color:#3B5998;
+	                color:#3B5998;
+	                font-weight:bold;
+	                padding-left:2px;
+	                padding-right:2px;
+	            }
+	            .pagination .current a:hover {
+	                background-color:#3B5998;
+	                color:#FFFFFF;
+	            }
+
+	        .pagination .prev_page {
+
+	        }
+	        .pagination .next_page {
+
+	        }
+	#home_table {
+		position:relative;
+		margin-top:40px;
+		margin-left:30px;
+	}
+	#home_table td {
+		padding:5px;
+	}
+	#hr_friends {
+		width:250px;
+		position:relative;
+		margin-top:30px;
+		margin-left:27px;
+	}
+	#hr_friends1 {
+		width:250px;
+		float:bottom;
+	top:280px;
+ position:absolute;
+		margin-left:27px;
+	}
+	.link_friends {
+		position:relative;
+		margin-top:20px;
+	}

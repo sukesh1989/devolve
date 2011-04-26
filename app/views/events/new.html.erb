@@ -1,8 +1,13 @@
 <%= content_for :extra_css do %>
 <%= stylesheet_link_tag "eventsnew" %>
 <% end %>
-<h1>New event</h1>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<div id="new_event_form">
+<h3 id="eventheading">New event</h3>
 
 <%= render 'form' %>
-
+<br />
 <%= link_to 'Back', events_path %>
+
+</div>
+<br />

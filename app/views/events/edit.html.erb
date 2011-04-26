@@ -1,6 +1,11 @@
-<h1>Editing event</h1>
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "eventsedit" %>
+<% end %>
+<div id="editevent">
+<h3 id="eventheading">Editing event</h3>
 
-<%= render 'form' %>
+<%= render 'form' %> <br />
 
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>
+</div>

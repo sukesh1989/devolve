@@ -1,4 +1,8 @@
-<h1>Listing events</h1>
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "eventsindex" %>
+<% end %>
+<div id="div_list">
+<h1>Event list</h1>
 
 <table>
   <tr>
@@ -14,19 +18,22 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.title %></td>
-    <td><%= event.starts_at %></td>
-    <td><%= event.ends_at %></td>
-    <td><%= event.all_day %></td>
-    <td><%= event.description %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td width="300px" align="center"><%= event.title %> </td>
+    <td width="600px" align="center"><%= event.starts_at %></td>
+    <td width="600px" align="center"><%= event.ends_at %></td>
+    <td width="200px" align="center"><%= event.all_day %></td>
+    <td width="300px" align="center"><%= event.description %></td>
+    <td width="100px" align="center"><%= link_to 'Show', event %></td>
+    <td width="100px" align="center"><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td width="100px" align="center"><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+
   </tr>
+
 <% end %>
 </table>
 
 <br />
-<%= link_to 'view calendar', calendar_index_path %>
-<br />
+<%= link_to 'View calendar', calendar_index_path %> | 
 <%= link_to 'New Event', new_event_path %>
+</div>
+<br />

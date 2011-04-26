@@ -1,0 +1,19 @@
+#div_list
+{
+	background-color:#FFF;
+	margin-top:20px;
+	margin-bottom:auto;
+	margin-left:auto;
+	margin-right:auto;
+	width:800px;
+	padding-top:5px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:5px;
+	border-radius:3px;
+	
+}
+tbody td:nth-of-type(odd),
+thead th:nth-of-type(odd){
+  background:rgba(255,255,136,0.5);
+}

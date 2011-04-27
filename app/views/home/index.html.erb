@@ -19,7 +19,7 @@
 	
 	
 		<li>
-		<%= image_tag "code.png",:id=>"code_img"%><%= link_to "My Code box","/codes/#{current_user.id}" ,:id=>"code_link"%></li>
+		<%= image_tag "code.png",:id=>"code_img"%><%= link_to "My Code Hub","/codes/#{current_user.id}" ,:id=>"code_link"%></li>
 
 
 	<li>
@@ -80,7 +80,7 @@
 		
 
 			  <p><%= f.label :email %>:   
-			  <%= f.text_field :email,:placeholder=>"Enter your friends email here." %></p>
+			  <%= f.text_field :email,:placeholder=>"Enter your friends email here.",:autocomplete=>"off"%></p>
 
 			  <p><%= f.submit "Send an invitation" %></p>
 			<% end %>
@@ -91,5 +91,19 @@
 	</div>
 	
 	
-	Drag this link: 
-	<a href="javascript:(function(){f='http://localhost:3000/bookmarks/create?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=900,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Bookmark on Devolve!</a> up to your Bookmarks Toolbar.
+	
+	<div id="sidecontainer1">
+
+
+	<h3 id="micropost_bookmarklet">Bookmarklet for your browser</h3> 
+
+	<span id="bookmarkletinfo">
+		
+		Drag this link: 
+		<a href="javascript:(function(){f='http://localhost:3000/bookmarks/create?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=900,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()">Bookmark on Devolve!</a> up to your Bookmarks Toolbar.
+
+ </span>
+
+	</div>
+	
+	

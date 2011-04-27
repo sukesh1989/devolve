@@ -1,3 +1,8 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "searchresults" %>
+<% end %>
+
+<div id="search_results">
 <h1>Search Results</h1>
 <p>Your search matches <%= @search_items.count%> results.</p>
 
@@ -14,9 +19,9 @@ No results found, Please try again.
 <% will_paginate @search_items%>
 <% unless @search_items.empty? %> 
 
-<table class="microposts" summary="User microposts">
+<table class="search_table">
 <%= render :partial => 'shared/search_item', :collection => @search_items%>
  </table>
 <% end %>
 <%end%>	
-	
+	</div>

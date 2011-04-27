@@ -6,7 +6,7 @@
 
  <div class="field">
 <%= f.text_area :content,:maxlength=>"140",
-:onkeyup=>"CheckFieldLength(micropost_content, 'charcount', 'remaining', 140);",:onkeydown=>"CheckFieldLength(micropost_content, 'charcount', 'remaining', 140);", :onmouseout=>"CheckFieldLength(micropost_content, 'charcount', 'remaining', 140);"%>
+:onkeyup=>"CheckFieldLength(micropost_content, 'charcount', 'remaining', 140);",:onkeydown=>"CheckFieldLength(micropost_content, 'charcount', 'remaining', 140);", :onmouseout=>"CheckFieldLength(micropost_content, 'charcount', 'remaining', 140);",:placeholder=>"Let everyone know,What your upto?"%>
 <small style="display: block; color: green; "><span id="charcount" style=" color: green; ">0</span> characters entered.   |   <span style=" color: green; " id="remaining" >140</span> characters remaining.</small>
 
 

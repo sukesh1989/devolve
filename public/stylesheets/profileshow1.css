@@ -4,13 +4,6 @@
 }
 
 
-footer {
-float:bottom;
-margin-top:-1px;
-	height:30px;
-	width:100%;
-	background-color:#6b238e;
-}
 #logoname {
 	
 	position:relative;
@@ -46,7 +39,7 @@ margin-top:-1px;
 {
 	position:absolute;
 	left:100 px;
-	width:600px;
+	width:500px;
 	height:3px;
 	color:#93C;
 }
@@ -58,6 +51,8 @@ margin-top:-1px;
 }
 #prof_img {
 	width:200px;
+	position:relative;
+	margin-top:20px;
 }
 
 #bio_id {
@@ -101,10 +96,11 @@ border: 2px solid white;
 
 #micropostcontainer
 {
+	padding-top:15px;
 	/*height:700px */
 	width:550px;
 	position:relative;
-	margin-top:-440px;
+	margin-top:-40px;
 	margin-left:300px;
 	background-color:#f5f5f5;
 border: 1px solid white;
@@ -254,9 +250,8 @@ hr
 .edit_link {
 list-style-type:none;
 position:relative;
-margin-left:50px;
+margin-left:-5px;
 margin-top:0px;
-border-top:1px solid #6b238e;
 padding:10px;
 }
 
@@ -404,5 +399,17 @@ padding:10px;
 			border-radius:5px;
 			padding:10px;
 	}
+	#prof_hr_img {
+		position:relative;
+		margin-left:-5px;
+		width:200px;
+	}
 	
 	
+	#request_friend {
+		display:inline;
+		position:absolute;
+		top:20px;
+	margin-left:490px;
+		
+	}

@@ -27,7 +27,7 @@
 		<%= form_for :search,:url =>{:controller=>'search',:action=> 'index'} do |f| %>
 
 		<fieldset class="search">
-			<%= f.text_field :query ,:class=>"box",:placeholder=>"Search"%>
+			<%= f.text_field :query ,:class=>"box",:placeholder=>"Search",:autocomplete=>"off"%>
 			<button class="btn" title="Submit Search">Search</button>
 		</fieldset>
 		

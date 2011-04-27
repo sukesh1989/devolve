@@ -1,95 +1,213 @@
 <%= content_for :extra_css do %>
-<%= stylesheet_link_tag "profileshow" %>
+<%= stylesheet_link_tag "profileshow1" %>
 <% end %>
+
+
+
+
+
+<%@logged_in_user=User.find(current_user.id)%>
+
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 <link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
 
 <div id="profilebody">
+	
+	
+	
 <h1 id="profilename"><%= @user_current.profile.name%> </h1>
+
+
+
+
+
+
+
+
+
 <p><img src="/images/scholar.gif" class="scholarlogo">Is a <%= @user_current.profile.occupation %> <img src="/images/scholar.gif" class="scholarlogo">Lives in <%= @user_current.profile.location%>  <img src="/images/scholar.gif" class="scholarlogo">Born on <%= @user_current.profile.birthdate %></p> 
-<hr id="profilehr"/>
+
 <br />
-<h3> About me </h3> <div id="bio_id"> <%= @user_current.profile.bio %> 
+<h3></h3> <div id="bio_id">  <br/>
 </div>
 
 <div id="profimg">
+	<br/>
+	<br/>
 	<%=image_tag @user_current.profile.image_url(:thumb).to_s,:id => "prof_img" %>
+	
+		
+	<br/>
+	<ul class="edit_link">
+	<% if user_signed_in? and @user_current != @logged_in_user %>
+	<li style="margin-left:-15px;">
+		<%= friendship_status(@logged_in_user, @user_current) %></li>
+	<%end%>
+<hr id="prof_hr_img">
+
+			<li>
+			<%= image_tag "code.png",:id=>"code_img"%><%= link_to @user_current.profile.name+"'s Code Hub","/codes/#{@user_current.id}" ,:id=>"code_link"%></li>
+
+
+		<li>
+			<%= image_tag "bookmark.png",:id=>"bookmark_img"%><%= link_to @user_current.profile.name+"'s Bookmarks",bookmark_url(@user_current.id),:id => @user_current.id %> </li>
+
+
+		<li>
+
+			<%= image_tag "communities.png",:id=>"communities_img"%><%= link_to @user_current.profile.name+"'s Communities",  profiles_edit_path %></li>
+		</ul>
+	
 	</span>
 
 			</div>
 			
-			<%= link_to "Bookmarks",bookmark_url(@user_current.id),:id => @user_current.id %>
-			<%= link_to "code hub","/codes/#{@user_current.id}" %>
 			
 			
-			<%@logged_in_user=User.find(current_user.id)%>
+			
+			
+			
+			
+			
+			
+		
+			
+			
 
-			<% if user_signed_in? and @user_current != @logged_in_user %>
+				
+				
+				
+				
+				
 
-				<h2> <br clear="all" />
-				</h2> <ul>
-					<strong>Microposts</strong> <%= @user_current.microposts.count %>
-					 <li><%= friendship_status(@logged_in_user, @user_current) %>
-			
-			
-			<% if friend_link( @user_current,@logged_in_user) == '0' %>
-				<%= link_to "Request friendship with #{@user_current.profile.name}", { :controller => "friendship", :action => "create",:id =>@user_current.id }, :confirm => "Send friend request to #{@user_current.profile.name}?" %>
-				<% end %>
-				<% if friend_link( @user_current, @logged_in_user)== '1' %>
-				<%= link_to "Cancel request",
-				{ :controller => "friendship", :action => "cancel", :id => @user_current.id },
-				:confirm => "Cancel friendship request?" %>
-				
-				<%end%>
 				
 				
-					<% if friend_link( @user_current, @logged_in_user)== '2' %>
-					<%= link_to "Accept", :controller => "friendship", :action => "accept", :id => @user_current.id %> / <%= link_to "Decline", { :controller => "friendship", :action => "decline",
-					:id => @user_current.id }, :confirm => "Really decline friendship with #{@user_current.profile.name}?" %>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</div>
+				
+				
+				
+				
+				<div id="friendscontainer" >
+				<div id="friendsinnerheading">	
+
+				<h3 id="friendsheading"> 
+					<%= pluralize(@user_current.friends.count, "friend") %></h3> 
+				<hr id="hr_friends">
+
+
+					</div>
+					<div style="width:310px; height:300px; overflow:auto;">
+						
+						
+						<%= render :partial => "friendship/friends_accepted" %>
+						</div>
+						<hr id="hr_friends1">
+					</div>
+					<div id="micropostcontainer">
+						<div id="innercontainer">
+
+					<h2 id="micropostupdates"> Updates </h2>
+						<small>Total number of Microposts	<%= @user_current.microposts.count %></small>
+						<hr><br/>
+					
+						<% if friend_link( @user_current,@logged_in_user) == '3' || @user_current == @logged_in_user  %>
+
+				
+						<% unless @user_current.microposts.empty? %>
+						<table class="microposts" summary="User microposts">
+							 <%= render @microposts %>
+						</table>
+						<%= will_paginate @microposts %>
+						 <% end %>
+						
+						
+						
+							<%else%>
+							Only friends can see <%= @user_current.profile.name%>'s microposts
 
 					<%end%>
+					<hr />
+					<br />
+					</div>
+
+					</div>
 				
 				
 				
 				
-				
-					<% if friend_link( @user_current,@logged_in_user) == '3' %>
-						<%= link_to "unfriend",
-								{ :controller => "friendship",:action => "delete",:id => @user_current.id },
-								:confirm => "Really delete friendship with #{@user_current.profile.name}?" %>
+				<div>
 					
-						<% end %>
 					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 			
+				</div>
+				<div id="request_friend">
 
-				</li>
-				</ul>
 
-				<% end %>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-					<% if friend_link( @user_current,@logged_in_user) == '3' || @user_current == @logged_in_user  %>
-				
-				
-				<% unless @user_current.microposts.empty? %>
-				<table class="microposts" summary="User microposts">
-					 <%= render @microposts %>
-				</table>
-				<%= will_paginate @microposts %>
-				 <% end %>
-						<%else%>
-						Only friends can see <%= @user_current.profile.name%>'s microposts
-				
-				<%end%>
-				
-				
-				<%= render :partial => "friendship/friends_accepted" %>
+							<% if user_signed_in? and @user_current != @logged_in_user %>
+
+								<h2> <br clear="all" />
+								</h2> <ul>
+
+
+							<% if friend_link( @user_current,@logged_in_user) == '0' %>
+								<%= link_to "Request friendship with #{@user_current.profile.name}", { :controller => "friendship", :action => "create",:id =>@user_current.id }, :confirm => "Send friend request to #{@user_current.profile.name}?" %>
+								<% end %>
+								<% if friend_link( @user_current, @logged_in_user)== '1' %>
+								<%= link_to "Cancel request",
+								{ :controller => "friendship", :action => "cancel", :id => @user_current.id },
+								:confirm => "Cancel friendship request?" %>
+
+								<%end%>
+
+
+									<% if friend_link( @user_current, @logged_in_user)== '2' %>
+									<%= link_to "Accept", :controller => "friendship", :action => "accept", :id => @user_current.id %> / <%= link_to "Decline", { :controller => "friendship", :action => "decline",
+									:id => @user_current.id }, :confirm => "Really decline friendship with #{@user_current.profile.name}?" %>
+
+									<%end%>
+
+
+
+
+
+									<% if friend_link( @user_current,@logged_in_user) == '3' %>
+										<%= link_to "unfriend",
+												{ :controller => "friendship",:action => "delete",:id => @user_current.id },
+												:confirm => "Really delete friendship with #{@user_current.profile.name}?" %>
+
+										<% end %>
+
+
+
+								</li>
+								</ul>
+
+								<% end %>
+
+					</div>
 				
 		

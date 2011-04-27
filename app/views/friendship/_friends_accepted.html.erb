@@ -1,16 +1,66 @@
-<table> <tr>
-<th colspan="3" align="left">
+<table id="home_table"> 
+
+	<% count=0%></th>
 	
-	<%= pluralize(@user_current.friends.count, "friend") %> </th>
-	</tr> <% @user_current.friends.each do |friend| %> <tr>
-	<td width="50">
+	
+
+	
+		 <% @user_current.friends.each do |friend| %> 
+		<%if count==0%>
+		<tr>
+	
+		<td width="50">
+
+				<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+		</td> <%= link_to friend.profile.name, profile_path(friend.id) %>
+		<% count+=1%>
+
+			<%else%>
+			
+			<% if count == 1 %>
+			
+				
+			<td width="50">
+
+				<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+			</td> <%= link_to friend.profile.name, profile_path(friend.id) %>
+			<% count+=1%>
+		<%else%>
 		
-			<%= image_tag friend.profile.image_url(:small).to_s,:width => "20" %>
-	</td> <td><%= link_to friend.profile.name, profile_path(friend.id) %></td> <td>
-		<% if @user_current.id == @logged_in_user.id %>
-<%= link_to "Delete",
-		{ :controller => "friendship",:action => "delete",:id => friend.id },
-		:confirm => "Really delete friendship with #{friend.profile.name}?" %>
+		<% if count ==2%>
+		
+		
+		<td width="50">
+
+			<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+		</td> <%= link_to friend.profile.name, profile_path(friend.id) %> 
+		<%count+=1%>
+		<%else%>
+		
+		
+		
+			<td width="50">
+
+				<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+			</td> <%= link_to friend.profile.name, profile_path(friend.id) %> 
+		</tr> 		
+		<% count=0%>
 		<%end%>
-	 </td> 
-	</tr> <% end %>
+		<%end%>
+		<% end %>
+		<% end %>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

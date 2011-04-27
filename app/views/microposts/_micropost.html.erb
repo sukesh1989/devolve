@@ -1,10 +1,21 @@
-<tr> <td class="micropost">
-<span class="content">
-<%= micropost.content %></span> 
-<span class="timestamp">
-Posted <%= time_ago_in_words(micropost.created_at) %> ago. </span>
+
+<tr> <td class="gravatar">
+<td class="micropost"> <span class="user">
+
+	<%= image_tag @user_current.profile.image_url(:small).to_s,:width=>40%>
+<h3 id="micropostname"><%= link_to @user_current.profile.name, profile_path(micropost.user.id) %></h3>
+	
+<span class="content" id="micropostdisplaycontent"><%= micropost.content %></span> <span class="timestamp"><h6 id="micropostposted">
+Posted <%= time_ago_in_words(micropost.created_at) %> ago.  </h6></span>
 </td> 
-<% if (current_user.id==micropost.user.id) %> <td>
-<%= link_to "delete",micropost_url(micropost.id),:id => micropost.id,:method=>:delete,:confirm => "You sure?" %>
-</td>
-<% end %> </tr>
+
+<% if @logged_in_user.id==micropost.user.id %> <td id="micropost_delete">
+	
+
+	<%= link_to "delete",micropost_url(micropost.id),:id => micropost.id,:method=>:delete,:confirm => "You sure?" %> 
+	</td> 
+	
+	<% end %> </tr>
+	
+	
+	

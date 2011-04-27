@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   helper :friendship
+  before_filter :authenticate_user!
   
   def show
     @user_current=User.find(params[:id])

@@ -1,8 +1,7 @@
 
+<tr>
+	<td>
+<%=image_tag search_item.image_url(:small).to_s,:id => "prof_img",:width=>50 %> </td><td>
 
-<%=image_tag search_item.image_url(:small).to_s,:id => "prof_img",:width=>50 %>
-
-<%= link_to search_item.name, " /profiles/#{search_item.user_id}" %>
-
-
-<hr>
+<%= link_to search_item.name, " /profiles/#{search_item.user_id}" %></td>
+</tr>

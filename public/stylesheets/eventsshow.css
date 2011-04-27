@@ -25,4 +25,19 @@
 {
 	font-size:14px;
 	font-family:"Times New Roman", Times, serif;
-}
+}	#header {
+		height:60px;
+		background-color:#6b238e;
+	}
+	#logoname {
+
+		position:relative;
+		  font-family: 'Rock Salt', serif;
+		  font-size: 24px;
+		  font-style: italic;
+		  font-weight: 700;
+		  text-shadow: 4px 4px 4px #000;
+		color:#ffffff;
+		  text-transform: uppercase;
+		margin-left:50px;
+	}

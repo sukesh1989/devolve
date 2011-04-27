@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
      layout 'events'
+      before_filter :authenticate_user!
   
   def index   
     # full_calendar will hit the index method with query parameters

@@ -1,4 +1,11 @@
-<%= link_to "new event", new_event_path %>
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "calendarindex" %>
+<%end%>
+<div id="calendardisp"><br/>
+
+
+<%= link_to "new event", new_event_path,:id=>"new_event" %>
 
 <div id='calendar'></div>
+</div>
 

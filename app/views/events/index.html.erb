@@ -11,16 +11,16 @@
     <th>Ends at</th>
     <th>All day</th>
     <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="displaynothing"></th>
+    <th class="displaynothing"></th>
+    <th class="displaynothing"></th>
   </tr>
 
 <% @events.each do |event| %>
   <tr>
     <td width="300px" align="center"><%= event.title %> </td>
-    <td width="600px" align="center"><%= event.starts_at %></td>
-    <td width="600px" align="center"><%= event.ends_at %></td>
+    <td width="1000px" align="center"><%= event.starts_at %></td>
+    <td width="1000px" align="center"><%= event.ends_at %></td>
     <td width="200px" align="center"><%= event.all_day %></td>
     <td width="300px" align="center"><%= event.description %></td>
     <td width="100px" align="center"><%= link_to 'Show', event %></td>

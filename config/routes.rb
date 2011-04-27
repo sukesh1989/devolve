@@ -5,6 +5,7 @@ Devolve::Application.routes.draw do
   get "codes/index"
 
   get "calendar/index"
+get 'users/invitation'
 
 get 'events/new'
   get "codes/create"

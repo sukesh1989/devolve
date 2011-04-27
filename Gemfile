@@ -7,6 +7,7 @@ gem 'rails', '3.0.4'
 
 gem 'mysql2'
 gem 'devise'
+gem 'devise_invitable'
 gem 'jquery-rails'
 gem 'tlsmail'
 gem "carrierwave"

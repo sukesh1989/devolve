@@ -12,11 +12,9 @@
 <!-- events -->
 <%= stylesheet_link_tag "fullcalendar.css" %>
 <%= stylesheet_link_tag "application.css" %>
-<%= javascript_include_tag "jquery.js" %>
 <%= javascript_include_tag "jquery.rest.js" %>
-<%= javascript_include_tag "rails.js" %>
-<%= javascript_include_tag "application.js" %>
-
+<%= yield :extra_js%>
+<%= yield :extra_css%>
 <!-- these are needed for the calendar. -->
 <%= javascript_include_tag "jquery-ui-1.8.11.custom.min.js" %>
 <%= javascript_include_tag "fullcalendar.js" %>
@@ -88,5 +86,8 @@
 <%= notice %>
 <%= alert %>
 </div>
+
+<footer>
+	</footer>
 </body>
 </html>

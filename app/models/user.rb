@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   :source => :friend, :conditions => "status = 'pending'", :order => :created_at
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable,:confirmable,
+  devise :invitable, :database_authenticatable, :registerable,:confirmable,
          :recoverable, :rememberable, :trackable, :validatable,:lockable
 
   # Setup accessible (or protected) attributes for your model

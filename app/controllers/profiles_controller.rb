@@ -11,11 +11,9 @@ class ProfilesController < ApplicationController
     @profile=current_user.profile
   end
   def create
-    
-        @image=current_user.profile.image
+   
     if params[:profile][:image]
-    
-        @image=params[:profile][:image]
+     @image=params[:profile][:image]
     end
     if params[:profile][:"birthdate(1i)"] && params[:profile][:"birthdate(2i)"] && params[:profile][:"birthdate(3i)"]
        year = params[:profile][:"birthdate(1i)"].to_i
@@ -31,7 +29,11 @@ class ProfilesController < ApplicationController
     :bio=>params[:profile][:bio],
     :occupation=>params[:profile][:occupation],:gender=>params[:profile][:gender],:image=>@image)
  
-    @user.profile=@pro
+    if @user.profile=@pro
+      flash[:notice] = "Profile Updated!"
         redirect_to root_path
+      else
+         flash[:error] = "Errors in fields!"
+      end
   end
 end

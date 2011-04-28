@@ -307,3 +307,6 @@ ul#user_menu_request {
 	        .pagination .next_page {
 
 	        }
+	
+	
+	input::error { appearance: balloon; }

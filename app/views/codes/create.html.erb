@@ -25,7 +25,11 @@
 			<%= f.label :Code_description, :id=>"code_description_label"%>
 		<%= f.text_area :description %> 
 		<%= f.label :Enter_your_code_here, :id=>"code_content_label"%>
-	<%= f.text_area :content%> </div>
+	<%= f.text_area :content,:value=>'<code lang="Enter_your_language_here"> 
+	
+	   Enter your code here....  
+	
+	</code>' %> </div>
 
 	<div class="actions"> <%= f.submit "Submit" %>
 		<input type="button" value="Cancel" onclick="window.close()" id="code_cancel"/>

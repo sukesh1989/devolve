@@ -24,59 +24,48 @@
 <%= form_for(:profile,@profile,:url =>{:action=> 'create'},:html => {:multipart => true,:method =>:put}) do |f| %>
 
 
-<div class="inputRow containerFix">
-          <div class="inputName">
-  <p><%= f.label :Name,:id => "name_lab" %><br /></div>
-		    <div class="inputValue">
-	
-  <%= f.text_field :name,:required=>"required" %></div>
-</div>
+
+      <br/>
+  <%= f.label :Name,:id => "name_lab" %>
+		   
+  <%= f.text_field :name,:required=>"required",:class=>"inputValue" %>
 <br/>
 <br/>
 
-<div class="inputRow containerFix">
-          <div class="inputName">
-  <%= f.label :BirthDate,:id=>"birthdate_lab" %><br /></div>
+  <%= f.label :BirthDate,:id=>"birthdate_lab" %>
 	
-	    <div class="inputValue">
-  <%= f.date_select :birthdate,:prompt => true,:default => true,  :start_year => 2000, :end_year => 1930%></div>
-</div><br/>
+  <%= f.date_select :birthdate,:prompt => true,:default => true,  :start_year => 2000, :end_year => 1930,:class=>"inputValue",:required=>"required"%>
+
 <br/>
-<div class="inputRow containerFix">
-          <div class="inputName">
-  <%= f.label :Location,:id=>"location_lab" %><br /></div>
+<br/>
+
+  <%= f.label :Location,:id=>"location_lab" %>
 	
-	    <div class="inputValue">
 		
-  <%= f.text_field :location %></div></div>
+  <%= f.text_field :location,:class=>"inputValue" ,:required=>"required"%>
 <br/>
 <br/>
 
-<div class="inputRow containerFix">
-          <div class="inputName">
-  <%= f.label :Bio,:id=>"bio_lab" %><br /></div>
-	 <div class="inputValue">
-  <%= f.text_area :bio, :size => '40*10'%></div></div>		<br/>
+  <%= f.label :Bio,:id=>"bio_lab" %>
+	 <br/>
+  <%= f.text_area :bio, :size => '40*10',:required=>"required"%>
+		<br/>
 		<br/>
 	
-<div class="inputRow containerFix">
-          <div class="inputName">
 
-  <%= f.label :Occupation,:id=>"occupation_lab" %><br /></div>		
-		 <div class="inputValue">
-  <%= f.text_field :occupation %>
-</div></div>
+  <%= f.label :Occupation,:id=>"occupation_lab" %>
+  <%= f.text_field :occupation,:required=>"required" %>
+<br/>
+<br/>
 
-<div class="inputRow containerFix">
-          <div class="inputName">
- <%= f.label :Gender,:id=>"gender_lab" %> <br /></div>
-	 <div class="inputValue">
-		<%= f.radio_button(:gender, 'male')%><p id="male_lab"> Male</p>
-		<%= f.radio_button(:gender, "female")%><p id="female_lab">Female</p> </div>
-		<div class="inputRow containerFix">
-		          <div class="inputName">
-		 <%= f.label :image,:id=>"image_lab" %> <br /></div>
-		 <div class="inputValue">
+ <%= f.label :Gender,:id=>"gender_lab" %> 
+	<%= f.radio_button(:gender, 'male')%>
+	<label id="male_lab"> Male</label>
+		<%= f.radio_button(:gender, "female")%><label id="female_lab">Female</label> 
+	
+	<br/><br/>
+		 <%= f.label :Image,:id=>"image_lab" %> 
+		 
 			<%= f.file_field :image %>
 		<br/>
 				<br/>

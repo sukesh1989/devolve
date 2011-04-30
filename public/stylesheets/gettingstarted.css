@@ -34,12 +34,6 @@ html, body {
 	color:#000;
 
 }
-#div_id
-{
-	positon:absolute;
-	margin-left:700px;
-	margin-top: -70px;
-}
 
 
 
@@ -57,13 +51,31 @@ html, body {
 {
 	 margin: 0 auto;
 	 position:relative;
+	margin-top:-40px;
+	background-color:#e6e6fa;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	height: 700px;
+	width:920px;
+	
+}
+#signup1
+{
+	 margin: 0 auto;
+	 position:relative;
 	margin-top:20px;
 	background-color:#e6e6fa;
 	-moz-border-radius: 25px;
 	border-radius: 25px;
-	height: 630px;
+	height: 700px;
 	width:920px;
 	
+}
+
+
+#profile_name {
+	position:relative;
+	margin-left:15px;
 }
 #profile_submit
 {
@@ -83,7 +95,7 @@ html, body {
 	font-size:18px;
 	position:relative;
 	margin-top:35px;
-	margin-left:150px;
+	margin-left:160px;
 	width:160px;
 }
 #profile_submit:hover
@@ -136,6 +148,7 @@ html, body {
 }
 .inputRow .inputValue 
 {
+	
 	float:left;
 	width:200px;
 }
@@ -155,69 +168,86 @@ input.selected, textarea.selected
 	
 	min-width:480px;
 }
+
 #name_lab {
-	position:absolute;
-	margin-top:-25px;
+	
+	position:relative;
 	margin-left:100px;
+	
 }
-#profile_birthdate_3i
+#profile_birthdate_1i
 {
-	position:absolute;
+
 	margin-top:2px;
-	margin-left:0px;
+	margin-left:15px;
 }
 #birthdate_lab {
-	position:absolute;
-	margin-top:-10px;
+	
+	position:relative;
 	margin-left:80px;
+	
 }
 #location_lab {
-	position:absolute;
-	margin-top:-10px;
+	position:relative;
 	margin-left:80px;
 }
+#profile_location {
+	position:relative;
+	margin-left:20px;
+}
 #bio_lab {
-	position:absolute;
-	margin-top:-10px;
-	margin-left:110px;
+	position:relative;
+	margin-left:100px;
+	margin-top:-40px;
+}
+#profile_bio {
+	position:relative;
+	margin-left:160px;
+	margin-top:-20px;
 }
 #occupation_lab {
-	position:absolute;
-	margin-top:-10px;
-	margin-left:65px;
+
+	position:relative;
+	margin-left:60px;
 }
-#gender_lab {
-	position:absolute;
-	margin-top:0px;
-	margin-left:90px;
-}
-#profile_gender_female {
-	position:absolute;
-	margin-top:15px;
-	margin-left:75px;
-}
-#profile_gender_male {
-	position:absolute;
-	margin-top:15px;
-	margin-left:0px;
-}
-#male_lab {
-	position:absolute;
-	margin-top:12px;
+#profile_occupation {
+	position:relative;
 	margin-left:25px;
 }
+#gender_lab {
+
+	position:relative;
+	margin-left:80px;
+}
+#profile_gender_female {
+	
+	position:relative;
+	margin-left:30px;
+
+}
+#profile_gender_male {
+
+	position:relative;
+	margin-left:30px;
+	
+}
+#male_lab {
+	
+	margin-left:10px;
+
+}
 #female_lab {
-	position:absolute;
-	margin-top:12px;
-	margin-left:100px;
+	
+	margin-left:10px;
 }
 #image_lab{
-	position:absolute;
-	margin-top:12px;
-	margin-left:100px;	
+
+	position:relative;
+	margin-left:80px;
 }
 #profile_image{
-	position:absolute;
-	margin-top:25px;
-	margin-left:0px;
+
+	position:relative;
+	margin-left:40px;
 }
+

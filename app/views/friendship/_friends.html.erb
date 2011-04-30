@@ -11,7 +11,7 @@
 			<li>	
 				<table> <tr>
 					<td width="30">
-				<%= image_tag requester.profile.image_url(:small).to_s,:width => "20" %></td><td width="70"><%= link_to requester.profile.name, profile_path(requester.id) %></td><td>       </td><td width="60"><%= button_to "Accept", :controller => "friendship", :action => "accept", :id => requester.id  %> 
+				<%= image_tag requester.profile.image_url.to_s,:width => "20" %></td><td width="70"><%= link_to requester.profile.name, profile_path(requester.id) %></td><td>       </td><td width="60"><%= button_to "Accept", :controller => "friendship", :action => "accept", :id => requester.id  %> 
 								</td><td> <%= button_to "Decline", { :controller => "friendship", :action => "decline",
 							:id => requester.id }, :confirm => "Really decline friendship with #{requester.profile.name}?" %> 	</td> </tr></table></li>
 							<%end%>

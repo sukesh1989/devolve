@@ -11,7 +11,7 @@
 	
 		<td width="50">
 
-				<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+				<%=link_to image_tag(friend.profile.image_url.to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
 		</td> <%= link_to friend.profile.name, profile_path(friend.id) %>
 		<% count+=1%>
 
@@ -22,7 +22,7 @@
 				
 			<td width="50">
 
-				<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+				<%=link_to image_tag(friend.profile.image_url.to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
 			</td> <%= link_to friend.profile.name, profile_path(friend.id) %>
 			<% count+=1%>
 		<%else%>
@@ -32,7 +32,7 @@
 		
 		<td width="50">
 
-			<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+			<%=link_to image_tag(friend.profile.image_url.to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
 		</td> <%= link_to friend.profile.name, profile_path(friend.id) %> 
 		<%count+=1%>
 		<%else%>
@@ -41,7 +41,7 @@
 		
 			<td width="50">
 
-				<%=link_to image_tag(friend.profile.image_url(:thumb).to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
+				<%=link_to image_tag(friend.profile.image_url.to_s,:width => "50",:title=>friend.profile.name,:alt=>friend.profile.name),profile_path(friend.id) %>
 			</td> <%= link_to friend.profile.name, profile_path(friend.id) %> 
 		</tr> 		
 		<% count=0%>

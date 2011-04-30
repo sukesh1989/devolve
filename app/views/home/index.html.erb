@@ -10,7 +10,7 @@
 <link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'>
 <div id="profilecontainer"><br >
-<%= image_tag current_user.profile.image_url(:thumb).to_s,:id=>"home_img"%>
+<%= image_tag current_user.profile.image_url.to_s,:id=>"home_img"%>
 
  <h1 id="user_profile_name">
 <%=current_user.profile.name%></h1>

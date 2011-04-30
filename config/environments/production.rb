@@ -72,11 +72,11 @@ Devolve::Application.configure do
 
      :authentication     => :plain,
 
-     :user_name          => ENV['GMAIL_SMTP_USER'],
+     :user_name          => 'devolve.india@gmail.com',
 
-     :password           => ENV['GMAIL_SMTP_PASSWORD'] # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])
+      :password           => 'devolve123' # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])
 
    }
    
-   config.action_mailer.default_url_options = { :host => 'devolve.heroku.com' }
+   config.action_mailer.default_url_options = { :host => 'strong-river-110.heroku.com' }
 end

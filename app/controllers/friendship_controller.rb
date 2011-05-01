@@ -1,6 +1,8 @@
 class FriendshipController < ApplicationController
    before_filter :authenticate_user!,:setup_friends
    
+   
+ 
    def create
    Friendship.request(@user, @friend)
    

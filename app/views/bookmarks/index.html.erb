@@ -15,8 +15,9 @@
 		<h1 id="bookmarksheading">	<span id="bookmarksname" ><%=@user_current.profile.name%>'s </span> Bookmarks</h1>
 					<strong>Total Bookmarks : </strong> <%= @user_current.bookmarks.count %> <br />
 					
+					<% if @user_current == @logged_in_user  %>
 					
-					<%= link_to "Create a new Bookmark","javascript:(function(){f='http://localhost:3000/bookmarks/create?&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=900,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()", :id=>"createnewbookmarlink" %>
+					<%= link_to "Create a new Bookmark","javascript:(function(){f='http://localhost:3000/bookmarks/create?&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=900,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()", :id=>"createnewbookmarlink" %><%end%>
 					<br/><br />
 					
 

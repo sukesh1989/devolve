@@ -13,7 +13,7 @@ class Message < ActiveRecord::Base
       to.each do |recipient|
         
        recipient = User.find(recipient)
-       sentmessages.build(:recipient_id=>recipient.id,:subject=>subject,:body=>body)
+       sentmessages.build(:recipient_id=>recipient.id,:subject=>subject,:body=>body,:user_id=>author_id)
        message_copies.build(:recipient_id => recipient.id, :folder_id => recipient.inbox.id,:deleted=>'false')
      end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110502112747) do
+ActiveRecord::Schema.define(:version => 20110502131703) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20110502112747) do
     t.integer  "folder_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "deleted"
+    t.boolean  "deleted"
   end
 
   create_table "messages", :force => true do |t|
@@ -104,9 +104,10 @@ ActiveRecord::Schema.define(:version => 20110502112747) do
     t.integer  "recipient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "message_id"
     t.string   "subject"
     t.text     "body"
+    t.integer  "message_id"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

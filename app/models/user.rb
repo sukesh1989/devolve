@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     def build_inbox
       folders.build(:name => "Inbox")
     end
-  
+  has_many :sentmessages
   has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"
   has_many :received_messages, :class_name => "MessageCopy", :foreign_key => "recipient_id"
   has_many :folders

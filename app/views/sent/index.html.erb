@@ -10,22 +10,11 @@
 
       <% for message in @messages %>
         <tr>
-          <%h @ones=Sentmessage.find(:all,:conditions=>{:message_id=>message.id}) %>
-<% @abc=""%>
-<% @count=1%>
-<% for one in @ones %>
-<% if @count==@ones.count%>
-<% @sent_obj=one %>
-<% @abc=@abc+' '+User.find(one.recipient_id).profile.name%>
-<%else%>
-<% @abc=User.find(one.recipient_id).profile.name+' and '+@abc %>
-<% @count+=1%>
-<%end%>
-<%end%>
 
-<td><%= @abc %></td>
-          <td><%= link_to h(@sent_obj.subject), sent_path(@sent_obj) %></td>
-          <td><%= distance_of_time_in_words(@sent_obj.created_at, Time.now) %> ago</td>
+<td>
+<%= User.find(message.recipient_id).profile.name %></td>
+          <td><%= link_to h(message.subject), sent_path(message.id) %></td>
+          <td><%= distance_of_time_in_words(message.created_at, Time.now) %> ago</td>
         </tr>
       <% end %>
     </table>

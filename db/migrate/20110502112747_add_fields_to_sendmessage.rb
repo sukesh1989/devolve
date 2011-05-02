@@ -1,8 +1,6 @@
 class AddFieldsToSendmessage < ActiveRecord::Migration
   def self.up
-    add_column :sentmessages, :subject, :string
-    
-        add_column :sentmessages, :body, :text
+   add_column :sentmessages, :message_id, :integer
   end
 
   def self.down

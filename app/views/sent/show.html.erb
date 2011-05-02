@@ -1,9 +1,19 @@
 
 
 <h2>Sent: <%=h(@message.subject) %></h2>
-<p><strong>To:</strong> <%= User.find(Sentmessage.find(@message.id).recipient_id).profile.name %></p>
+
+
+
+<p><strong>To:</strong> 
+<%= User.find(@message.recipient_id).profile.name %></p>
+
+
+
+
+
 <p><strong>Sent:</strong> <%= @message.created_at.to_s(:long) %></p>
 
 <pre><%=h @message.body %></pre>
 <p>
-<%= link_to "Delete Permanently", sent_delete_path+'/'+@message.id.to_s,:method=>"put"%></p
+<%= link_to "Delete Permanently", sent_delete_path+'/'+@message.id.to_s,:method=>"put"%></p>
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110426170708) do
+ActiveRecord::Schema.define(:version => 20110502112747) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -45,12 +45,37 @@ ActiveRecord::Schema.define(:version => 20110426170708) do
     t.datetime "updated_at"
   end
 
+  create_table "folders", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "parent_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "accepted_at"
+  end
+
+  create_table "message_copies", :force => true do |t|
+    t.integer  "recipient_id"
+    t.integer  "message_id"
+    t.integer  "folder_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "deleted"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "author_id"
+    t.string   "subject"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "microposts", :force => true do |t|
@@ -73,6 +98,15 @@ ActiveRecord::Schema.define(:version => 20110426170708) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "sentmessages", :force => true do |t|
+    t.integer  "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "message_id"
+    t.string   "subject"
+    t.text     "body"
   end
 
   create_table "users", :force => true do |t|

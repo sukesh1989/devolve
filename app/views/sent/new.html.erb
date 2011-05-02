@@ -1,0 +1,28 @@
+<h2>Compose</h2>
+
+<% form_for :message, :url => {:controller => "sent", :action => "create"} do |f| %>
+
+<div>
+    To:  </div>
+<div>
+   
+	  <% selected ||= []%>
+	 <%for item in current_user.friends %>
+     <%= item.profile.name%><br/>
+     <%= check_box_tag "message[to][]", item.send(:id) %> 
+<%=h item.send(:email) %><br />
+
+      <%end%>
+	
+	
+
+
+	
+    
+   
+  
+  <p>Subject: <%= f.text_field :subject %></p>
+  <p>Body:<br /> <%= f.text_area :body %></p>
+  <p><%= submit_tag "Send" %></p>
+<% end %>
+</div>

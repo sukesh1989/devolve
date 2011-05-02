@@ -17,6 +17,9 @@
 
 <ul class="edit_link">
 	
+		<li>
+		<%= image_tag "mailbox.png",:id=>"code_img"%><%= link_to "My Mail Box","/mailbox/" ,:id=>"code_link"%></li>
+	
 	
 		<li>
 		<%= image_tag "code.png",:id=>"code_img"%><%= link_to "My Code Hub","/codes/#{current_user.id}" ,:id=>"code_link"%></li>

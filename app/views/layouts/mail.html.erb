@@ -1,0 +1,91 @@
+
+
+
+
+
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	  <title>Devolve</title>
+	  <%= stylesheet_link_tag "custom" %>
+	<%= javascript_include_tag 'jquery'%>
+	<%= javascript_include_tag 'rails' %>
+	<%= javascript_include_tag 'application' %>
+
+	<%= javascript_include_tag 'modernizr.min.js' %>
+
+
+	<%= yield :extra_js %>
+	<%= yield :extra_css %>
+
+	<%= csrf_meta_tag %>
+
+
+
+
+
+
+	</head>
+	<body>
+		<%	if (current_user  && current_user.getting_started == false) %>
+		<div id="header"><div id="logoname" ><%=link_to "Devolve" ,root_path ,:id=>"link_devolve"%>
+
+			</div>
+			<div id="searchform">
+			<%= form_for :search,:url =>{:controller=>'search',:action=> 'index'} do |f| %>
+
+			<fieldset class="search">
+				<%= f.search_field :query ,:class=>"box",:placeholder=>"Search",:autocomplete=>"off"%>
+				<button class="btn" title="Submit Search">Search</button>
+			</fieldset>
+
+
+			<% end %>
+			</div>
+
+
+
+
+
+
+
+		<ul id="user_menu">
+
+		        	<%=image_tag current_user.profile.image_url.to_s,:class=>"avatar"  %>
+
+
+
+		<%= link_to current_user.profile.name, '#' %>
+	      <li> <%= link_to "view_profile", " /profiles/#{current_user.id}" %></li>
+	      <li> <%= link_to "edit_profile",  profiles_edit_path %> </li>
+	      <li> <%= link_to "account_settings", edit_user_registration_path %></li>
+	      <li> <%= link_to "logout", destroy_user_session_path %></li>
+			<div class="right">
+		       ▼
+		</div>
+
+
+	    </ul>
+
+
+		<%= render :partial => "friendship/friends" %>
+	<%end%>
+
+	<%= yield %>
+  <%= render :partial => "layouts/mailbox_list" %>
+
+
+
+	<div id="alertmsg">
+
+
+		    <%= flash[:error] || flash[:success] %>
+
+
+
+	<%= notice %>
+	<%= alert %>
+	</div>
+	</body>
+	</html>

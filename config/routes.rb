@@ -1,4 +1,20 @@
 Devolve::Application.routes.draw do
+  get "mailbox/show"
+ get "mailbox/trash"
+  get "messages/show"
+get "messages/destroy"
+get "messages/undelete"
+get "messages/delete_from_trash"
+  get "sent/index"
+
+  get "sent/show"
+
+  get "sent/new"
+  get "sent/delete"
+  
+  get "sent/new_reply"
+  get "messages/forward"
+
     resources :events
   get "search/index"
 
@@ -18,7 +34,8 @@ get 'events/new'
   get "bookmarks/saved"
   
   get "bookmarks/notsaved"
-
+  get "messages/reply"
+ match 'mailbox/inbox' => 'mailbox#index'
   resources :microposts, :only => [:create, :destroy]
   resources :bookmarks,:only=>[:create,:destroy]
   
@@ -49,7 +66,8 @@ match 'microposts/destroy'=>'microposts#destroy'
 
 match 'bookmarks/destroy'=>'bookmarks#destroy'
 match 'codes/destroy'=>'codes#destroy'
-  resources :profiles
+  resources :profiles,:sent,:messages,:mailbox,:member =>{ :reply => :get,:forward => :get, :undelete => :put  },:collection => { :trash => :get }
+ 
 
  get "home/getting_started_completed"
   devise_for :users

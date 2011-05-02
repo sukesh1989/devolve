@@ -13,9 +13,10 @@ gem 'tlsmail'
 gem "carrierwave"
 gem "rmagick"
 gem 'will_paginate', '3.0.pre2'
-
+gem "acts_as_tree"
 # Use unicorn as the web server
 # gem 'unicorn'
+
 gem 'coderay'
 gem 'RedCloth'
 

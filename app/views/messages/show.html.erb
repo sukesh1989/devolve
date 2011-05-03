@@ -1,7 +1,7 @@
 <h2><%=h @message.subject %></h2>
 
-<p><strong>From:</strong> <%=h @message.author.email %></p>
-<p><strong>To:</strong> <%=h @message.recipients.map(&:email).to_sentence %></p>
+<p><strong>From:</strong> <%=h User.find(@message.author.id).profile.name %></p>
+<p><strong>To:</strong> <%=h User.find(@message.recipient_id).profile.name %></p>
 <p><strong>Received:</strong> <%= @message.created_at.to_s(:long) %></p>
 
 <pre><%=h @message.body %></pre>

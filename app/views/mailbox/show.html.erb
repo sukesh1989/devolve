@@ -1,21 +1,24 @@
 <h2><%=h @folder.name %></h2>
-
-<table border="1">
+<div id="box">
+<table id="table_inbox">
   <tr>
-    <th>From</th>
-    <th>Subject</th>
-    <th>Received</th>
+    <th width="20%">From</th>
+    <th width="50%">Subject</th>
+    <th width="30%">Received</th>
   </tr>
-  
+
+
   <% for message in @messages %>
 <%if message.deleted==false%>
     <tr>
-      <td><%=h message.author.email %></td>
-      <td><%= link_to h(message.subject), message_path(message) %></td>
-      <td><%= distance_of_time_in_words(message.created_at, Time.now) %> ago</td>
+      <td align="center"><%=h User.find(message.author.id).profile.name %></td>
+      <td align="left"><%= link_to h(message.subject), message_path(message) %></td>
+      <td align="center"><%= distance_of_time_in_words(message.created_at, Time.now) %> ago</td>
     </tr>
 <%end%>
   <% end %>
 </table>
 
 <%= will_paginate @messages %>
+</div>
+<br/>

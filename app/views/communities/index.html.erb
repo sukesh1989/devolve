@@ -1,2 +1,29 @@
-<h1>Communities#index</h1>
-<p>Find me in app/views/communities/index.html.erb</p>
+<h1>Communities</h1>
+
+<%= link_to "create a new community" , communities_create_path%>
+<h3>My owned Communities</h3>
+<%if @community.count==0%>
+You have not created any communities yet!
+<%end%>
+  <% for commu in @community%>
+
+	<%= image_tag commu.commuimage.to_s,:width=>80%>
+	<%= link_to commu.name , { :controller => "communities", :action => "show",:id =>commu.id }%>
+
+<br/>
+<%end%>
+
+<h3>My Communities</h3>
+<%count=0%>
+<% for commu in @member_community%>
+
+	<% if Commu.find(commu.commu_id).user_id!=current_user.id %>
+	<%count+=1%>
+	<%= image_tag Commu.find(commu.commu_id).commuimage.to_s,:width=>40%>
+	<%= link_to Commu.find(commu.commu_id).name, { :controller => "communities", :action => "show",:id =>commu.id }%>
+<%end%>
+<br/>
+<%end%>
+<% if count==0%>
+You have not joined any communities yet!
+<%end%>

@@ -13,7 +13,9 @@
 <h1>Create a new community here.</h1>
   <%= f.label :Name_of_the_community,:id => "name_lab" %>
 		   
-  <%= f.text_field :name,:required=>"required",:class=>"inputValue" %>
+  <%= f.text_field :name,:required=>"required",:class=>"inputValue" %><br/>
+<%= f.label :Image%>
+<%= f.file_field :commuimage%>
 
   <%= f.submit "create" %>
 

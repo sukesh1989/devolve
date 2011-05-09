@@ -9,7 +9,7 @@
 
 
 	
-	
+	<%= image_tag @community.commuimage.to_s,:width=>160%>
 <h1 id="profilename"><%= @community.name%> </h1>
 
 
@@ -50,10 +50,10 @@ Created on: <%= @community.created_at.in_time_zone  %>
 				
 				
 				
-				<h2>FORUM</h2>
+				<h2>FORUM</h2><br/>
 			
 					<%= link_to "Create a new post", { :controller => "communities", :action => "newpost",:id =>@community.id }%>
-					
+					<br/>
 					
 					
 						 <%= render @posts %>

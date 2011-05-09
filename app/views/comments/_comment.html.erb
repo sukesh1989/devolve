@@ -1,1 +1,8 @@
-<%= comment.title %> <br/>
+<h3><%= comment.title %></h3>
+<%= comment.body%>
+<% if @post.body!=comment.body%>
+<%if comment.user_id==current_user.id%>
+<%= link_to "Delete Comment", { :controller => "communities", :action => "deletecomment",:id =>comment.id }%>
+<%end%>
+<%end%>
+<br/>

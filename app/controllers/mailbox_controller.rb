@@ -1,5 +1,7 @@
 class MailboxController < ApplicationController
     layout 'mail'
+    
+    before_filter :authenticate_user!
   def index
      @folder = current_user.inbox
      show

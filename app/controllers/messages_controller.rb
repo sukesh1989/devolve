@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
    layout 'mail'
+   
+   before_filter :authenticate_user!
   def show
       @message = current_user.received_messages.find(params[:id])
     end

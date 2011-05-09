@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110507113634) do
+ActiveRecord::Schema.define(:version => 20110509142710) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110507113634) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "commus", :force => true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110507113634) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "commuimage"
   end
 
   create_table "events", :force => true do |t|
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20110507113634) do
     t.integer  "commu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "profiles", :force => true do |t|

@@ -1,5 +1,6 @@
 class CommunitiesController < ApplicationController
   
+  before_filter :authenticate_user!
   def save
      @commu = current_user.commus.build(params[:commu])
        if @commu.save
@@ -7,7 +8,7 @@ class CommunitiesController < ApplicationController
          @member = current_user.memberships.build(:commu_id=>@commu.id)
          @member.save
       flash[:success] = "Community created!"
-      redirect_to root_path
+      redirect_to communities_show_path+'/'+@commu.id.to_s
       else
           flash[:error] = "Error in creation of new community!(max length of community name is 20 chars)"
           redirect_to root_path
@@ -15,6 +16,11 @@ class CommunitiesController < ApplicationController
   end
 
   def index
+    
+      @community=Commu.find(:all,:conditions=>{:user_id=>current_user.id})
+      @member_community=Membership.find(:all,:conditions=>{:user_id=>current_user.id})
+       
+      
   end
 
   def show
@@ -50,18 +56,21 @@ def destroy
   
     @com=Commu.find_by_id_and_user_id(params[:id],current_user.id)
     @com.destroy
-    
+     @member=Membership.find_all_by_commu_id(params[:id])
+      for commu in @member
+      commu.destroy
+    end
     flash[:success] = "You've succesfully removed the Community!"
-    redirect_to root_url
+    redirect_to communities_index_path
 end
 def create_post
   @commu=Commu.find(params[:id])
-  @post=@commu.posts.build(:title=>params[:post][:title],:body=>params[:post][:body])
+  @post=@commu.posts.build(:title=>params[:post][:title],:body=>params[:post][:body],:user_id=>current_user.id)
   
   
    if @post.save
      @post1=Post.find(@post.id)
-     @comment=@post1.comments.build(:title=>params[:post][:title],:body=>params[:post][:body])
+     @comment=@post1.comments.build(:title=>params[:post][:title],:body=>params[:post][:body],:user_id=>current_user.id)
      @comment.save
   flash[:success] = "Post Saved!"
   redirect_to  communities_show_path+'/'+params[:id]
@@ -78,9 +87,22 @@ def post
   @comments = @post.comments.paginate(:per_page => 10,:page => params[:page])
 end
 
+def deletepost
+  @post=Post.find(params[:id])
+@post.destroy
+redirect_to communities_show_path+'/'+@post.commu_id.to_s
+end
+
+
+def deletecomment
+  @post=Comment.find(params[:id])
+@post.destroy
+  redirect_to communities_post_path+'/'+@post.post_id.to_s
+end
+
 def create_comment
   @commu=Post.find(params[:id])
-  @post=@commu.comments.build(:title=>params[:post][:title],:body=>params[:post][:body])
+  @post=@commu.comments.build(:title=>params[:post][:title],:body=>params[:post][:body],:user_id=>current_user.id)
  
   
    if @post.save

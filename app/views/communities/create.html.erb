@@ -1,0 +1,27 @@
+<%= content_for :extra_js do %>
+
+<% end%>
+<%= content_for :extra_css do %>
+
+<% end %>
+
+
+
+
+<%= form_for(:commu,:url =>{:controller=>"communities",:action=> 'save'},:html => {:multipart => true,:method =>:put}) do |f| %>
+
+<h1>Create a new community here.</h1>
+  <%= f.label :Name_of_the_community,:id => "name_lab" %>
+		   
+  <%= f.text_field :name,:required=>"required",:class=>"inputValue" %>
+
+  <%= f.submit "create" %>
+
+
+<% end %>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></div>

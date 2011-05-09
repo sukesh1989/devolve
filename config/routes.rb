@@ -1,4 +1,17 @@
 Devolve::Application.routes.draw do
+  get "communities/create"
+
+  get "communities/index"
+  
+  get "communities/delete"
+  
+  get "communities/join"
+  
+  get "communities/destroy"
+  get "communities/save"
+  get "communities/show"
+  get "communities/post"
+
   get "mailbox/show"
  get "mailbox/trash"
   get "messages/show"
@@ -25,7 +38,7 @@ get 'users/invitation'
 
 get 'events/new'
   get "codes/create"
-  
+  get 'communities/create_post'
   get "codes/save"
 
   get "bookmarks/index"
@@ -36,12 +49,13 @@ get 'events/new'
   get "bookmarks/notsaved"
   get "messages/reply"
  match 'mailbox/inbox' => 'mailbox#index'
+ 
+ match 'communities/create_post'=>'communities#create_post'
   resources :microposts, :only => [:create, :destroy]
   resources :bookmarks,:only=>[:create,:destroy]
   
   resources :codes,:only=>[:create,:destroy]
   get "profiles/show"
-
 
   get "profiles/edit"
   get "microposts/destroy"
@@ -50,7 +64,7 @@ get 'events/new'
  get "home/gettingstarted"
   get "profile/show"
   match 'home/create' => 'home#create'
-  
+  match 'communities/save' => 'communities#save'
   match 'profiles/create' => 'profiles#create'
   
   match 'friendship/create' => 'friendship#create'
@@ -66,7 +80,7 @@ match 'microposts/destroy'=>'microposts#destroy'
 
 match 'bookmarks/destroy'=>'bookmarks#destroy'
 match 'codes/destroy'=>'codes#destroy'
-  resources :profiles,:sent,:messages,:mailbox,:member =>{ :reply => :get,:forward => :get, :undelete => :put  },:collection => { :trash => :get }
+  resources :profiles,:commus,:sent,:messages,:mailbox,:member =>{ :reply => :get,:forward => :get, :undelete => :put  },:collection => { :trash => :get }
  
 
  get "home/getting_started_completed"
@@ -83,6 +97,8 @@ match 'codes/destroy'=>'codes#destroy'
   # Sample of regular route:
   match 'profiles/:id' => 'profile#show'
   match 'bookmarks/:id' => 'bookmarks#index'
+  
+  match 'communities/:id' => 'communities#show'
   
   match 'codes/:id' => 'codes#index'
     match 'codes/:id1/:id' => 'codes#view'

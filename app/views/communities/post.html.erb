@@ -1,0 +1,5 @@
+
+
+		<%= link_to "Comment", { :controller => "communities", :action => "newcomment",:id =>params[:id] }%>
+	 <%= render @comments %>
+	<%= will_paginate @comments %>

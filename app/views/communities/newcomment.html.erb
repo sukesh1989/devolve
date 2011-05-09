@@ -1,0 +1,31 @@
+
+<%= javascript_include_tag 'profileshow' %>
+
+
+
+<%= form_for :post,:url =>'/communities/create_comment/'+params[:id] do |f| %>
+
+	
+<%= render 'shared/error_messages', :object => @post %>
+
+<br/>
+subject: <%= Post.find(params[:id]).title%>
+<br/>
+Author: <%= current_user.profile.name %><br/>
+<%= f.label :Subject,:id => "title_lab" %>
+	   
+<%= f.text_field :title,:required=>"required",:class=>"inputValue" %><br/>
+
+
+<%= f.label :Message,:id => "body_lab" %>
+<%= f.text_area :body,:maxlength=>"1024",
+:onkeyup=>"CheckFieldLength(post_body, 'charcount', 'remaining', 1024);",:onkeydown=>"CheckFieldLength(post_body, 'charcount', 'remaining', 1024);", :onmouseout=>"CheckFieldLength(post_body, 'charcount', 'remaining', 1024);"%>
+<small style="display: block; color: green; "><span id="charcount" style=" color: green; ">0</span> characters entered.   |   <span style=" color: green; " id="remaining" >1024</span> characters remaining.</small><br/>
+
+
+<div class="actions"> <%= f.submit "Submit" %>
+</div> 
+
+<% end %>
+
+<%= button_to "Cancel", "/post/"+params[:id]%>

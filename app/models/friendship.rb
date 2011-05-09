@@ -10,8 +10,8 @@ class Friendship < ActiveRecord::Base
   def self.request(user, friend)
   unless user == friend or Friendship.exists?(user, friend) 
     transaction do
-  create(:user => user, :friend => friend, :status => 'pending')
-  create(:user => friend, :friend => user, :status => 'requested') 
+      create(:user => user, :friend => friend, :status => 'pending')
+      create(:user => friend, :friend => user, :status => 'requested') 
   end
   end
 end

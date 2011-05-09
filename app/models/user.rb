@@ -12,12 +12,13 @@ class User < ActiveRecord::Base
   has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"
   has_many :received_messages, :class_name => "MessageCopy", :foreign_key => "recipient_id"
   has_many :folders
-  
+  has_many :commus
+    has_many :memberships
   has_one :profile
     has_many :codes
     has_many :bookmarks
   has_many :microposts, :dependent => :destroy
-  
+  has_many :commus
   has_many :friendships 
   has_many :friends,:through => :friendships, :conditions => "status = 'accepted'"
   has_many :requested_friends, :through => :friendships,:source => :friend, :conditions => "status = 'requested'",

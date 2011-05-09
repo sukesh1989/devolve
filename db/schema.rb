@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110502131703) do
+ActiveRecord::Schema.define(:version => 20110507113634) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +34,21 @@ ActiveRecord::Schema.define(:version => 20110502131703) do
   end
 
   add_index "codes", ["user_id"], :name => "index_codes_on_user_id"
+
+  create_table "comments", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "commus", :force => true do |t|
+    t.string   "name",       :limit => 20
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -61,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20110502131703) do
     t.datetime "accepted_at"
   end
 
+  create_table "memberships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "commu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "message_copies", :force => true do |t|
     t.integer  "recipient_id"
     t.integer  "message_id"
@@ -86,6 +108,14 @@ ActiveRecord::Schema.define(:version => 20110502131703) do
   end
 
   add_index "microposts", ["user_id"], :name => "index_microposts_on_user_id"
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "commu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id",    :null => false

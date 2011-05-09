@@ -1,0 +1,60 @@
+<%= content_for :extra_css do %>
+<% end %>
+
+
+
+
+
+<%@logged_in_user=User.find(current_user.id)%>
+
+
+	
+	
+<h1 id="profilename"><%= @community.name%> </h1>
+
+
+
+
+
+<br/>
+Created by:<%= User.find(@community.user_id).profile.name %> 
+<br/>
+Created on: <%= @community.created_at.in_time_zone  %>
+<br/>
+<% @members=Commu.find(params[:id])%>
+	 <% @members.memberships.each do |m| %> 
+<% @prof=User.find(m.user_id).profile%>
+<%= @prof.name %><br/>
+<%end%>
+
+	<% if Membership.find_by_user_id_and_commu_id(@logged_in_user.id,@community.id).nil? %>
+	
+		<%= link_to "Join Community", { :controller => "communities", :action => "join",:id =>@community.id }, :confirm => "Are you sure of joining this community?" %>
+		<%else%>
+		
+		
+		<% if @community.user_id!=current_user.id%>
+			<%= link_to "Unjoin from this Community", { :controller => "communities", :action => "delete",:id =>@community.id }, :confirm => "Are you sure of unjoining from this community?" %>
+			<%end%>
+		<%end%>
+		
+		
+		
+		
+		<% if @community.user_id==current_user.id%>
+			
+				<%= link_to "Delete this Community", { :controller => "communities", :action => "destroy",:id =>@community.id }, :confirm => "Are you sure of deleting this community?" %>
+				<%end%>
+				
+				
+				
+				
+				
+				<h2>FORUM</h2>
+			
+					<%= link_to "Create a new post", { :controller => "communities", :action => "newpost",:id =>@community.id }%>
+					
+					
+					
+						 <%= render @posts %>
+						<%= will_paginate @posts %>

@@ -46,13 +46,13 @@
 #profimg
 {
 	position:absolute;
-	margin-top:-220px;
+	margin-top:-240px;
 	margin-left:-230px;
 }
 #prof_img {
 	width:200px;
 	position:relative;
-	margin-top:20px;
+	margin-top:70px;
 }
 
 #bio_id {
@@ -166,7 +166,7 @@ border: 1px solid white;
 {
 	font-style:italic;
 	position:relative;
-	margin-left:310px;
+	margin-left:350px;
 	font-weight:lighter;
 	color:#363;
 }
@@ -409,11 +409,17 @@ padding:10px;
 	#request_friend {
 		display:inline;
 		position:absolute;
-		top:30px;
-		
-	margin-left:580px;
+		top:90px;
+	margin-left:680px;
 	
 	
 	
 		
+	}
+	#create{
+		display:inline;
+		position:relative;
+		margin-top:-35px;
+		float:right;
+		margin-right:40px;
 	}

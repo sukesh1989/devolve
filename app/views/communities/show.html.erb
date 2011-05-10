@@ -1,4 +1,5 @@
 <%= content_for :extra_css do %>
+<%= stylesheet_link_tag "commushow" %>
 <% end %>
 
 
@@ -7,29 +8,180 @@
 
 <%@logged_in_user=User.find(current_user.id)%>
 
+<link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+<link  href="http://fonts.googleapis.com/css?family=Rock+Salt:regular" rel="stylesheet" type="text/css" />
 
+<div id="profilebody">
 	
-	<%= image_tag @community.commuimage.to_s,:width=>160%>
-<h1 id="profilename"><%= @community.name%> </h1>
+	
+	
+<h1 id="profilename"><%= @community.name%></h1>
+<p>
+<b>Owned by:</b> <%=link_to User.find(@community.user_id).profile.name,profile_path(User.find(@community.user_id).id) %> 
+</p>
+
+
+
+	<% count=0%>
+
+
+
+
+
+<br />
+<h3></h3>
+
+<div id="profimg">
+	<br/>
+	<br/>
+	
+	<%= image_tag @community.commuimage_url.to_s,:id=>"prof_img"%><br/>
+	
+		
+	<br/>
+				
+				</div>
+				
+				
+				</div>
+				
+				<div id="friendscontainer" >
+				<div id="friendsinnerheading">	
+
+				<h3 id="friendsheading"> 
+					<%= pluralize(Commu.find(params[:id]).memberships.count, "member") %></h3> 
+				<hr id="hr_friends">
+
+
+					</div>
+					<div style="width:310px; height:300px; overflow:auto;">
+						<table id="home_table"> 
+						<% @members=Commu.find(params[:id])%>
+							 <% @members.memberships.each do |m| %> 
+						<% @prof=User.find(m.user_id).profile%>
+						
+						
+							<%if count==0%>
+							<tr>
+
+							<td width="50">
+
+									<%=link_to image_tag(@prof.image_url.to_s,:width => "50",:title=>@prof.name,:alt=>@prof.name),profile_path(@prof.id) %>
+							</td> 
+							<% count+=1%>
+
+								<%else%>
+
+								<% if count == 1 %>
+
+
+								<td width="50">
+
+									<%=link_to image_tag( @prof.image_url.to_s,:width => "50",:title=>@prof.name,:alt=>@prof.name),profile_path(@prof.id) %>
+								</td> 
+								<% count+=1%>
+							<%else%>
+
+							<% if count ==2%>
+
+
+							<td width="50">
+
+								<%=link_to image_tag( @prof.image_url.to_s,:width => "50",:title=>@prof.name,:alt=>@prof.name),profile_path(@prof.id) %>
+							</td> 
+							<%count+=1%>
+							<%else%>
+
+
+
+								<td width="50">
+
+									<%=link_to image_tag( @prof.image_url.to_s,:width => "50",:title=>@prof.name,:alt=>@prof.name),profile_path(@prof.id) %>
+								</td> 
+							</tr> 		
+							<% count=0%>
+							<%end%>
+						<%end%>
+						<%end%>
+						<%end%>
+						</table>
+						</div>
+						<hr id="hr_friends1">
+					</div>
+					
+					
+					
+					
+					
+					
+					<div id="micropostcontainer">
+					<div id="innercontainer">
+
+					<h2 id="micropostupdates"> Forum </h2>
+					
+						<% if Membership.find_by_user_id_and_commu_id(@logged_in_user.id,@community.id).nil? %>	
+						<%else%>
+						<div id="create">
+					<%= link_to "Create a new post", { :controller => "communities", :action => "newpost",:id =>@community.id }%></div>
+					<%end%>
+						<small>Total number of topics <%= @posts.count%>	 </small>
+						<hr><br/>
+					
+
+				
+						<table class="microposts" summary="User microposts">
+								 <%= render @posts %>
+						</table>
+								<%= will_paginate @posts %>
+					
+						
+						
+							
+					<hr />
+					<br />
+					</div>
+
+					</div>
+				
+				
+				
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <br/>
-Created by:<%= User.find(@community.user_id).profile.name %> 
 <br/>
-Created on: <%= @community.created_at.in_time_zone  %>
-<br/>
-<% @members=Commu.find(params[:id])%>
-	 <% @members.memberships.each do |m| %> 
-<% @prof=User.find(m.user_id).profile%>
-<%= @prof.name %><br/>
-<%end%>
 
+
+<div id="request_friend">
 	<% if Membership.find_by_user_id_and_commu_id(@logged_in_user.id,@community.id).nil? %>
 	
-		<%= link_to "Join Community", { :controller => "communities", :action => "join",:id =>@community.id }, :confirm => "Are you sure of joining this community?" %>
+		<%= link_to "Join this Community", { :controller => "communities", :action => "join",:id =>@community.id }, :confirm => "Are you sure of joining this community?" %>
 		<%else%>
 		
 		
@@ -49,12 +201,4 @@ Created on: <%= @community.created_at.in_time_zone  %>
 				
 				
 				
-				
-				<h2>FORUM</h2><br/>
-			
-					<%= link_to "Create a new post", { :controller => "communities", :action => "newpost",:id =>@community.id }%>
-					<br/>
-					
-					
-						 <%= render @posts %>
-						<%= will_paginate @posts %>
+		</div>

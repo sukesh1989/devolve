@@ -83,7 +83,7 @@ end
 
 def post
   @post=Post.find(params[:id])
-  
+  @commu=Commu.find_by_id(@post.commu_id)
   @comments = @post.comments.paginate(:per_page => 10,:page => params[:page])
 end
 

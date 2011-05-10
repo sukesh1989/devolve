@@ -27,7 +27,7 @@
 {
 	font-family: 'Copse', arial, serif;
 	text-transform:capitalize;
-	font-size:36px;
+	font-size:24px;
 
 }
 .scholarlogo
@@ -46,13 +46,13 @@
 #profimg
 {
 	position:absolute;
-	margin-top:-220px;
+	margin-top:-240px;
 	margin-left:-230px;
 }
 #prof_img {
-	width:200px;
+	width:50px;
 	position:relative;
-	margin-top:20px;
+	margin-top:70px;
 }
 
 #bio_id {
@@ -63,7 +63,8 @@
 	margin-left:45px;
 	height:200px;
 	max-width:200px;
-	margin-top:-0px;
+	margin-top:240px;
+	margin-left:-20px;
  border-color:#6b238e;
 border: 2px solid white;
 }
@@ -100,7 +101,7 @@ border: 2px solid white;
 	/*height:700px */
 	width:550px;
 	position:relative;
-	margin-top:-40px;
+	margin-top:0px;
 	margin-left:300px;
 	background-color:#f5f5f5;
 border: 1px solid white;
@@ -150,10 +151,20 @@ border: 1px solid white;
 {
 	text-transform:capitalize;
 	font-family: 'Philosopher', arial, serif;
+	font-size:12px;
+	position:relative;
+	margin-left:50px;
+	margin-top:-10px;
+}
+#micropostname1
+{
+	text-transform:capitalize;
+	color:#6b238e;
+	font-family: 'Philosopher', arial, serif;
 	font-size:14px;
 	position:relative;
 	margin-left:50px;
-	margin-top:-40px;
+	margin-top:-50px;
 }
 #micropostupdates
 {
@@ -166,7 +177,7 @@ border: 1px solid white;
 {
 	font-style:italic;
 	position:relative;
-	margin-left:310px;
+	margin-left:300px;
 	font-weight:lighter;
 	color:#363;
 }
@@ -204,8 +215,17 @@ border: 1px solid #6b238e;
 {
 	text-transform:capitalize;
 position:relative;
+font-size:12px;
 margin-top:20px;
+margin-left:-20px;
 }
+#micropost_delete
+{
+	text-transform:capitalize;
+float:right;
+right:20px;
+}
+
 
 #micropost_paginatefeed
 {
@@ -409,11 +429,38 @@ padding:10px;
 	#request_friend {
 		display:inline;
 		position:absolute;
-		top:30px;
-		
-	margin-left:580px;
+		top:90px;
+	margin-left:680px;
 	
 	
 	
 		
+	}
+	#create{
+		display:inline;
+		position:relative;
+		margin-top:-35px;
+		float:right;
+		margin-right:40px;
+	}
+	#communame {
+		
+		font-family: 'Copse', arial, serif;
+		text-transform:capitalize;
+		font-size:24px;
+		
+	}
+	
+	#commenttitle{
+		font-family: 'Copse', arial, serif;
+		text-transform:capitalize;
+		font-size:16px;
+		display:inline;
+		position:relative;
+		margin-top:-30px;
+	}
+	#commentimg{
+		position:relative;
+		margin-top:-150px;
+		display:inline;
 	}

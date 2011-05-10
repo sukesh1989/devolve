@@ -7,7 +7,7 @@ You have not created any communities yet!
 <%end%>
   <% for commu in @community%>
 
-	<%= image_tag commu.commuimage.to_s,:width=>80%>
+	<%= image_tag commu.commuimage_url.to_s,:width=>80%>
 	<%= link_to commu.name , { :controller => "communities", :action => "show",:id =>commu.id }%>
 
 <br/>
@@ -19,8 +19,8 @@ You have not created any communities yet!
 
 	<% if Commu.find(commu.commu_id).user_id!=current_user.id %>
 	<%count+=1%>
-	<%= image_tag Commu.find(commu.commu_id).commuimage.to_s,:width=>40%>
-	<%= link_to Commu.find(commu.commu_id).name, { :controller => "communities", :action => "show",:id =>commu.id }%>
+	<%= image_tag Commu.find(commu.commu_id).commuimage_url.to_s,:width=>40%>
+	<%= link_to Commu.find(commu.commu_id).name, { :controller => "communities", :action => "show",:id =>commu.commu_id }%>
 <%end%>
 <br/>
 <%end%>

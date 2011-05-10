@@ -1,4 +1,8 @@
-<br/>
-
-		<%= link_to post.title, { :controller => "communities", :action => "post",:id =>post.id }%>   <%=   User.find(post.user_id).profile.name%>
-<br/>
+<tr height="50px">
+<td class="micropost">
+	 <span style="font-size:18px;"><%= link_to post.title, { :controller => "communities", :action => "post",:id =>post.id }%></span>
+	 <h6 id="micropostposted">
+	Posted <%= time_ago_in_words(post.created_at) %> ago.  </h6></td>
+	<td>
+<span style="float:right;margin-top:-40px;margin-left:-80px;">	<small> <%=   User.find(post.user_id).profile.name%></small></td>
+</tr>

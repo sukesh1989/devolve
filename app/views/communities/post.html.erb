@@ -1,11 +1,48 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "postshow" %>
+<% end %>
 
+
+	
+	
+	<div id="profilebody">
+
+		<div id="profimg">
+
+
+			<%= image_tag @commu.commuimage_url.to_s,:id=>"home_img"%><br/>
+       <h2 id="communame"><%= @commu.name%></h2>
+
+						</div>
+
+	 </div>
+	
+
+	<div id="micropostcontainer">
+	<div id="innercontainer">
+		<h4 id="profilename" style="display:inline;"><%= @post.title%></h4><br/>
 		<br/>
+				<%= link_to "Back to Forum", { :controller => "communities", :action => "show",:id =>@post.commu_id }%>
+	<hr>
+<table>
 	 <%= render @comments %>
+	</table>
 	<%= will_paginate @comments %>
 	<br/>
-<%if @post.user_id==current_user.id%>
 
-<%= link_to "Delete Post", { :controller => "communities", :action => "deletepost",:id =>@post.id }%>
-<%end%>
+<hr>
 
-	<%= link_to "Reply to Post", { :controller => "communities", :action => "newcomment",:id =>params[:id] }%>
+
+
+
+	<%if @post.user_id==current_user.id%>
+
+	<%= link_to "Delete Post", { :controller => "communities", :action => "deletepost",:id =>@post.id }%>
+	<%end%>
+
+		<%= link_to "Reply to Post", { :controller => "communities", :action => "newcomment",:id =>params[:id] }%>
+		<span style="margin-left:320px">
+				<%= link_to "Back to Forum", { :controller => "communities", :action => "show",:id =>@post.commu_id }%></span>
+		<br/>		<br/>		<br/>
+		</div>
+		</div>

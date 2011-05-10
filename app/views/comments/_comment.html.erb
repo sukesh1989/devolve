@@ -1,8 +1,18 @@
-<h3><%= comment.title %></h3>
-<%= comment.body%>
+
+<tr> <td class="gravatar">
+<td class="micropost"> <span class="user">
+
+<%= image_tag User.find(comment.user_id).profile.image_url.to_s,:width=>40%>
+<h3 id="micropostname1"><%= User.find(comment.user_id).profile.name %></h3>
+
+<h3 id="micropostname"><%= comment.title %></h3>
+<span class="content" id="micropostdisplaycontent" ><%= comment.body%></span> <span class="timestamp"><h6 id="micropostposted">
+Posted <%= time_ago_in_words(comment.created_at) %> ago.  </h6></span>
+</td>
 <% if @post.body!=comment.body%>
-<%if comment.user_id==current_user.id%>
-<%= link_to "Delete Comment", { :controller => "communities", :action => "deletecomment",:id =>comment.id }%>
+<%if comment.user_id==current_user.id%><td id="micropost_delete">
+<%= link_to "Delete comment", { :controller => "communities", :action => "deletecomment",:id =>comment.id }%>	</td> 
 <%end%>
 <%end%>
-<br/>
+
+</tr>

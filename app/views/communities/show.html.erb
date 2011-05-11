@@ -202,3 +202,21 @@
 				
 				
 		</div>
+		<style>
+		div.floating-menu {position:fixed;bottom:10px;background:#6b238e;border:1px solid #ffcc00;width:600px;z-index:100;-webkit-border-radius: 10px;
+		  -moz-border-radius: 10px;
+		  border-radius: 10px;}
+		div.floating-menu a, div.floating-menu h3 {display:inline;margin:0 0.5em;}
+		div.floating-menu a {color:#fff;padding:5px;}
+		</style>
+		<div class="floating-menu">
+		<h3 style="color:#ff0">Quick Menu</h3>
+		<%= link_to "Home",root_path %>
+		<%= link_to "Communities",communities_index_path %>
+		<%= link_to "Messages",mailbox_index_path %>
+		<%= link_to "Code Hub","/codes/#{current_user.id}"%>
+		<%= link_to "Bookmarks",bookmark_url(current_user.id),:id => current_user.id %> 
+
+		</div>
+
+	

@@ -2,7 +2,36 @@
 	height:140px;
 	background-color:#6b238e;
 }
-
+#box {
+	position:relative;
+	margin-left:140px;
+	margin-top:20px;
+	    width:220px;
+		height:300px;
+		background-color:#fff;
+		border-color:#6b238e;
+		border:1px solid;
+		border-radius: 15px;
+	      -webkit-border-radius: 15px;
+	      -moz-border-radius   : 15px;
+	
+	
+}
+#box1 {
+	position:relative;
+	margin-left:430px;
+	margin-top:-302px;
+	    width:220px;
+		height:300px;
+		background-color:#fff;
+		border-color:#6b238e;
+		border:1px solid;
+		border-radius: 15px;
+	      -webkit-border-radius: 15px;
+	      -moz-border-radius   : 15px;
+	
+	
+}
 #email_lab {
 	position:absolute;
 	margin-left:30px;
@@ -175,6 +204,27 @@ font-size:14px;
 	background-color:#6b238e;
 }
 
+#buttonsignup{
+		border-radius:25px;
+		
+		height:30px;
+		width:180px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	
+		font-family:Georgia, "Times New Roman", Times, serif;
+		font-size:14px;
+	    padding:0px;
+		position:relative;
+		margin-left:20px;
+	}
+	#buttonsignup:hover
+	{
+	
+			background-color:#ff6;
+	
+	
+}
 
 
 

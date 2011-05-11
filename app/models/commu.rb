@@ -4,4 +4,5 @@ class Commu < ActiveRecord::Base
    has_many :posts
    
     has_many :memberships
+    validates :name, :presence => true, :length => { :maximum => 20 }
 end

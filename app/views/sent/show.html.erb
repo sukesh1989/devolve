@@ -1,19 +1,23 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "sentshow" %>
+<% end %>
+
+<div id="sentshowbody">
+<h2 id="sentheading">Sent - <%=h(@message.subject) %></h2>
 
 
-<h2>Sent: <%=h(@message.subject) %></h2>
 
-
-
-<p><strong>To:</strong> 
+<p><strong>To: </strong> 
 <%= User.find(@message.recipient_id).profile.name %></p>
 
 
 
 
 
-<p><strong>Sent:</strong> <%= @message.created_at.to_s(:long) %></p>
-
-<pre><%=h @message.body %></pre>
+<p><strong>Sent On: </strong> <%= @message.created_at.to_s(:long) %></p>
+<div id="messagecontent">
+<%=h @message.body %> </div>
 <p>
 <%= link_to "Delete Permanently", sent_delete_path+'/'+@message.id.to_s,:method=>"put"%></p>
+</div>
 

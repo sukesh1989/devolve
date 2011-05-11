@@ -1,10 +1,14 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "inboxshow" %>
+<% end %>
+<div id="inboxmsgshow">
 <h2><%=h @message.subject %></h2>
 
 <p><strong>From:</strong> <%=h User.find(@message.author.id).profile.name %></p>
 <p><strong>To:</strong> <%=h User.find(@message.recipient_id).profile.name %></p>
 <p><strong>Received:</strong> <%= @message.created_at.to_s(:long) %></p>
-
-<pre><%=h @message.body %></pre>
+<div id="messagecontentbody">
+<%=h @message.body %> </div>
 
 <p><%= link_to "Reply", messages_reply_path+'/'+@message.id.to_s %>
 	
@@ -16,3 +20,4 @@
 <%= link_to "Delete Permanently", messages_delete_from_trash_path+'/'+@message.id.to_s,:method=>"put"%>
   <% end %>
 </p>
+</div>

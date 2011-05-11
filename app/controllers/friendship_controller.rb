@@ -3,7 +3,7 @@ class FriendshipController < ApplicationController
    
    
  def index
-   @friends=current_user.friends
+   @friends=current_user.friends.where("name like ?","%#{params[:q]}%")
   ActiveRecord::Base.include_root_in_json = false
    respond_to do |format|
      format.html

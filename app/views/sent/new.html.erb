@@ -1,27 +1,18 @@
-<h2>Compose</h2>
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "composemessage" %>
+<% end %>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<div id="composebody">
+<h2 id="composeheading">Compose</h2>
 
 <% form_for :message, :url => {:controller => "sent", :action => "create"} do |f| %>
+<p> To <br />
 
-<div>
-    To:  </div>
-<div>
-   <%= f.text_field :friend_tokens,:name=>"message[to][]" %>
-	  <% selected ||= []%>
-	 <%for item in current_user.friends %>
-     <%= item.profile.name%><br/>
-<%=h item.send(:email) %><br />
-
-      <%end%>
-	
-	
-
-
-	
-    
-   
-  
-  <p>Subject: <%= f.text_field :subject %></p>
-  <p>Body:<br /> <%= f.text_area :body %></p>
-  <p><%= submit_tag "Send" %></p>
+   <%= f.text_field :friend_tokens,:name=>"message[to][]" %> </p>
+  <p>Subject <br /> <%= f.text_field :subject %></p>
+  <p>Body <br /> <%= f.text_area :body %></p>
+  <p><%= submit_tag "Send", :id=>"submit_button"%></p>
 <% end %>
+
 </div>
+<br />

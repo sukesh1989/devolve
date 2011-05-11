@@ -7,6 +7,9 @@ Devolve::Application.routes.draw do
   
   get "communities/join"
   get "friendship/index"
+  get "communities/newpost"
+  
+  get "communities/newcomment"
   get "communities/destroy"
   get "communities/save"
   get "communities/show"

@@ -1,23 +1,26 @@
 
 <%= javascript_include_tag 'profileshow' %>
-
-
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "newcommentform" %>
+<% end %>
+<br />
+<div id="commentform">
 
 <%= form_for :post,:url =>'/communities/create_comment/'+params[:id] do |f| %>
 
 	
 <%= render 'shared/error_messages', :object => @post %>
 
-<br/>
-subject: <%= Post.find(params[:id]).title%>
-<br/>
-Author: <%= current_user.profile.name %><br/>
-<%= f.label :Subject,:id => "title_lab" %>
+<br/> <span id="commentheading">
+Comment on <%= Post.find(params[:id]).title%>
+
+authored by <%= current_user.profile.name %> </span><br/> <br />
+<%= f.label :Subject,:id => "title_lab" %> <br />
 	   
-<%= f.text_field :title,:required=>"required",:class=>"inputValue" %><br/>
+<%= f.text_field :title,:required=>"required",:class=>"inputValue" %><br /> <br />
 
 
-<%= f.label :Message,:id => "body_lab" %>
+<%= f.label :Message,:id => "body_lab" %> <br />
 <%= f.text_area :body,:maxlength=>"1024",
 :onkeyup=>"CheckFieldLength(post_body, 'charcount', 'remaining', 1024);",:onkeydown=>"CheckFieldLength(post_body, 'charcount', 'remaining', 1024);", :onmouseout=>"CheckFieldLength(post_body, 'charcount', 'remaining', 1024);"%>
 <small style="display: block; color: green; "><span id="charcount" style=" color: green; ">0</span> characters entered.   |   <span style=" color: green; " id="remaining" >1024</span> characters remaining.</small><br/>
@@ -27,5 +30,9 @@ Author: <%= current_user.profile.name %><br/>
 </div> 
 
 <% end %>
-
-<%= button_to "Cancel", "/post/"+params[:id]%>
+<br />
+<%= button_to "Cancel", "post/"+params[:id], :id=>"cancel_button"%>
+<br />
+</div>
+<br />
+<br />

@@ -1,0 +1,20 @@
+#trashbody
+{
+	background-color:#FFF;
+		padding-left:15px;
+	padding-top:10px;
+	border-radius:3px;
+	border-style:solid;
+	border-color:#6b238e;
+	border-width:1px;
+	margin:auto;
+	width:750px;
+	margin-top:-200px;
+	margin-left:200px;
+	
+
+}
+#trashheading
+{
+	font-family: 'Josefin Sans', arial, serif;
+}

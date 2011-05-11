@@ -10,7 +10,7 @@ class CommunitiesController < ApplicationController
       flash[:success] = "Community created!"
       redirect_to communities_show_path+'/'+@commu.id.to_s
       else
-          flash[:error] = "Error in creation of new community!(max length of community name is 20 chars)"
+          flash[:error] = "Error in creation of new community!(max length of community name is 20 chars and min is 1)"
           redirect_to root_path
       end
   end
@@ -76,7 +76,7 @@ def create_post
   redirect_to  communities_show_path+'/'+params[:id]
   else
       flash[:error] = "Error in creation of the post"
-      redirect_to communities_show_path+'/'+params[:id]
+      redirect_to  communities_newpost_path+'/'+@commu.id.to_s
   end
   
 end
@@ -110,7 +110,7 @@ def create_comment
      redirect_to  communities_post_path+'/'+params[:id]
   else
       flash[:error] = "Error in your comment"
-      redirect_to  communities_post_path+'/'+params[:id]
+      redirect_to  communities_newcomment_path+'/'+@commu.id.to_s
   end
   
 end

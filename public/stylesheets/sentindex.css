@@ -1,0 +1,19 @@
+#sentbody
+{
+	background-color:#FFF;
+	border-radius:3px;
+	border-color:#6b238e;
+	border-width:1px;
+	border-style:solid;
+	width:750px;
+	position:relative;
+	margin-left:200px;
+	padding-left:15px;
+	padding-top:10px;
+	margin-top:-200px;
+	
+}
+#sentheading
+{
+	font-family: 'Josefin Sans', arial, serif;
+}

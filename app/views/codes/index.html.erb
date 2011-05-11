@@ -19,7 +19,8 @@
 					<strong>Total number of code blocks saved: </strong> <%= @user_current.codes.count %>
 <br /> 
 				
-					<%= link_to "Create a new code block","javascript:(function(){f='http://localhost:3000/codes/create?&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,toolbar=no,scrollbars=yes,width=900'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()", :id => "link_new_code"%>
+				<% if @user_current == @logged_in_user  %>
+					<%= link_to "Create a new code block","javascript:(function(){f='"+root_url+"codes/create?&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,toolbar=no,scrollbars=yes,width=900'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()", :id => "link_new_code"%><%end%>
 					<br/><br />
 					
 

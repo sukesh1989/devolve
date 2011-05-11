@@ -1,10 +1,15 @@
-<h2><%=h @folder.name %></h2>
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "mailbox" %>
+<% end %>
+
+<div id="inboxdiv">
+<h2 id="mailboxheading"><%=h @folder.name %></h2>
 <div id="box">
 <table id="table_inbox">
   <tr>
-    <th width="20%">From</th>
-    <th width="50%">Subject</th>
-    <th width="30%">Received</th>
+    <th width="30%" align="center">From</th>
+    <th width="50%"align="center">Subject</th>
+    <th width="30%" align="center">Received</th>
   </tr>
 
 
@@ -12,13 +17,14 @@
 <%if message.deleted==false%>
     <tr>
       <td align="center"><%=h User.find(message.author.id).profile.name %></td>
-      <td align="left"><%= link_to h(message.subject), message_path(message) %></td>
+      <td align="center"><%= link_to h(message.subject), message_path(message) %></td>
       <td align="center"><%= distance_of_time_in_words(message.created_at, Time.now) %> ago</td>
     </tr>
 <%end%>
   <% end %>
 </table>
-
+<br />
 <%= will_paginate @messages %>
+</div>
 </div>
 <br/>

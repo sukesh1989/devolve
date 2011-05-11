@@ -1,3 +1,8 @@
+<%= content_for :extra_css do %>
+<%= stylesheet_link_tag "communityindex" %>
+<% end %>
+<br />
+<div id="community">
 <h1>Communities</h1>
 
 <%= link_to "create a new community" , communities_create_path%>
@@ -27,3 +32,5 @@ You have not created any communities yet!
 <% if count==0%>
 You have not joined any communities yet!
 <%end%>
+</div>
+<br />

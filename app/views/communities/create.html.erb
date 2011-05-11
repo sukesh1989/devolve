@@ -2,25 +2,28 @@
 
 <% end%>
 <%= content_for :extra_css do %>
-
+<%= stylesheet_link_tag "communitycreate" %>
 <% end %>
-
-
+<br />
+<div id="communityform">
 
 
 <%= form_for(:commu,:url =>{:controller=>"communities",:action=> 'save'},:html => {:multipart => true,:method =>:put}) do |f| %>
 
-<h1>Create a new community here.</h1>
-  <%= f.label :Name_of_the_community,:id => "name_lab" %>
+<h1>Create a new community</h1>
+  <%= f.label :Community_name,:id => "name_lab" %>
 		   
-  <%= f.text_field :name,:required=>"required",:class=>"inputValue" %><br/>
-<%= f.label :Image%>
+  <%= f.text_field :name,:required=>"required",:class=>"inputValue" %><br/> <br />
+<%= f.label :Upload_an_image, :id=>"image_label"%>
 <%= f.file_field :commuimage%>
-
-  <%= f.submit "create" %>
+<br /> <br />
+  <%= f.submit "Create" %>
 
 
 <% end %>
+<br />
+<br />
+</div>
 <br/>
 <br/>
 <br/>

@@ -5,11 +5,10 @@
 <div>
     To:  </div>
 <div>
-   
+   <%= f.text_field :friend_tokens,:name=>"message[to][]" %>
 	  <% selected ||= []%>
 	 <%for item in current_user.friends %>
      <%= item.profile.name%><br/>
-     <%= check_box_tag "message[to][]", item.send(:id) %> 
 <%=h item.send(:email) %><br />
 
       <%end%>

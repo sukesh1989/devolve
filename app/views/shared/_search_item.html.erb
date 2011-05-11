@@ -1,7 +1,9 @@
 
+	<% if search_item.user_id!=0%>
 <tr>
 	<td>
 <%=image_tag search_item.image_url.to_s,:id => "prof_img",:width=>50 %> </td><td>
 
 <%= link_to search_item.name, " /profiles/#{search_item.user_id}" %></td>
 </tr>
+<%end%>

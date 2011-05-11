@@ -6,8 +6,9 @@ class Message < ActiveRecord::Base
    has_many :sentmessages
    has_many :recipients, :through => :message_copies
   
-   attr_accessor  :to ,:recipient_id
+   attr_accessor  :to ,:recipient_id,:friend_tokens
    attr_accessible :subject, :body, :to,:recipient_id
+attr_reader :friend_tokens
 
    def prepare_copies
       to.each do |recipient|

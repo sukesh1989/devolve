@@ -2,7 +2,15 @@ class FriendshipController < ApplicationController
    before_filter :authenticate_user!,:setup_friends
    
    
+ def index
+   @friends=current_user.friends
+  ActiveRecord::Base.include_root_in_json = false
+   respond_to do |format|
+     format.html
+   format.json {render :json => @friends.map,:only=>[:name,:id]}
  
+ end
+ end
    def create
    Friendship.request(@user, @friend)
    

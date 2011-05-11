@@ -14,6 +14,11 @@ $.ajaxSetup({
 
 
 $(document).ready(function() {
+	
+		$("#message_friend_tokens").tokenInput("/friendship/index.json",{
+			crossDomain:false
+
+		});
 
 	 View.initialize.apply(View);
 	
@@ -26,6 +31,7 @@ var $alertdiv = $('<div id = "alertmsg"/>');
             $(document.body).append($alertdiv);
             $("#alertmsg").slideDown("slow"); 
             setTimeout(function() { $("#alertmsg").slideUp(200) }, 3000); 
+		
 			});
 			
 			
@@ -103,3 +109,4 @@ var $alertdiv = $('<div id = "alertmsg"/>');
 					    selector: "#user_menu_request"
 					  }
 					};
+

@@ -17,6 +17,7 @@ class HomeController < ApplicationController
     
     @user.profile=@pro
     
+     @user.update_attributes(:name=>params[:profile][:name])
      @user.update_attributes(:getting_started => false)
         redirect_to root_path
   end

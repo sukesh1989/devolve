@@ -20,12 +20,7 @@ class SentController < ApplicationController
      @message = current_user.sent_messages.build(params[:message])
   
      if @message.save
-      
-       
-      
-       flash[:notice] = "Message sent"
-       
-      
+       flash[:notice] = "Message sent" 
        redirect_to :action => "index"
      else
        render :action => "new"

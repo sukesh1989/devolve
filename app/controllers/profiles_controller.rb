@@ -23,6 +23,10 @@ class ProfilesController < ApplicationController
      end
      
     @user=User.find(current_user.id)
+    
+    
+     @user.update_attributes(:name=>params[:profile][:name])
+    
     @pro=Profile.new(:name=>params[:profile][:name],
     :birthdate=>@date,
     :location=>params[:profile][:location],

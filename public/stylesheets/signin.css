@@ -6,7 +6,7 @@
 	position:relative;
 	margin-left:140px;
 	margin-top:20px;
-	    width:220px;
+	    width:275px;
 		height:300px;
 		background-color:#fff;
 		border-color:#6b238e;
@@ -14,6 +14,7 @@
 		border-radius: 15px;
 	      -webkit-border-radius: 15px;
 	      -moz-border-radius   : 15px;
+	padding:10px;
 	
 	
 }
@@ -217,6 +218,8 @@ font-size:14px;
 	    padding:0px;
 		position:relative;
 		margin-left:20px;
+		margin-top:50px;
+			background-color:#4dcffa;
 	}
 	#buttonsignup:hover
 	{
@@ -224,6 +227,18 @@ font-size:14px;
 			background-color:#ff6;
 	
 	
+}
+#newheading
+{
+	font-family:Arial, "Times New Roman", Times, serif;
+	font-size:18px;
+	font-style:italic;
+	font-weight:bolder;
+}
+#signupinfo
+{
+	font-family:"Times New Roman";
+	font-size:16px;
 }
 
 
